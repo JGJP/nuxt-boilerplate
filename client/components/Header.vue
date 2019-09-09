@@ -25,18 +25,13 @@
 					li
 						nuxt-link(to="/page2/")
 							span page 2
-					li
-						nuxt-link(to="/page3/")
-							span page 3
-					li
-						nuxt-link(to="/page4/")
-							span page 4
-					li
-						nuxt-link(to="/page5/")
-							span page 5
-					li
-						nuxt-link(to="/page6/")
-							span page 6
+						ul
+							li
+								nuxt-link(to="/page 3/")
+									span page 3
+							li
+								nuxt-link(to="/page 4/")
+									span page 4
 
 </template>
 
@@ -60,7 +55,7 @@
 		width: 100%
 
 		nav
-			background: $black
+			background: $nav-bg
 
 			.container
 				display: flex
@@ -103,14 +98,14 @@
 						ul
 							@media ($phone)
 								display: none
-							background: $white
-							background: transparent
+							background: $nav-bg
+							@mixin transparent
 							overflow: hidden
 							max-height: 0
 							@mixin transition max-height
 
 							li
-								background: $white
+								background: $nav-bg
 								a
 									text-align: left
 							li:first-child
@@ -183,11 +178,8 @@
 							border: 1px solid $white-rim
 
 							a
-								padding: 1em 0
-								@media ($phone)
-									padding: 0
+								padding: 0
 								font-size: 1em
-
 				.logo
 					display: none
 
