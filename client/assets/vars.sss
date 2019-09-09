@@ -1,0 +1,227 @@
+
+@import './proprietary.sss'
+
+// breakpoints
+
+$phone-bp:  34em
+$tablet-bp: 48em
+
+$phone:       width <= $phone-bp
+$tablet:      width <= $tablet-bp
+
+$not-phone:   width > $phone-bp
+$not-tablet:  width > $tablet-bp
+
+$tablet-only: $phone-bp < width <= $tablet-bp
+
+// sizes
+
+$width-wide:   80em
+$width-full:   66em
+$width-medium: 45em
+$width-narrow: 30em
+
+$border-width: 2px
+
+// colors
+
+$black:             hsl(0, 0%, 5%)
+$white:             hsl(0, 0%, 99%)
+$white-transparent: hsla(0, 0%, 99%, 0.7)
+$white-rim: 		hsl(0, 0%, 80%)
+$black-dark:        hsl(0, 0%, 3%)
+$black-transparent: rgba(0, 0, 0, 0.7)
+$black-rim:         rgba(255, 255, 255, 0.1)
+$blue:				hsl(230, 50%, 25%)
+$orange:			hsl(30, 75%, 50%)
+$blue-light:        #0095e6
+$blue-dark:         #014988
+$blue-pale:         #ACC8DE
+$light-grey:        hsl(0, 0%, 70%)
+$grey:              #747474
+$grey-dark:			hsl(0, 0%, 30%)
+
+$body-color: $grey-dark
+$body-bg: $black
+$header-color: hsl(0, 0%, 10%)
+$accent-color: $blue-light
+$main-bg: $white
+$nav-bg: $black
+$transparency: 0.75
+// fonts
+
+// $body-font: 'Noto Sans JP', sans-serif
+$font-serif:     游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
+$font-body:      'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
+$font-minchotai: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+$font-english:   'Roboto', sans-serif
+
+$font-weight-thin:    400
+$font-weight-normal:  500
+$font-weight-bold:    700
+$font-weight-header:  $font-weight-normal
+
+// transitions
+
+$trans-time:    0.3s
+$ease-out:      cubic-bezier(0, 0, 0, 1)
+$scale-down:    0.96
+$scale-up:      1.05
+$hover-opacity: 0.6
+
+@define-mixin transition $property, $time: $trans-time, $ease: ease
+	transition: $property $time $ease
+	will-change: $property
+
+// mixins
+
+@define-mixin box-shadow
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+@define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 34em
+	font-size: responsive $min $max
+	font-range: $range
+
+@define-mixin minchotai
+	font-family: $font-minchotai
+
+@define-mixin hover-opacity
+	transition: opacity $trans-time ease
+	&:hover
+		opacity: $hover-opacity
+
+@define-mixin hover-scale $amount: $scale-down, $start: 1
+	transform: scale($start)
+	transition: transform $trans-time ease
+	&:hover
+		transform: scale($amount)
+
+@define-mixin background-image $src
+	background: url($src)
+	background-size: cover
+	background-position: center center
+
+@define-mixin overlay
+	&::after
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+
+@define-mixin ghost-button $color: $body-color, $hover-color: $white
+	display: inline-block
+	padding: 1em 2em
+	border: $border-width solid $color
+	color: $color
+	@mixin transition color
+	@mixin transition background
+	@mixin hover-scale
+	&:hover
+		color: $hover-color
+		background: $color
+
+@define-mixin button $color: $body-color, $text-color: $white
+	display: inline-block
+	padding: 1em 2em
+	border: $border-width solid $color
+	background: $color
+	color: $text-color
+	@mixin transition color
+	@mixin transition background
+	@mixin hover-scale
+	@mixin hover-opacity
+
+@define-mixin position-absolute
+	position: absolute
+	height: 100%
+	width: 100%
+	top: 0
+	left: 0
+
+@define-mixin big-vert-padding
+	@mixin big-vert-padding-top
+	@mixin big-vert-padding-bottom
+
+@define-mixin big-vert-padding-top
+	padding-top: 9em
+	@media ($tablet)
+		padding-top: 6em
+	@media ($phone)
+		padding-top: 3em
+
+@define-mixin big-vert-padding-bottom
+	padding-bottom: 9em
+	@media ($tablet)
+		padding-bottom: 6em
+	@media ($phone)
+		padding-bottom: 3em
+
+@define-mixin medium-vert-padding
+	@mixin medium-vert-padding-top
+	@mixin medium-vert-padding-bottom
+
+@define-mixin medium-vert-padding-top
+	padding-top: 6em
+	@media ($tablet)
+		padding-top: 4em
+	@media ($phone)
+		padding-top: 2em
+
+@define-mixin medium-vert-padding-bottom
+	padding-bottom: 6em
+	@media ($tablet)
+		padding-bottom: 4em
+	@media ($phone)
+		padding-bottom: 2em
+
+@define-mixin small-vert-padding
+	@mixin small-vert-padding-top
+	@mixin small-vert-padding-bottom
+
+@define-mixin small-vert-padding-top
+	padding-top: 1em
+	@media ($tablet)
+		padding-top: 1em
+	@media ($phone)
+		padding-top: 1em
+
+@define-mixin small-vert-padding-bottom
+	padding-bottom: 1em
+	@media ($tablet)
+		padding-bottom: 1em
+	@media ($phone)
+		padding-bottom: 1em
+
+
+@define-mixin vert-padding
+	@mixin vert-padding-top
+	@mixin vert-padding-bottom
+
+@define-mixin vert-padding-top
+	padding-top: 3em
+	@media ($phone)
+		padding-top: 2em
+
+@define-mixin vert-padding-bottom
+	padding-bottom: 3em
+	@media ($phone)
+		padding-bottom: 2em
+
+@define-mixin horz-padding
+	@mixin horz-padding-left
+	@mixin horz-padding-right
+
+@define-mixin horz-padding-left
+	padding-left: 4em
+	@media ($phone)
+		padding-left: 2em
+
+@define-mixin horz-padding-right
+	padding-right: 4em
+	@media ($phone)
+		padding-right: 2em
+
+@define-mixin transparent
+	opacity: $transparency

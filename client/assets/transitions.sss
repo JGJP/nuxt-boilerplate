@@ -1,0 +1,57 @@
+$transitionTime: 0.3s
+$staggerTime: 0.1s
+$totalTime: 0.4s
+
+$pageTransform1: translateY(0.3em)
+$pageTransform2: translateY(0.5em)
+$pageTransform3: translateY(30px)
+// $pageTransform1: translateX(0.3em)
+// $pageTransform2: translateX(0.5em)
+// $pageTransform3: translateX(30px)
+
+.page-enter-active, .page-leave-active
+	transition: opacity $totalTime ease-out, transform $totalTime ease-out
+	> #title
+		transition: opacity $transitionTime ease-out, transform $transitionTime ease-out
+	> :not(#title)
+		transition: opacity $transitionTime $staggerTime ease-out, transform $transitionTime $staggerTime ease-out
+
+.page-leave-active
+	> *
+		opacity: 0
+		transform: $pageTransform1
+		
+.page-enter
+	> *
+		opacity: 0
+		transform: $pageTransform2
+
+.alert-leave-active, .alert-enter-active
+	transition: opacity 0.3s 0.5s ease-out, transform 0.3s 0.5s ease-out
+
+.alert-enter, .alert-leave-to
+	opacity: 0
+	transform: translateX(0.3em)
+
+.alert-enter-to, .alert-leave
+	transform: translateX(0)
+
+.media-leave-active
+	position: absolute
+.media-move
+	transition: transform 0.5s
+.media-enter-active, .media-leave-active 
+	transition: opacity 0.3s, transform 0.5s
+.media-enter, .media-leave-to
+	opacity: 0
+	transform: $pageTransform3
+
+.fade-enter-active, .fade-leave-active 
+	transition: opacity 0.2s
+.fade-enter, .fade-leave-to
+	opacity: 0
+
+.single-enter-active, .single-leave-active 
+	transition: opacity 0.2s 0.3s
+.single-enter, .single-leave-to
+	opacity: 0
