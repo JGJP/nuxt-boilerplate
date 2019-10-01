@@ -125,13 +125,13 @@
 			img
 				padding: 0.35em
 				height: 2.5em
-			background: $white
+			background: $nav-bg
 			padding: .4em 1.2em
 			display: flex
 			justify-content: space-between
 			align-items: center
 			&.open
-				border-bottom: 1px solid $white-rim
+				border-bottom: 1px solid $nav-bg-rim
 
 		nav
 			@media ($phone)
@@ -154,7 +154,7 @@
 					visibility: visible
 					opacity: 1
 					transition: opacity $trans-time $ease-out
-					background: $white-transparent
+					background: $nav-bg-transparent
 
 				.container
 					flex-direction: column
@@ -171,11 +171,11 @@
 
 						li
 							flex: 1
-							background: $white
+							background: $nav-bg
 							width: 20em
 							margin: 0.25em
 							max-width: 100%
-							border: 1px solid $white-rim
+							border: 1px solid $nav-bg-rim
 
 							a
 								padding: 0
