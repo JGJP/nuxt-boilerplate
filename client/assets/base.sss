@@ -4,15 +4,13 @@
 	overflow: hidden
 	position: relative
 
-
 body
-	font-family: $font-body
-	background: $body-bg
-	color: $body-color
+	font-family: $font
+	background: $bg
+	color: $fg
 	@mixin font-range
 
 	main
-		background: $main-bg
 		min-height: 20em
 		overflow: hidden
 		
@@ -25,6 +23,9 @@ body
 		@mixin vert-padding-top
 		@mixin vert-padding-bottom
 
+		&.small-padding
+			@mixin small-vert-padding-top
+			@mixin small-vert-padding-bottom
 		&.medium-padding
 			@mixin medium-vert-padding-top
 			@mixin medium-vert-padding-bottom
@@ -63,7 +64,10 @@ body
 				padding: 0
 
 	.space-items > *:not(:last-child)
-		margin-bottom: 1.5rem
+		margin-bottom: $spacing
+
+	.space-items-horz > *:not(:last-child)
+		margin-right: $spacing
 
 	.reader
 		@util hide-visually
@@ -71,6 +75,66 @@ body
 	br:not(.mobile)
 		@media ($phone)
 			display: none
+
+// grids
+
+.grid
+	display: flex
+	justify-content: stretch
+	align-items: center
+	&.start
+		align-items: flex-start
+	.half
+		width: 50%
+	.two-thirds
+		width: 66.66%
+	.third
+		width: 33.33%
+	.quarter
+		width: 25%
+	.grow
+		flex-grow: 1
+	@media ($not-phone)
+		&.spacing
+			> *
+				padding-left: 1em
+				padding-right: 1em
+			> *:first-child
+				padding-left: 0
+			> *:last-child
+				padding-right: 0
+		> *
+			padding-left: 0.5em
+			padding-right: 0.5em
+		> *:first-child
+			padding-left: 0
+		> *:last-child
+			padding-right: 0
+		&.reverse
+			flex-direction: row-reverse
+			> *
+				padding-left: 0.5em
+				padding-right: 0.5em
+			> *:first-child
+				padding-right: 0
+			> *:last-child
+				padding-left: 0
+	@media ($phone)
+		&:not(.mobile)
+			display: block
+			.half,
+			.two-thirds,
+			.third,
+			.quarter
+				width: 100%
+			> *:not(:last-child)
+				margin-bottom: $spacing-big
+				
+.center:not(h1,h2,h3,h4,h5,h6,p,table)
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: center
 
 // z-indexes
 
@@ -92,13 +156,13 @@ body
 		margin-bottom: 0
 
 	p
+		color: $fg-3
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
 		word-wrap: break-word
 
 	h1, h2, h3, h4, h5, h6
-		color: $header-color
 		font-weight: $font-weight-header
 		line-height: 1.2em
 

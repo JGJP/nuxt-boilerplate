@@ -3,7 +3,9 @@
 	.layout
 
 		Header
-		nuxt
+		main
+			nuxt
+		Footer
 
 </template>
 
@@ -13,17 +15,8 @@
 
 @import "../assets/vars.sss"
 
-.layout
-	overflow: hidden
-	position: relative
-
 main
-	background: white
-	min-height: 20em
-	overflow: hidden
-
-body
-	background: $black
+	margin-top: $nav-height
 
 </style>
 

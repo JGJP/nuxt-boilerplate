@@ -1,75 +1,62 @@
-
 @import './proprietary.sss'
 
 // breakpoints
 
-$phone-bp:  34em
-$tablet-bp: 48em
-
-$phone:       width <= $phone-bp
-$tablet:      width <= $tablet-bp
-
-$not-phone:   width > $phone-bp
-$not-tablet:  width > $tablet-bp
-
-$tablet-only: $phone-bp < width <= $tablet-bp
+$phone-bp:              34em
+$tablet-bp:             48em
+$phone:                 width <= $phone-bp
+$tablet:                width <= $tablet-bp
+$not-phone:             width > $phone-bp
+$not-tablet:            width > $tablet-bp
+$tablet-only:           $phone-bp < width <= $tablet-bp
 
 // sizes
-
-$width-wide:   80em
-$width-full:   66em
-$width-medium: 45em
-$width-narrow: 30em
-
-$border-width: 2px
+$width-wide:            80em
+$width-full:            66em
+$width-medium:          45em
+$width-narrow:          30em
+$width-super-narrow: 	20em
+$border-width:          2px
+$spacing: 1rem
+$spacing-big: 1.5rem
 
 // colors
+// postcss-color-function
+$hue:					220
+$transparency:          0.75
+$black:                 hsl($hue, 100%, 5%)
+$white:                 hsl($hue, 100%, 97%)
+$orange:			    hsl(30, 75%, 50%)
+$blue:				    hsl(220,46%,48%)
+// color assignments
+$bg:                    $white
+$bg-2:					color( $bg shade(15%) )
+$fg:                    $black
+$fg-2:                  color( $fg tint(15%) )
+$fg-3:                  color( $fg tint(30%) )
 
-$black:             hsl(0, 0%, 5%)
-$white:             hsl(0, 0%, 99%)
-$white-transparent: hsla(0, 0%, 99%, 0.7)
-$white-rim: 		hsl(0, 0%, 80%)
-$black-dark:        hsl(0, 0%, 3%)
-$black-transparent: rgba(0, 0, 0, 0.7)
-$black-rim:         rgba(255, 255, 255, 0.1)
-$blue:				hsl(220, 46%, 48%)
-$orange:			hsl(30, 75%, 50%)
-$blue-light:        #0095e6
-$blue-dark:         #014988
-$blue-pale:         #ACC8DE
-$light-grey:        hsl(0, 0%, 70%)
-$grey:              #747474
-$grey-dark:			hsl(0, 0%, 30%)
+// nav
+$nav-height:			3.5em
+$nav-bg:                $fg-3
+$nav-bg-rim:            color( $nav-bg tint(30%) )
+$nav-bg-transparent:    color( $nav-bg a(80%) )
 
-$body-color: $grey-dark
-$body-bg: $black
-$header-color: hsl(0, 0%, 10%)
-$accent-color: $blue-light
-$main-bg: $white
-$nav-bg: $blue
-$nav-bg-rim: color($nav-bg tint(30%))
-$nav-bg-transparent: color($nav-bg a(80%))
-$transparency: 0.75
 // fonts
-
-// $body-font: 'Noto Sans JP', sans-serif
-$font-serif:     游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
-$font-body:      'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
-$font-minchotai: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
-$font-english:   'Roboto', sans-serif
-
-$font-weight-thin:    400
-$font-weight-normal:  500
-$font-weight-bold:    700
-$font-weight-header:  $font-weight-normal
+$font:	                'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
+$font-serif:            游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
+$font-minchotai:        "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+$font-english:          'Roboto', sans-serif
+$font-weight-thin:      400
+$font-weight-normal:    500
+$font-weight-bold:      700
+$font-weight-header:    $font-weight-normal
 
 // transitions
-
-$trans-time:    0.3s
-$ease-out:      cubic-bezier(0, 0, 0, 1)
-$scale-down:    0.96
-$scale-up:      1.05
-$hover-opacity: 0.6
+$trans-time:            0.3s
+$ease-out:              cubic-bezier(0, 0, 0, 1)
+$scale-down:            0.96
+$scale-up:              1.05
+$hover-opacity:         0.6
 
 @define-mixin transition $property, $time: $trans-time, $ease: ease
 	transition: $property $time $ease

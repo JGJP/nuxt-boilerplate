@@ -1,9 +1,14 @@
 <template lang="pug">
 
-	main#top
+#index
 
-		Hero
-		
+	Hero
+
+	section
+		.container.space-items
+			h1 title
+			p some content
+
 </template>
 
 
@@ -11,7 +16,6 @@
 <script>
 	
 	import Hero from '~/components/Hero'
-	import Footer from '~/components/Footer'
 
 	export default {
 		head(){
@@ -25,7 +29,6 @@
 		scrollToTop: true,
 		components: {
 			Hero,
-			Footer,
 		},
 	}
 

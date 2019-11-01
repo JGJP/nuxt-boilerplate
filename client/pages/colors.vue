@@ -3,7 +3,7 @@
 	main#top
 		.container
 			section
-				h1 page 1
+				h1 colors
 				
 </template>
 

@@ -4,8 +4,9 @@
 
 		.mobile
 			
-			nuxt-link(to="/") 
-				img(src="~/assets/images/logo.png" alt="logo")
+			.logo
+				nuxt-link(to="/") 
+					img(src="~/assets/images/logo.png" alt="logo")
 
 			.menu-button(@click="open = !open")
 				.bars(:class="{open: open}")
@@ -20,11 +21,8 @@
 
 				ul
 					li
-						nuxt-link(to="/page1/")
-							span page 1
-					li
-						nuxt-link(to="/page2/")
-							span page 2
+						nuxt-link(to="/colors/")
+							span colors
 						ul
 							li
 								nuxt-link(to="/page 3/")
@@ -54,6 +52,13 @@
 		position: fixed
 		width: 100%
 
+		.logo
+			height: $nav-height
+			a
+				img
+					display: block
+					padding: 1em
+
 		nav
 			background: $nav-bg
 
@@ -63,19 +68,13 @@
 				flex-wrap: wrap
 				align-items: stretch
 
-				.logo,
 				> ul
 					color: $white
-					@media ($not-phone)
-						height: 3.5em
+					height: $nav-height
 
-				.logo
-					a
-						img
-							@mixin hover-opacity
-							@mixin hover-scale
-							display: block
-							padding: 1em
+				.logo a img
+					@mixin hover-opacity
+					@mixin hover-scale
 
 				> ul
 					display: flex
@@ -122,11 +121,9 @@
 		.mobile
 			@media ($not-phone)
 				display: none
-			img
-				padding: 0.35em
-				height: 2.5em
 			background: $nav-bg
-			padding: .4em 1.2em
+			padding-left: 1.2em
+			padding-right: 1.2em
 			display: flex
 			justify-content: space-between
 			align-items: center
