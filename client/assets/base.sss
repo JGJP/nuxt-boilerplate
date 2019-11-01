@@ -7,7 +7,7 @@
 body
 	font-family: $font
 	background: $bg
-	color: $fg
+	color: $color
 	@mixin font-range
 
 	main
@@ -18,8 +18,6 @@ body
 	.section
 		position: relative
 
-		&:first-child
-			@mixin medium-vert-padding-top
 		@mixin vert-padding-top
 		@mixin vert-padding-bottom
 
@@ -43,7 +41,7 @@ body
 		position: relative
 		width: $width-full
 		max-width: 100%
-		padding: 0 1em
+		padding: 0 $unit1
 		margin: 0 auto
 
 		&.narrow
@@ -64,10 +62,10 @@ body
 				padding: 0
 
 	.space-items > *:not(:last-child)
-		margin-bottom: $spacing
+		margin-bottom: $unit1
 
 	.space-items-horz > *:not(:last-child)
-		margin-right: $spacing
+		margin-right: $unit1
 
 	.reader
 		@util hide-visually
@@ -128,7 +126,7 @@ body
 			.quarter
 				width: 100%
 			> *:not(:last-child)
-				margin-bottom: $spacing-big
+				margin-bottom: $unit1
 				
 .center:not(h1,h2,h3,h4,h5,h6,p,table)
 	display: flex
@@ -156,7 +154,7 @@ body
 		margin-bottom: 0
 
 	p
-		color: $fg-3
+		opacity: $opacity2
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
@@ -204,3 +202,23 @@ body
 		list-style: none
 	table
 		border-collapse: collapse
+
+// buttons
+button,
+.button
+	cursor: pointer
+	display: inline-block
+	font-family: inherit
+	padding: $unit05 $unit2
+	border: $border-width solid $fg
+	background: $fg
+	color: $bg
+	font-size: inherit
+	// @mixin transition color
+	// @mixin transition background
+	@mixin hover-scale
+	@mixin hover-opacity
+
+	&.ghost
+		background: none
+		color: $fg

@@ -21,6 +21,9 @@
 
 				ul
 					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
 						nuxt-link(to="/colors/")
 							span colors
 						ul
@@ -57,7 +60,9 @@
 			a
 				img
 					display: block
-					padding: 1em
+					padding: $unit1
+					position: relative
+					right: $unit1
 
 		nav
 			background: $nav-bg
@@ -82,6 +87,7 @@
 						align-items: stretch
 
 					> li
+						position: relative
 						a
 							@mixin hover-opacity
 							@mixin hover-scale
@@ -89,34 +95,44 @@
 							display: flex
 							flex-direction: column
 							justify-content: space-around
-							padding: 0 1em
-							padding-top: 0.25em
 							text-align: center
 							@mixin font-range 0.8em, 1em, 34em 42em
+						> a
+							padding: 0 $unit1
+							padding-top: 0.25em
+							padding-bottom: 0
 
 						ul
+							position: absolute
+							top: 100%
+							left: 0
 							@media ($phone)
 								display: none
-							background: $nav-bg
-							@mixin transparent
+							background: $nav-bg-transparent
 							overflow: hidden
 							max-height: 0
 							@mixin transition max-height
 
 							li
-								background: $nav-bg
 								a
+									padding: $unit05 $unit2
 									text-align: left
+									white-space: nowrap
 							li:first-child
-								padding-top: 0.5em
+								padding-top: $unit05
 							li:last-child
-								padding-bottom: 0.5em
+								padding-bottom: $unit05
 
 					> li:hover
 						ul
 							max-height: 10em
 						ul.shorter
 							max-height: 5em
+
+					> li:last-child
+						ul
+							right: 0
+							left: auto
 
 		.mobile
 			@media ($not-phone)

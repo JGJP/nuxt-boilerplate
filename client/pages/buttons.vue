@@ -1,10 +1,15 @@
 <template lang="pug">
 
-	main#top
-		.container
-			section
-				h1 page 2
-				
+	section
+		.container.space-items
+			h1 buttons
+			p some text
+			.space-items-horz
+				button button
+				button.ghost button
+				a.button anchor
+				a.button.ghost anchor ghost
+
 </template>
 
 

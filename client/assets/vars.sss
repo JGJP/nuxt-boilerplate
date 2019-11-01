@@ -17,21 +17,31 @@ $width-medium:          45em
 $width-narrow:          30em
 $width-super-narrow: 	20em
 $border-width:          2px
-$spacing: 1rem
-$spacing-big: 1.5rem
+$unit05:				0.5rem
+$unit1:					1rem
+$unit2:					1.5rem
+$unit3:					2.5rem
 
 // colors
 // postcss-color-function
-$hue:					220
-$transparency:          0.75
+$orange-hue:			30
+$orange:			    hsl($orange-hue, 75%, 50%)
+$blue-hue:				220
+$blue:				    hsl($blue-hue, 46%, 48%)
+$turqoise-hue:			170
+$turquoise:				hsl($turqoise-hue, 99%, 31%)
+
+$hue:					$turqoise-hue
 $black:                 hsl($hue, 100%, 5%)
 $white:                 hsl($hue, 100%, 97%)
-$orange:			    hsl(30, 75%, 50%)
-$blue:				    hsl(220,46%,48%)
+$opacity1:				0.85
+$opacity2:				0.65
+
 // color assignments
+$color:					$black
 $bg:                    $white
 $bg-2:					color( $bg shade(15%) )
-$fg:                    $black
+$fg:                    $turquoise
 $fg-2:                  color( $fg tint(15%) )
 $fg-3:                  color( $fg tint(30%) )
 
@@ -39,7 +49,7 @@ $fg-3:                  color( $fg tint(30%) )
 $nav-height:			3.5em
 $nav-bg:                $fg-3
 $nav-bg-rim:            color( $nav-bg tint(30%) )
-$nav-bg-transparent:    color( $nav-bg a(80%) )
+$nav-bg-transparent:    color( $nav-bg a(75%) )
 
 // fonts
 $font:	                'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
@@ -65,7 +75,7 @@ $hover-opacity:         0.6
 // mixins
 
 @define-mixin box-shadow
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+	box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.16)
 
 @define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 34em
 	font-size: responsive $min $max
@@ -98,29 +108,6 @@ $hover-opacity:         0.6
 		height: 100%
 		left: 0
 		top: 0
-
-@define-mixin ghost-button $color: $body-color, $hover-color: $white
-	display: inline-block
-	padding: 1em 2em
-	border: $border-width solid $color
-	color: $color
-	@mixin transition color
-	@mixin transition background
-	@mixin hover-scale
-	&:hover
-		color: $hover-color
-		background: $color
-
-@define-mixin button $color: $body-color, $text-color: $white
-	display: inline-block
-	padding: 1em 2em
-	border: $border-width solid $color
-	background: $color
-	color: $text-color
-	@mixin transition color
-	@mixin transition background
-	@mixin hover-scale
-	@mixin hover-opacity
 
 @define-mixin position-absolute
 	position: absolute
@@ -211,6 +198,3 @@ $hover-opacity:         0.6
 	padding-right: 4em
 	@media ($phone)
 		padding-right: 2em
-
-@define-mixin transparent
-	opacity: $transparency
