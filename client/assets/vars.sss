@@ -2,21 +2,21 @@
 
 // breakpoints
 
-$phone-bp:              34em
-$tablet-bp:             48em
-$phone:                 width <= $phone-bp
-$tablet:                width <= $tablet-bp
-$not-phone:             width > $phone-bp
-$not-tablet:            width > $tablet-bp
-$tablet-only:           $phone-bp < width <= $tablet-bp
+$phone-bp:           	34em
+$tablet-bp:          	48em
+$phone:              	width <= $phone-bp
+$tablet:             	width <= $tablet-bp
+$not-phone:          	width > $phone-bp
+$not-tablet:         	width > $tablet-bp
+$tablet-only:        	$phone-bp < width <= $tablet-bp
 
 // sizes
-$width-wide:            80em
-$width-full:            66em
-$width-medium:          45em
-$width-narrow:          30em
+$width-wide:         	80em
+$width-full:         	66em
+$width-medium:       	45em
+$width-narrow:       	30em
 $width-super-narrow: 	20em
-$border-width:          2px
+$border-width:       	2px
 $unit05:				0.5rem
 $unit1:					1rem
 $unit2:					1.5rem
@@ -25,52 +25,52 @@ $unit3:					2.5rem
 // colors
 // postcss-color-function
 $orange-hue:			30
-$orange:			    hsl($orange-hue, 75%, 50%)
+$orange:			 	hsl($orange-hue, 75%, 50%)
 $blue-hue:				196
-$blue:				    hsl($blue-hue, 79%, 52%)
+$blue:				 	hsl($blue-hue, 79%, 52%)
 $turqoise-hue:			170
 $turquoise:				hsl($turqoise-hue, 99%, 31%)
 
 $hue:					$turqoise-hue
-$black:                 hsl($hue, 100%, 5%)
-$white:                 hsl($hue, 100%, 97%)
+$black:              	hsl($hue, 100%, 5%)
+$white:              	hsl($hue, 100%, 97%)
 $opacity1:				0.85
 $opacity2:				0.65
 
 // color assignments
 $color:					$black
-$bg:                    $white
-$bg--1:                 color( $bg shade(15%) )
-$bg--2:                 color( $bg shade(30%) )
-$fg:                    $turquoise
-$fg--1:                 color( $fg shade(15%) )
-$fg--2:                 color( $fg shade(30%) )
+$bg:                 	$white
+$bg--1:              	color( $bg shade(15%) )
+$bg--2:              	color( $bg shade(30%) )
+$fg:                 	$turquoise
+$fg--1:              	color( $fg shade(15%) )
+$fg--2:              	color( $fg shade(30%) )
 $fg-secondary:			$blue
 $fg-accent:				$orange
 $body-bg:				$fg--2
 
 // nav
 $nav-height:			3.5em
-$nav-bg:                $fg
-$nav-bg-rim:            color( $nav-bg tint(30%) )
-$nav-bg-transparent:    color( $nav-bg a(75%) )
+$nav-bg:             	$fg
+$nav-bg-rim:         	color( $nav-bg tint(30%) )
+$nav-bg-transparent: 	color( $nav-bg a(75%) )
 
 // fonts
-$font:	                'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
-$font-serif:            游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
-$font-minchotai:        "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
-$font-english:          'Roboto', sans-serif
-$font-weight-thin:      400
-$font-weight-normal:    500
-$font-weight-bold:      700
-$font-weight-header:    $font-weight-normal
+$font:	             	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
+$font-serif:         	游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
+$font-minchotai:     	"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+$font-english:       	'Roboto', sans-serif
+$font-weight-thin:   	400
+$font-weight-normal: 	500
+$font-weight-bold:   	700
+$font-weight-header: 	$font-weight-normal
 
 // transitions
-$trans-time:            0.3s
-$ease-out:              cubic-bezier(0, 0, 0, 1)
-$scale-down:            0.96
-$scale-up:              1.05
-$hover-opacity:         0.6
+$trans-time:         	0.3s
+$ease-out:           	cubic-bezier(0, 0, 0, 1)
+$scale-down:         	0.96
+$scale-up:           	1.05
+$hover-opacity:      	0.6
 
 @define-mixin transition $property, $time: $trans-time, $ease: ease
 	transition: $property $time $ease
