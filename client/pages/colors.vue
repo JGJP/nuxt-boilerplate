@@ -1,9 +1,8 @@
 <template lang="pug">
 
-	main#top
+	section
 		.container
-			section
-				h1 colors
+			h1 colors
 				
 </template>
 

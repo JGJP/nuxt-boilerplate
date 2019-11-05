@@ -26,8 +26,8 @@ $unit3:					2.5rem
 // postcss-color-function
 $orange-hue:			30
 $orange:			    hsl($orange-hue, 75%, 50%)
-$blue-hue:				220
-$blue:				    hsl($blue-hue, 46%, 48%)
+$blue-hue:				196
+$blue:				    hsl($blue-hue, 79%, 52%)
 $turqoise-hue:			170
 $turquoise:				hsl($turqoise-hue, 99%, 31%)
 
@@ -40,14 +40,18 @@ $opacity2:				0.65
 // color assignments
 $color:					$black
 $bg:                    $white
-$bg-2:					color( $bg shade(15%) )
+$bg--1:                 color( $bg shade(15%) )
+$bg--2:                 color( $bg shade(30%) )
 $fg:                    $turquoise
-$fg-2:                  color( $fg tint(15%) )
-$fg-3:                  color( $fg tint(30%) )
+$fg--1:                 color( $fg shade(15%) )
+$fg--2:                 color( $fg shade(30%) )
+$fg-secondary:			$blue
+$fg-accent:				$orange
+$body-bg:				$fg--2
 
 // nav
 $nav-height:			3.5em
-$nav-bg:                $fg-3
+$nav-bg:                $fg
 $nav-bg-rim:            color( $nav-bg tint(30%) )
 $nav-bg-transparent:    color( $nav-bg a(75%) )
 

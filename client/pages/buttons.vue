@@ -1,14 +1,32 @@
 <template lang="pug">
 
-	section
-		.container.space-items
-			h1 buttons
-			p some text
-			.space-items-horz
-				button button
-				button.ghost button
-				a.button anchor
-				a.button.ghost anchor ghost
+	#buttons
+		section
+			.container.space-items
+				h1 buttons
+				p default
+				.space-items-horz
+					button button
+					button.ghost button
+					a.button anchor
+					a.button.ghost anchor ghost
+				p secondary
+				.space-items-horz
+					button.secondary button
+					button.secondary.ghost button
+		section#inverted
+			.container.space-items.inverted
+				p inverted
+				.space-items-horz
+					button button
+					button.ghost button
+		section
+			.container.space-items
+				p call to action
+				.space-items-horz
+					button.cta button
+					button.cta.ghost button
+
 
 </template>
 
@@ -40,5 +58,8 @@
 <style lang="sss" scoped>
 
 	@import "../assets/vars.sss"
+
+	section#inverted
+		background: $body-bg
 
 </style>

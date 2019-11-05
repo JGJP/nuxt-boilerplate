@@ -12,7 +12,7 @@
 	@import "../assets/vars.sss"
 
 	#hero
-		background: $bg-2
+		background: $bg--1
 		.container
 			height: 40em
 			max-height: 140vw

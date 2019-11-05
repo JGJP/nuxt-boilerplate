@@ -1,13 +1,13 @@
 <template lang="pug">
 
-#index
+	#index
 
-	Hero
+		Hero
 
-	section
-		.container.space-items
-			h1 title
-			p some content
+		section
+			.container.space-items
+				h1 title
+				p some content
 
 </template>
 

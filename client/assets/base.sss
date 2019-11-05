@@ -6,11 +6,12 @@
 
 body
 	font-family: $font
-	background: $bg
+	background: $body-bg
 	color: $color
 	@mixin font-range
 
 	main
+		background: $bg
 		min-height: 20em
 		overflow: hidden
 		
@@ -216,13 +217,41 @@ button,
 	padding: $unit05 $unit2
 	border: $border-width solid $fg
 	background: $fg
-	color: $bg
 	font-size: inherit
 	// @mixin transition color
 	// @mixin transition background
 	@mixin hover-scale
 	@mixin hover-opacity
+	color: $fg
+	&:not(.ghost)
+		color: $bg
+
+	&.secondary
+		background: $fg-secondary
+		border-color: $fg-secondary
+		color: $fg-secondary
+		&:not(.ghost)
+			color: $bg
+
+	&.cta
+		background: $fg-accent
+		border-color: $fg-accent
+		color: $fg-accent
+		&:not(.ghost)
+			color: $bg
 
 	&.ghost
 		background: none
-		color: $fg
+
+// inverted
+.inverted
+	color: $bg
+
+	button,
+	.button
+		background: $bg
+		color: $body-bg
+		border-color: $bg
+		&.ghost
+			background: none
+			color: $bg
