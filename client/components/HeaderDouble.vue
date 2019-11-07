@@ -1,0 +1,220 @@
+<template lang="pug">
+
+	header
+
+		#logo-bar.section.small-padding
+
+			.container
+
+				.logo
+					nuxt-link(to="/")
+						img(src="~/assets/images/logo.gif" alt="logo")
+
+				.ctas.space-items-horz
+					nuxt-link.button.cta.ghost(to="/") contact
+					nuxt-link.button.cta(to="/") reserve
+
+		.mobile
+			
+			//- .logo
+				nuxt-link(to="/") 
+					img(src="~/assets/images/logo.gif" alt="logo")
+
+			.menu-button(@click="open = !open")
+				.bars(:class="{open: open}")
+
+		nav(:class="{open: open, closed: !open}")
+
+			.container
+
+				//- .logo
+					nuxt-link(to="/")
+						img(src="~/assets/images/logo.gif" alt="logo")
+
+				ul
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
+						nuxt-link(to="/colors/")
+							span colors
+						ul
+							li
+								nuxt-link(to="/page 3/")
+									span page 3
+							li
+								nuxt-link(to="/page 4/")
+									span page 4
+
+</template>
+
+<script>
+	
+	export default {
+		data: () => ({
+			open: false
+		}),
+	}
+
+</script>
+
+<style lang="sss">
+
+	@import "../assets/vars.sss"
+	@import "../assets/burgermenu.sss"
+
+	header
+		position: fixed
+		width: 100%
+
+		#logo-bar
+
+			background: $bg
+
+			.container
+
+				display: flex
+				justify-content: space-between
+
+				.logo
+					height: $logo-bar-height
+					a
+						img
+							@mixin hover-opacity
+							@mixin hover-scale
+							display: block
+							position: relative
+							padding: $unit05
+							right: $unit05
+
+				.ctas
+					display: flex
+					align-items: flex-end
+
+		nav
+			background: $nav-bg
+
+			.container
+				display: flex
+				justify-content: space-around
+				flex-wrap: wrap
+				align-items: stretch
+
+				> ul
+					color: $white
+					height: $nav-height
+					display: flex
+					@media ($not-phone)
+						align-items: stretch
+
+					> li
+						position: relative
+						a
+							@mixin hover-opacity
+							@mixin hover-scale
+							height: 100%
+							display: flex
+							flex-direction: column
+							justify-content: space-around
+							text-align: center
+							@mixin font-range 0.8em, 1em, 34em 42em
+						> a
+							padding: 0 $unit1
+							padding-top: 0.25em
+							padding-bottom: 0
+
+						ul
+							position: absolute
+							top: 100%
+							left: 0
+							@media ($phone)
+								display: none
+							background: $nav-bg-transparent
+							overflow: hidden
+							max-height: 0
+							@mixin transition max-height
+
+							li
+								a
+									padding: $unit05 $unit2
+									text-align: left
+									white-space: nowrap
+							li:first-child
+								padding-top: $unit05
+							li:last-child
+								padding-bottom: $unit05
+
+					> li:hover
+						ul
+							max-height: 10em
+						ul.shorter
+							max-height: 5em
+
+					> li:last-child
+						ul
+							right: 0
+							left: auto
+
+		.mobile
+			@media ($not-phone)
+				display: none
+			background: $nav-bg
+			padding-left: 1.2em
+			padding-right: 1.2em
+			display: flex
+			justify-content: space-between
+			align-items: center
+			&.open
+				border-bottom: 1px solid $nav-bg-rim
+
+		nav
+			@media ($phone)
+				display: flex
+				flex-direction: column
+
+				&.closed
+					padding: 0
+					height: 0
+					opacity: 0
+					visibility: hidden
+					transition: opacity $trans-time ease
+					transition: visibility 0s $trans-time
+					transition: height 0s $trans-time
+					transition: padding 0s $trans-time
+
+				&.open
+					padding: 1.2em
+					height: calc(100vh - 2.5em - .4em * 2)
+					visibility: visible
+					opacity: 1
+					transition: opacity $trans-time $ease-out
+					background: $nav-bg-transparent
+
+				.container
+					flex-direction: column
+					justify-content: center
+					height: 100%
+					padding: 0
+
+					ul
+						flex-direction: column
+						align-items: center
+						justify-content: space-around
+						height: 20em
+						max-width: 100%
+
+						li
+							flex: 1
+							background: $nav-bg
+							width: 20em
+							margin: 0.25em
+							max-width: 100%
+							border: 1px solid $nav-bg-rim
+
+							a
+								padding: 0
+								font-size: 1em
+				.logo
+					display: none
+
+</style>

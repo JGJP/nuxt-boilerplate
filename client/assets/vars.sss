@@ -39,21 +39,31 @@ $opacity2:				0.65
 
 // color assignments
 $color:					$black
+
 $bg:                 	$white
 $bg--1:              	color( $bg shade(15%) )
 $bg--2:              	color( $bg shade(30%) )
+
 $fg:                 	$turquoise
 $fg--1:              	color( $fg shade(15%) )
 $fg--2:              	color( $fg shade(30%) )
-$fg-secondary:			$blue
+$fg-1:              	color( $fg tint(15%) )
+
+$fg2:					$blue
+$fg2-1:              	color( $fg2 tint(15%) )
 $fg-accent:				$orange
 $body-bg:				$fg--2
 
 // nav
+$logo-bar-height:		5em
 $nav-height:			3.5em
-$nav-bg:             	$fg
+$nav-bg:             	$fg2-1
+$nav-bg--1:            	color( $nav-bg shade(15%) )
+$nav-bg--2:            	color( $nav-bg shade(30%) )
 $nav-bg-rim:         	color( $nav-bg tint(30%) )
 $nav-bg-transparent: 	color( $nav-bg a(75%) )
+$footer-bg:				$nav-bg--1
+$socket-bg:				$nav-bg--2
 
 // fonts
 $font:	             	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif

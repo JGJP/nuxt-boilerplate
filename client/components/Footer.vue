@@ -28,10 +28,10 @@
 			background: $bg--1
 
 		#footer
-			background: $nav-bg
+			background: $footer-bg
 
 		#socket
-			background: $body-bg
+			background: $socket-bg
 
 	#prefooter
 

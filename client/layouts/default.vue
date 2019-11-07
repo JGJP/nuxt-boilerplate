@@ -2,7 +2,7 @@
 
 	.layout
 
-		Header
+		HeaderDouble
 		main
 			nuxt
 		Footer
@@ -24,12 +24,12 @@ main
 
 <script>
 
-	import Header from '~/components/Header';
+	import HeaderDouble from '~/components/HeaderDouble';
 	import Footer from '~/components/Footer';
 
 	export default {
 		components: {
-			Header,
+			HeaderDouble,
 			Footer,
 			},
 		}
