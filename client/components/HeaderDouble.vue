@@ -234,7 +234,8 @@
 
 				&.open
 					padding: 1.2em
-					height: calc(100vh - 2.5em - .4em * 2)
+					padding-top: 3em
+					height: calc(100vh - 6em - .4em * 2)
 					visibility: visible
 					opacity: 1
 					transition: opacity $trans-time $ease-out
@@ -242,15 +243,15 @@
 
 				.container
 					flex-direction: column
-					justify-content: center
+					justify-content: flex-start
 					height: 100%
 					padding: 0
 
 					ul
 						flex-direction: column
 						align-items: center
-						justify-content: space-around
-						height: 20em
+						justify-content: space-between
+						max-height: 100%
 						max-width: 100%
 
 						li
@@ -264,6 +265,7 @@
 							a
 								padding: 0
 								font-size: 1em
+								height: $unit3
 				.logo
 					display: none
 
