@@ -24,12 +24,14 @@ $unit3:					2.5rem
 
 // colors
 // postcss-color-function
-$orange-hue:			30
-$orange:			 	hsl($orange-hue, 75%, 50%)
+$orange-hue:			36
+$orange:			 	hsl($orange-hue, 100%, 50%)
 $blue-hue:				196
 $blue:				 	hsl($blue-hue, 79%, 52%)
 $turqoise-hue:			170
 $turquoise:				hsl($turqoise-hue, 99%, 31%)
+$yellow-hue:			61
+$yellow:				hsl($yellow-hue, 92%, 63%)
 
 $hue:					$turqoise-hue
 $black:              	hsl($hue, 100%, 5%)
@@ -55,9 +57,12 @@ $fg-accent:				$orange
 $body-bg:				$fg--2
 
 // nav
-$logo-bar-height:		5em
-$nav-height:			3.5em
-$nav-bg:             	$fg2-1
+$logo-bar-height:		4em
+$logo-bar-height-mobile: 3em
+$nav-height:			3em
+$nav-bg:             	$bg
+$nav-color:				$color
+$nav-fg:				$fg
 $nav-bg--1:            	color( $nav-bg shade(15%) )
 $nav-bg--2:            	color( $nav-bg shade(30%) )
 $nav-bg-rim:         	color( $nav-bg tint(30%) )
@@ -89,7 +94,7 @@ $hover-opacity:      	0.6
 // mixins
 
 @define-mixin box-shadow
-	box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.16)
+	box-shadow: 0 3px 10px color( $black a(8%) ), 0 3px 10px color( $black a(16%) )
 
 @define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 34em
 	font-size: responsive $min $max

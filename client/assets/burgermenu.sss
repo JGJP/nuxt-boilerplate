@@ -1,13 +1,15 @@
 @import "vars.sss"
 
-$barwidth: 26px
+$barwidth: 24px
 $barheight: 2px
-$barspacing: 9px
+$barspacing: 6px
 $color: $white
 
 .menu-button
-	width: $barwidth
-	height: calc($barheight + $barspacing*2)
+	$padding: $unit05
+	padding: $padding
+	width: calc($barwidth + $padding*2)
+	height: calc($barheight + $barspacing*2 + $padding*2)
 	cursor: pointer
 
 	.bars,

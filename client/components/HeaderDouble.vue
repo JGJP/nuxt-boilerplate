@@ -10,28 +10,38 @@
 					nuxt-link(to="/")
 						img(src="~/assets/images/logo.gif" alt="logo")
 
+					.mobile(@click="open = !open")
+						.menu-button
+							.bars(:class="{open: open}")
+
 				.ctas.space-items-horz
-					nuxt-link.button.cta.ghost(to="/") contact
-					nuxt-link.button.cta(to="/") reserve
-
-		.mobile
-			
-			//- .logo
-				nuxt-link(to="/") 
-					img(src="~/assets/images/logo.gif" alt="logo")
-
-			.menu-button(@click="open = !open")
-				.bars(:class="{open: open}")
+					nuxt-link.button.secondary.ghost(to="/") contact
+					nuxt-link.button.secondary(to="/") reserve
 
 		nav(:class="{open: open, closed: !open}")
 
-			.container
+			.container.no-padding
 
 				//- .logo
 					nuxt-link(to="/")
 						img(src="~/assets/images/logo.gif" alt="logo")
 
 				ul
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
+					li
+						nuxt-link(to="/buttons/")
+							span buttons
 					li
 						nuxt-link(to="/buttons/")
 							span buttons
@@ -66,49 +76,98 @@
 	header
 		position: fixed
 		width: 100%
+		@mixin box-shadow
 
 		#logo-bar
 
 			background: $bg
+			@media ($phone)
+				padding-top: $unit05
+				padding-bottom: 0
 
 			.container
 
-				display: flex
-				justify-content: space-between
+				@media ($not-phone)
+					display: flex
+					flex-wrap: wrap
+					justify-content: space-between
+					align-items: flex-end
+
+				&:last-child
+					@media ($phone)
+						padding: 0
 
 				.logo
 					height: $logo-bar-height
+					@media ($phone)
+						padding: 0 $unit1
+						display: flex
+						height: $logo-bar-height-mobile
+						margin-bottom: $unit05
 					a
 						img
 							@mixin hover-opacity
 							@mixin hover-scale
 							display: block
-							position: relative
-							padding: $unit05
-							right: $unit05
+
+					.mobile
+						@media ($not-phone)
+							display: none
+						margin-left: $unit05
+						background: $nav-fg
+						position: relative
+						padding-bottom: 0.6em
+						cursor: pointer
+						&:after
+							content: "MENU"
+							color: $bg
+							font-size: 0.6em
+							text-align: center
+							width: 100%
+							position: absolute
+							left: 0
+							bottom: 0.2em
+						// &.open
+						// 	border-bottom: 1px solid $nav-bg-rim
 
 				.ctas
-					display: flex
-					align-items: flex-end
+					// @media ($not-phone)
+					// 	display: flex
+					// 	align-items: flex-end
+					@media ($phone)
+						text-align: right
+						display: flex
+						.button
+							width: 50%
+							text-align: center
+							height: 3em
+							margin-right: 0
 
 		nav
 			background: $nav-bg
+			@mixin box-shadow
+			border-top: 1px solid color( $nav-bg shade(10%) )
 
 			.container
 				display: flex
-				justify-content: space-around
-				flex-wrap: wrap
 				align-items: stretch
 
 				> ul
-					color: $white
+					color: $nav-color
 					height: $nav-height
+					width: 100%
 					display: flex
+					justify-content: stretch
+					// background: $nav-bg--1
 					@media ($not-phone)
 						align-items: stretch
 
 					> li
+						flex-grow: 1
 						position: relative
+						border-left: 1px solid color( $nav-bg shade(10%) )
+						&:last-child
+							border-right: 1px solid color( $nav-bg shade(10%) )
 						a
 							@mixin hover-opacity
 							@mixin hover-scale
@@ -119,6 +178,7 @@
 							text-align: center
 							@mixin font-range 0.8em, 1em, 34em 42em
 						> a
+							// background: $nav-bg
 							padding: 0 $unit1
 							padding-top: 0.25em
 							padding-bottom: 0
@@ -155,17 +215,6 @@
 							right: 0
 							left: auto
 
-		.mobile
-			@media ($not-phone)
-				display: none
-			background: $nav-bg
-			padding-left: 1.2em
-			padding-right: 1.2em
-			display: flex
-			justify-content: space-between
-			align-items: center
-			&.open
-				border-bottom: 1px solid $nav-bg-rim
 
 		nav
 			@media ($phone)
