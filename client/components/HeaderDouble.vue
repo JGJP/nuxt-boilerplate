@@ -22,10 +22,6 @@
 
 			.container.no-padding
 
-				//- .logo
-					nuxt-link(to="/")
-						img(src="~/assets/images/logo.gif" alt="logo")
-
 				ul
 					li(v-for="item in menu")
 						nuxt-link(:to="item.link")
@@ -139,13 +135,9 @@
 							position: absolute
 							left: 0
 							bottom: 0.2em
-						// &.open
-						// 	border-bottom: 1px solid $nav-bg-rim
+						
 
 				.ctas
-					// @media ($not-phone)
-					// 	display: flex
-					// 	align-items: flex-end
 					@media ($phone)
 						text-align: right
 						display: flex
@@ -170,7 +162,6 @@
 					width: 100%
 					display: flex
 					justify-content: stretch
-					// background: $nav-bg--1
 					@media ($not-phone)
 						align-items: stretch
 
@@ -190,7 +181,6 @@
 							text-align: center
 							@mixin font-range 0.8em, 1em, 34em 42em
 						> a
-							// background: $nav-bg
 							padding: 0 $unit1
 							padding-top: 0.25em
 							padding-bottom: 0
