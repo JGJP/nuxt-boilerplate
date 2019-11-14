@@ -27,34 +27,13 @@
 						img(src="~/assets/images/logo.gif" alt="logo")
 
 				ul
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/buttons/")
-							span buttons
-					li
-						nuxt-link(to="/colors/")
-							span colors
-						ul
-							li
-								nuxt-link(to="/page 3/")
-									span page 3
-							li
-								nuxt-link(to="/page 4/")
-									span page 4
+					li(v-for="item in menu")
+						nuxt-link(:to="item.link")
+							span {{ item.label }}
+						ul(v-if="item.submenu")
+							li(v-for="child in item.submenu")
+								nuxt-link(:to="item.link")
+									span {{ item.label }}
 
 </template>
 
@@ -62,7 +41,39 @@
 	
 	export default {
 		data: () => ({
-			open: false
+			open: false,
+			menu: [
+				{
+					label: "buttons",
+					link: "/buttons/",
+					submenu: [
+						{
+							label: "child",
+							link: "/child/",
+						},
+						{
+							label: "child",
+							link: "/child/",
+						},
+					]
+				},
+				{
+					label: "buttons",
+					link: "/buttons/",
+				},
+				{
+					label: "buttons",
+					link: "/buttons/",
+				},
+				{
+					label: "buttons",
+					link: "/buttons/",
+				},
+				{
+					label: "colors",
+					link: "/colors/",
+				},
+			],
 		}),
 	}
 
