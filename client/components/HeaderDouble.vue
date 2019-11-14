@@ -28,8 +28,8 @@
 							span {{ item.label }}
 						ul(v-if="item.submenu")
 							li(v-for="child in item.submenu")
-								nuxt-link(:to="item.link")
-									span {{ item.label }}
+								nuxt-link(:to="child.link")
+									span {{ child.label }}
 
 </template>
 
