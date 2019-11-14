@@ -93,8 +93,14 @@ $hover-opacity:      	0.6
 
 // mixins
 
+$shadow: color( $black a(8%) )
+$shadow-2: color( $black a(16%) )
+
 @define-mixin box-shadow
-	box-shadow: 0 3px 10px color( $black a(8%) ), 0 3px 10px color( $black a(16%) )
+	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
+
+@define-mixin box-shadow-down
+	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
 
 @define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 34em
 	font-size: responsive $min $max

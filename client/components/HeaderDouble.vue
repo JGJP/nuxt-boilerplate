@@ -186,23 +186,24 @@
 						ul
 							position: absolute
 							top: 100%
+							min-width: 100%
 							left: 0
 							@media ($phone)
 								display: none
-							background: $nav-bg-transparent
 							overflow: hidden
 							max-height: 0
 							@mixin transition max-height
+							background: $nav-bg
+							@mixin box-shadow-down
 
 							li
+								border-top: 1px solid color( $nav-bg shade(10%) )
 								a
 									padding: $unit05 $unit2
 									text-align: left
 									white-space: nowrap
-							li:first-child
-								padding-top: $unit05
-							li:last-child
-								padding-bottom: $unit05
+									span
+										text-align: center
 
 					> li:hover
 						ul
