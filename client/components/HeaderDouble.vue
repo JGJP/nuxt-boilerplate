@@ -105,6 +105,7 @@
 						height: $logo-bar-height-mobile
 						margin-bottom: $unit05
 					a
+						flex-grow: 1
 						img
 							@mixin hover-opacity
 							@mixin hover-scale
@@ -202,8 +203,6 @@
 									padding: $unit05 $unit2
 									text-align: left
 									white-space: nowrap
-									span
-										text-align: center
 
 					> li:hover
 						ul
