@@ -16,7 +16,9 @@
 @import "../assets/vars.sss"
 
 main
-	margin-top: $nav-height
+	margin-top: $header-height
+	@media ($phone)
+		margin-top: $header-height-mobile
 
 </style>
 

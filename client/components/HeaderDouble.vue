@@ -88,28 +88,34 @@
 		#logo-bar
 
 			background: $bg
+			height: $logo-bar-height
 			@media ($phone)
+				height: $header-height-mobile
 				padding-top: $unit05
 				padding-bottom: 0
 
 			.container
 
+				height: 100%
+				display: flex
+				justify-content: space-between
 				@media ($not-phone)
-					display: flex
 					flex-wrap: wrap
-					justify-content: space-between
 					align-items: flex-end
+				@media ($phone)
+					flex-direction: column
 
 				&:last-child
 					@media ($phone)
 						padding: 0
 
 				.logo
-					height: $logo-bar-height
+					@media ($not-phone)
+						height: 100%
 					@media ($phone)
+						min-height: 0
 						padding: 0 $unit1
 						display: flex
-						height: $logo-bar-height-mobile
 						margin-bottom: $unit05
 					a
 						flex-grow: 1
