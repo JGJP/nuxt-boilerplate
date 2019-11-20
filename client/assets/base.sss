@@ -81,12 +81,33 @@ body
 
 // grids
 
-.grid
+.grid,
+.grid-column
 	display: flex
 	justify-content: stretch
 	align-items: center
 	&.start
 		align-items: flex-start
+	> .grow
+		flex-grow: 1
+
+.grid
+	@media ($not-phone)
+		@mixin space-equal-padding-horz $unit1
+	@media ($phone)
+		&:not(.mobile):not(.column)
+			display: block
+			.half,
+			.two-thirds,
+			.third,
+			.quarter
+				width: 100%
+			@mixin space-equal-padding $unit1
+
+.grid-column
+	flex-direction: column
+	@media ($not-phone)
+		@mixin space-equal-padding $unit1
 	.half
 		width: 50%
 	.two-thirds
@@ -95,44 +116,7 @@ body
 		width: 33.33%
 	.quarter
 		width: 25%
-	.grow
-		flex-grow: 1
-	@media ($not-phone)
-		&.spacing
-			> *
-				padding-left: 1em
-				padding-right: 1em
-			> *:first-child
-				padding-left: 0
-			> *:last-child
-				padding-right: 0
-		> *
-			padding-left: 0.5em
-			padding-right: 0.5em
-		> *:first-child
-			padding-left: 0
-		> *:last-child
-			padding-right: 0
-		&.reverse
-			flex-direction: row-reverse
-			> *
-				padding-left: 0.5em
-				padding-right: 0.5em
-			> *:first-child
-				padding-right: 0
-			> *:last-child
-				padding-left: 0
-	@media ($phone)
-		&:not(.mobile)
-			display: block
-			.half,
-			.two-thirds,
-			.third,
-			.quarter
-				width: 100%
-			> *:not(:last-child)
-				margin-bottom: $unit1
-				
+
 .center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table)
 	display: flex
 	flex-direction: column

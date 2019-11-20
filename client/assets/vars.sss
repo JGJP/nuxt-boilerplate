@@ -101,6 +101,22 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
+@define-mixin space-equal-padding $padding
+	> *
+		padding: calc($padding / 2) 0
+	> *:first-child
+		padding-top: 0
+	> *:last-child
+		padding-bottom: 0
+
+@define-mixin space-equal-padding-horz $padding
+	> *
+		padding: 0 calc($padding / 2)
+	> *:first-child
+		padding-left: 0
+	> *:last-child
+		padding-right: 0
+
 @define-mixin gradient-bg $color
 	background: linear-gradient($color, color( $color shade(15%) ))
 
