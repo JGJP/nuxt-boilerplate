@@ -17,6 +17,7 @@ $width-medium:       	45em
 $width-narrow:       	30em
 $width-super-narrow: 	20em
 $border-width:       	2px
+$unit025:				0.25rem
 $unit05:				0.5rem
 $unit1:					1rem
 $unit2:					1.5rem
@@ -99,6 +100,9 @@ $shadow-2: color( $black a(16%) )
 
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
+
+@define-mixin rounded
+	border-radius: $unit025
 
 @define-mixin box-shadow-down
 	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2

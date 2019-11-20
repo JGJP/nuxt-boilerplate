@@ -152,6 +152,7 @@
 							text-align: center
 							height: 3em
 							margin-right: 0
+							border-radius: 0
 
 		nav
 			background: $nav-bg
@@ -203,6 +204,9 @@
 							@mixin transition max-height
 							background: $nav-bg
 							@mixin box-shadow-down
+							@mixin rounded
+							border-top-right-radius: 0
+							border-top-left-radius: 0
 
 							li
 								border-top: 1px solid color( $nav-bg shade(10%) )
@@ -263,6 +267,7 @@
 						li
 							flex: 1
 							background: $nav-bg
+							@mixin rounded
 							width: 20em
 							margin: 0.25em
 							max-width: 100%
