@@ -121,15 +121,17 @@ $shadow-2: color( $black a(16%) )
 	font-family: $font-minchotai
 
 @define-mixin hover-opacity
-	transition: opacity $trans-time ease
-	&:hover
-		opacity: $hover-opacity
+	@media ($not-phone)
+		transition: opacity $trans-time ease
+		&:hover
+			opacity: $hover-opacity
 
 @define-mixin hover-scale $amount: $scale-down, $start: 1
-	transform: scale($start)
-	transition: transform $trans-time ease
-	&:hover
-		transform: scale($amount)
+	@media ($not-phone)
+		transform: scale($start)
+		transition: transform $trans-time ease
+		&:hover
+			transform: scale($amount)
 
 @define-mixin background-image $src
 	background: url($src)
