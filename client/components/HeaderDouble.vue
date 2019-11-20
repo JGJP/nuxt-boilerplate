@@ -150,7 +150,8 @@
 						.button
 							width: 50%
 							text-align: center
-							height: 3em
+							height: $nav-height
+							line-height: calc($nav-height - $unit05 * 2)
 							margin-right: 0
 							border-radius: 0
 
