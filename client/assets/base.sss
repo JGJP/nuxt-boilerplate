@@ -222,11 +222,14 @@ button,
 	display: inline-block
 	font-family: inherit
 	padding: $unit05 $unit2
-	border: $border-width solid $fg
-	background: $fg
+	border: none
+	&:not(.ghost)
+		@mixin gradient-bg $fg
+	&.ghost
+		padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
+		border: $border-width solid $fg
+		border-offset: -$border-width
 	font-size: inherit
-	// @mixin transition color
-	// @mixin transition background
 	@mixin hover-scale
 	@mixin hover-opacity
 	@mixin rounded
@@ -235,18 +238,18 @@ button,
 		color: $bg
 
 	&.secondary
-		background: $fg2
-		border-color: $fg2
-		color: $fg2
 		&:not(.ghost)
-			color: $bg
+			@mixin gradient-bg $fg2
+		&.ghost
+			color: $fg2
+			border-color: $fg2
 
 	&.cta
-		background: $fg-accent
-		border-color: $fg-accent
-		color: $fg-accent
 		&:not(.ghost)
-			color: $bg
+			@mixin gradient-bg $fg-accent
+		&.ghost
+			border-color: $fg-accent
+			color: $fg-accent
 
 	&.ghost
 		background: none

@@ -101,6 +101,12 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
+@define-mixin gradient-bg $color
+	background: linear-gradient($color, color( $color shade(15%) ))
+
+@define-mixin gradient-bg-opposite $color
+	background: linear-gradient(color( $color shade(15%) ), $color)
+
 @define-mixin rounded
 	border-radius: $unit025
 
