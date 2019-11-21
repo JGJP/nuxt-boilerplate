@@ -101,6 +101,9 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
+@define-mixin highlight $color: $yellow
+	background: linear-gradient(transparent 60%, $color 60%) 
+
 @define-mixin space-equal-padding $padding
 	> *
 		padding: calc($padding / 2) 0
@@ -123,8 +126,8 @@ $shadow-2: color( $black a(16%) )
 @define-mixin gradient-bg-opposite $color
 	background: linear-gradient(color( $color shade(15%) ), $color)
 
-@define-mixin rounded
-	border-radius: $unit025
+@define-mixin rounded $radius: $unit025
+	border-radius: $radius
 
 @define-mixin box-shadow-down
 	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
