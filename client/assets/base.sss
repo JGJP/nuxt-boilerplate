@@ -84,7 +84,7 @@ body
 .grid,
 .grid-column
 	display: flex
-	justify-content: stretch
+	justify-content: center
 	align-items: center
 	&.start
 		align-items: flex-start
@@ -94,6 +94,14 @@ body
 .grid
 	@media ($not-phone)
 		@mixin space-equal-padding-horz $unit1
+	.half
+		width: 50%
+	.two-thirds
+		width: 66.66%
+	.third
+		width: 33.33%
+	.quarter
+		width: 25%
 	@media ($phone)
 		&:not(.mobile):not(.column)
 			display: block
@@ -109,13 +117,13 @@ body
 	@media ($not-phone)
 		@mixin space-equal-padding $unit1
 	.half
-		width: 50%
+		height: 50%
 	.two-thirds
-		width: 66.66%
+		height: 66.66%
 	.third
-		width: 33.33%
+		height: 33.33%
 	.quarter
-		width: 25%
+		height: 25%
 
 .center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table)
 	display: flex
