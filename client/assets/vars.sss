@@ -21,7 +21,9 @@ $unit025:				0.25rem
 $unit05:				0.5rem
 $unit1:					1rem
 $unit2:					1.5rem
-$unit3:					2.5rem
+$unit3:					3.5rem
+$unit4:					4.5rem
+$unit5:					5.5rem
 
 // colors
 // postcss-color-function
@@ -196,36 +198,36 @@ $shadow-2: color( $black a(16%) )
 	@mixin medium-vert-padding-bottom
 
 @define-mixin medium-vert-padding-top
-	padding-top: 6em
+	padding-top: $unit3
 	@media ($tablet)
-		padding-top: 4em
+		padding-top: $unit2
 	@media ($phone)
-		padding-top: 2em
+		padding-top: $unit1
 
 @define-mixin medium-vert-padding-bottom
-	padding-bottom: 6em
+	padding-bottom: $unit3
 	@media ($tablet)
-		padding-bottom: 4em
+		padding-bottom: $unit2
 	@media ($phone)
-		padding-bottom: 2em
+		padding-bottom: $unit1
 
 @define-mixin small-vert-padding
 	@mixin small-vert-padding-top
 	@mixin small-vert-padding-bottom
 
 @define-mixin small-vert-padding-top
-	padding-top: 1em
+	padding-top: $unit1
 	@media ($tablet)
-		padding-top: 1em
+		padding-top: $unit1
 	@media ($phone)
-		padding-top: 1em
+		padding-top: $unit1
 
 @define-mixin small-vert-padding-bottom
-	padding-bottom: 1em
+	padding-bottom: $unit1
 	@media ($tablet)
-		padding-bottom: 1em
+		padding-bottom: $unit1
 	@media ($phone)
-		padding-bottom: 1em
+		padding-bottom: $unit1
 
 
 @define-mixin vert-padding
@@ -233,14 +235,14 @@ $shadow-2: color( $black a(16%) )
 	@mixin vert-padding-bottom
 
 @define-mixin vert-padding-top
-	padding-top: 3em
+	padding-top: $unit2
 	@media ($phone)
-		padding-top: 2em
+		padding-top: $unit1
 
 @define-mixin vert-padding-bottom
-	padding-bottom: 3em
+	padding-bottom: $unit2
 	@media ($phone)
-		padding-bottom: 2em
+		padding-bottom: $unit1
 
 @define-mixin horz-padding
 	@mixin horz-padding-left
