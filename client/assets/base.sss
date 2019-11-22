@@ -215,10 +215,17 @@ button,
 	font-family: inherit
 	padding: $unit05 $unit2
 	border: none
+	&.full
+		width: 100%
+		text-align: center
+	&.big
+		padding: $unit1
 	&:not(.ghost)
 		@mixin gradient-bg $fg
 	&.ghost
 		padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
+		&.big
+			padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
 		border: $border-width solid $fg
 		border-offset: -$border-width
 	font-size: inherit
@@ -252,7 +259,7 @@ button,
 
 	button,
 	.button
-		background: $bg
+		@mixin gradient-bg $bg
 		color: $body-bg
 		border-color: $bg
 		&.ghost
