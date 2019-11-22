@@ -19,6 +19,8 @@ main
 	margin-top: $header-height
 	@media ($phone)
 		margin-top: $header-height-mobile
+	> *:first-child
+		min-height: 30em
 
 </style>
 
