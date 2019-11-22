@@ -1,4 +1,5 @@
 @import "./vars.sss"
+@import "./proprietary.sss"
 
 .layout
 	overflow: hidden
@@ -79,6 +80,10 @@ body
 		@media ($phone)
 			display: none
 
+	.box
+		padding: $unit05
+		@mixin rounded
+
 // grids
 
 .grid,
@@ -150,12 +155,18 @@ body
 		margin-top: 0
 		margin-bottom: 0
 
+	strong
+		display: block
 	p
-		opacity: $opacity2
+		color: color( $body-bg a(80%) )
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
 		word-wrap: break-word
+
+		a
+			color: $fg2
+			@mixin hover-opacity
 
 	.smaller
 		font-size: 0.9em
@@ -175,7 +186,20 @@ body
 		font-size: 2em
 	h3
 		font-size: 1.5em
-	
+		position: relative
+		padding-left: 1em
+		border-bottom: 1px dotted $fg
+		&::before
+			content: ""
+			position: absolute
+			width: 0.4em
+			height: 0.4em
+			border-radius: 2em
+			left: 0
+			top: 50%
+			border: 2px solid $fg
+			transform: translateY(-65%)
+
 // resets and compatibility
 
 body

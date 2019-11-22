@@ -1,5 +1,3 @@
-@import './proprietary.sss'
-
 // breakpoints
 
 $phone-bp:           	34em
@@ -17,6 +15,7 @@ $width-medium:       	45em
 $width-narrow:       	30em
 $width-super-narrow: 	20em
 $border-width:       	2px
+$unit01:				0.1rem
 $unit025:				0.25rem
 $unit05:				0.5rem
 $unit1:					1rem
@@ -35,6 +34,8 @@ $turqoise-hue:			170
 $turquoise:				hsl($turqoise-hue, 99%, 31%)
 $yellow-hue:			61
 $yellow:				hsl($yellow-hue, 92%, 63%)
+$red-hue:				2
+$red:					hsl($red-hue, 100%, 44%)
 
 $hue:					$turqoise-hue
 $black:              	hsl($hue, 100%, 5%)
@@ -46,6 +47,7 @@ $opacity2:				0.65
 $color:					$black
 
 $bg:                 	$white
+$bg--05:              	color( $bg shade(3.75%) )
 $bg--1:              	color( $bg shade(15%) )
 $bg--2:              	color( $bg shade(30%) )
 
@@ -53,6 +55,7 @@ $fg:                 	$turquoise
 $fg--1:              	color( $fg shade(15%) )
 $fg--2:              	color( $fg shade(30%) )
 $fg-1:              	color( $fg tint(15%) )
+$fg-2:              	color( $fg tint(30%) )
 
 $fg2:					$blue
 $fg2-1:              	color( $fg2 tint(15%) )
@@ -100,11 +103,16 @@ $hover-opacity:      	0.6
 $shadow: color( $black a(8%) )
 $shadow-2: color( $black a(16%) )
 
+@define-mixin bg1
+	background: $bg--05
+
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
-@define-mixin highlight $color: $yellow
+@define-mixin highlight $color: color( $yellow tint(50%) )
 	background: linear-gradient(transparent 60%, $color 60%) 
+	display: inline-block
+	padding-right: $unit1
 
 @define-mixin space-equal-padding $padding
 	> *
