@@ -27,7 +27,7 @@ $sidebar-div: 4
 		@media ($phone)
 			margin-top: $header-height-mobile
 		> *:first-child
-			min-height: 30em
+			min-height: 50em
 
 .layout.sidebar
 	main
@@ -56,7 +56,7 @@ $sidebar-div: 4
 						background: $bg
 						@mixin box-shadow
 						@mixin rounded
-						height: 20em
+						min-height: 20em
 						padding: $unit1
 
 </style>
