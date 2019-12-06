@@ -244,20 +244,25 @@ button,
 		text-align: center
 	&.big
 		padding: $unit1
+	&.inline
+		padding: $unit025 $unit05
+		margin-left: $unit025
+		margin-right: $unit025
 	&:not(.ghost)
 		@mixin gradient-bg $fg
 	&.ghost
 		padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
 		&.big
 			padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
+		&.inline
+			padding: calc($unit025 - $border-width) calc($unit05 - $border-width)
 		border: $border-width solid $fg
 		border-offset: -$border-width
 	font-size: inherit
 	@mixin hover-scale
 	@mixin hover-opacity
 	@mixin rounded
-	color: $fg
-	&:not(.ghost)
+	&:not(.ghost):not(.plain)
 		color: $bg
 
 	&.secondary
@@ -274,8 +279,17 @@ button,
 			border-color: $fg-accent
 			color: $fg-accent
 
+	&.plain
+		&:not(.ghost)
+			@mixin gradient-bg $bg
+			color: $color
+		&.ghost
+			border-color: $bg
+			color: $bg
+
 	&.ghost
 		background: none
+		color: $fg
 
 // inverted
 .inverted
