@@ -33,7 +33,7 @@ $blue:				 	hsl($blue-hue, 79%, 52%)
 $turqoise-hue:			170
 $turquoise:				hsl($turqoise-hue, 99%, 31%)
 $yellow-hue:			61
-$yellow:				hsl($yellow-hue, 92%, 63%)
+$yellow:				hsl($yellow-hue, 90%, 70%)
 $red-hue:				2
 $red:					hsl($red-hue, 100%, 44%)
 
@@ -45,6 +45,7 @@ $opacity2:				0.65
 
 // color assignments
 $color:					$black
+$highlight-color:		$yellow
 
 $bg:                 	$white
 $bg--05:              	color( $bg shade(3.75%) )
@@ -109,7 +110,7 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
-@define-mixin highlight $color: color( $yellow tint(30%) )
+@define-mixin highlight $color: $highlight-color
 	background: linear-gradient(transparent 60%, $color 60%) 
 	display: inline-block
 	padding-right: $unit05
