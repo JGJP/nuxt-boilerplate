@@ -66,6 +66,12 @@ body
 				padding: 0
 			@media ($phone)
 				padding: 0
+	hr
+		border: none
+		border-top: $border-width dotted $bg--1
+		width: $width-full
+		margin: 0 auto
+		max-width: 100%
 
 	.space-items > *:not(:last-child)
 		margin-bottom: $unit1
@@ -83,6 +89,10 @@ body
 	.box
 		padding: $unit05
 		@mixin rounded
+
+	img
+		&.float-right
+			float: right
 
 // grids
 
@@ -159,7 +169,7 @@ body
 	strong
 		display: block
 	p
-		color: color( $body-bg a(80%) )
+		color: color( $body-bg a(85%) )
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
@@ -168,8 +178,9 @@ body
 			font-size: 1.5em
 
 		a
-			color: $fg2
+			color: inherit
 			@mixin hover-opacity
+			@mixin highlight
 
 	.smaller
 		font-size: 0.9em
@@ -182,7 +193,7 @@ body
 			font-size: 0.65em
 
 	h1, h2, h3, h4, h5, h6, p, span,
-	.h1, .h2, .h3, .h4, .h5, .h6
+	.h1, .h2, .h3, .h4, .h5, .h6, a
 		&.center
 			text-align: center
 		&.highlight
@@ -202,7 +213,7 @@ body
 		font-size: 1.5em
 		position: relative
 		padding-left: 1em
-		border-bottom: 1px dotted $fg
+		border-bottom: $border-width dotted $bg--1
 		&::before
 			content: ""
 			position: absolute
@@ -213,6 +224,11 @@ body
 			top: 50%
 			border: 2px solid $fg
 			transform: translateY(-65%)
+
+	.list
+		list-style: circle
+		li
+			margin-left: $unit1
 
 // resets and compatibility
 
