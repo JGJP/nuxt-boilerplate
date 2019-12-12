@@ -109,10 +109,10 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
-@define-mixin highlight $color: color( $yellow tint(50%) )
+@define-mixin highlight $color: color( $yellow tint(30%) )
 	background: linear-gradient(transparent 60%, $color 60%) 
 	display: inline-block
-	padding-right: $unit1
+	padding-right: $unit05
 
 @define-mixin space-equal-padding $padding
 	> *
