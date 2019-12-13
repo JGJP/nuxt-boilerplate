@@ -17,6 +17,9 @@ export default {
 		// "~/plugins/vue-textarea-autosize",
 		{ src: "~/plugins/vue-scroll-reveal", ssr: false },
 	],
+	buildModules: [
+		"@nuxtjs/router",
+	],
 	build: {
 		extractCSS: true,
 		extend (config, { isDev, isClient, isServer }) {
