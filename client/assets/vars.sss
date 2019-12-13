@@ -1,12 +1,17 @@
 // breakpoints
 
-$phone-bp:           	34em
-$tablet-bp:          	48em
+$phone-bp:           	44em
+$tablet-bp:          	66em
 $phone:              	width <= $phone-bp
 $tablet:             	width <= $tablet-bp
 $not-phone:          	width > $phone-bp
 $not-tablet:         	width > $tablet-bp
 $tablet-only:        	$phone-bp < width <= $tablet-bp
+
+$nav-breakpoint: $phone
+$not-nav-breakpoint: $not-phone
+
+
 
 // sizes
 $width-wide:         	80em
@@ -75,8 +80,8 @@ $nav-bg--1:            	color( $nav-bg shade(15%) )
 $nav-bg--2:            	color( $nav-bg shade(30%) )
 $nav-bg-rim:         	color( $nav-bg tint(30%) )
 $nav-bg-transparent: 	color( $fg2 a(75%) )
-$footer-bg:				$nav-bg--1
-$socket-bg:				$nav-bg--2
+$footer-bg:				$fg
+$socket-bg:				color( $footer-bg shade(15%) )
 
 // fonts
 $font:	             	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
@@ -141,7 +146,7 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow-down
 	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
 
-@define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 34em
+@define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 54em
 	font-size: responsive $min $max
 	font-range: $range
 
@@ -264,3 +269,88 @@ $shadow-2: color( $black a(16%) )
 	padding-right: 4em
 	@media ($phone)
 		padding-right: 2em
+
+// margins
+
+@define-mixin big-vert-margin
+	@mixin big-vert-margin-top
+	@mixin big-vert-margin-bottom
+
+@define-mixin big-vert-margin-top
+	margin-top: $unit4
+	@media ($tablet)
+		margin-top: $unit3
+	@media ($phone)
+		margin-top: $unit2
+
+@define-mixin big-vert-margin-bottom
+	margin-bottom: $unit4
+	@media ($tablet)
+		margin-bottom: $unit3
+	@media ($phone)
+		margin-bottom: $unit2
+
+@define-mixin medium-vert-margin
+	@mixin medium-vert-margin-top
+	@mixin medium-vert-margin-bottom
+
+@define-mixin medium-vert-margin-top
+	margin-top: $unit3
+	@media ($tablet)
+		margin-top: $unit2
+	@media ($phone)
+		margin-top: $unit1
+
+@define-mixin medium-vert-margin-bottom
+	margin-bottom: $unit3
+	@media ($tablet)
+		margin-bottom: $unit2
+	@media ($phone)
+		margin-bottom: $unit1
+
+@define-mixin small-vert-margin
+	@mixin small-vert-margin-top
+	@mixin small-vert-margin-bottom
+
+@define-mixin small-vert-margin-top
+	margin-top: $unit1
+	@media ($tablet)
+		margin-top: $unit1
+	@media ($phone)
+		margin-top: $unit1
+
+@define-mixin small-vert-margin-bottom
+	margin-bottom: $unit1
+	@media ($tablet)
+		margin-bottom: $unit1
+	@media ($phone)
+		margin-bottom: $unit1
+
+
+@define-mixin vert-margin
+	@mixin vert-margin-top
+	@mixin vert-margin-bottom
+
+@define-mixin vert-margin-top
+	margin-top: $unit2
+	@media ($phone)
+		margin-top: $unit1
+
+@define-mixin vert-margin-bottom
+	margin-bottom: $unit2
+	@media ($phone)
+		margin-bottom: $unit1
+
+@define-mixin horz-margin
+	@mixin horz-margin-left
+	@mixin horz-margin-right
+
+@define-mixin horz-margin-left
+	margin-left: 4em
+	@media ($phone)
+		margin-left: 2em
+
+@define-mixin horz-margin-right
+	margin-right: 4em
+	@media ($phone)
+		margin-right: 2em
