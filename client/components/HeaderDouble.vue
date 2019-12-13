@@ -23,7 +23,7 @@
 			.container.no-padding
 
 				ul
-					li(v-for="item in menu")
+					li(v-for="item in menu" :class="item.class")
 						nuxt-link(:to="item.link")
 							span {{ item.label }}
 						ul(v-if="item.submenu")
