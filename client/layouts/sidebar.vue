@@ -24,7 +24,7 @@ $sidebar-div: 4
 .layout
 	main
 		margin-top: $header-height
-		@media ($phone)
+		@media ($nav-breakpoint)
 			margin-top: $header-height-mobile
 		> *:first-child
 			min-height: 50em

@@ -95,7 +95,7 @@
 
 			background: $bg
 			height: $logo-bar-height
-			@media ($phone)
+			@media ($nav-breakpoint)
 				height: $header-height-mobile
 				padding-top: $unit05
 				padding-bottom: 0
@@ -105,20 +105,20 @@
 				height: 100%
 				display: flex
 				justify-content: space-between
-				@media ($not-phone)
+				@media ($not-nav-breakpoint)
 					flex-wrap: wrap
 					align-items: flex-end
-				@media ($phone)
+				@media ($nav-breakpoint)
 					flex-direction: column
 
 				&:last-child
-					@media ($phone)
+					@media ($nav-breakpoint)
 						padding: 0
 
 				.logo
-					@media ($not-phone)
+					@media ($not-nav-breakpoint)
 						height: 100%
-					@media ($phone)
+					@media ($nav-breakpoint)
 						min-height: 0
 						padding: 0 $unit1
 						display: flex
@@ -131,7 +131,7 @@
 							display: block
 
 					.mobile
-						@media ($not-phone)
+						@media ($not-nav-breakpoint)
 							display: none
 						margin-left: $unit05
 						background: $nav-fg
@@ -150,7 +150,7 @@
 						
 
 				.ctas
-					@media ($phone)
+					@media ($nav-breakpoint)
 						text-align: right
 						display: flex
 						.button
@@ -176,7 +176,7 @@
 					width: 100%
 					display: flex
 					justify-content: stretch
-					@media ($not-phone)
+					@media ($not-nav-breakpoint)
 						align-items: stretch
 
 					> li
@@ -204,7 +204,7 @@
 							top: 100%
 							min-width: 100%
 							left: 0
-							@media ($phone)
+							@media ($nav-breakpoint)
 								display: none
 							overflow: hidden
 							max-height: 0
@@ -235,7 +235,7 @@
 
 
 		nav
-			@media ($phone)
+			@media ($nav-breakpoint)
 				display: flex
 				flex-direction: column
 

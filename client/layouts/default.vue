@@ -17,7 +17,7 @@
 
 main
 	margin-top: $header-height
-	@media ($phone)
+	@media ($tablet)
 		margin-top: $header-height-mobile
 	> *:first-child
 		min-height: 30em
