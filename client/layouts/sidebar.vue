@@ -5,7 +5,7 @@
 		HeaderDouble
 		main
 			nuxt
-			section#sidebar
+			aside#sidebar
 				.container
 					aside
 						Sidebar
@@ -39,7 +39,9 @@ $sidebar-div: 4
 			.container
 				@media ($not-tablet)
 					padding-right: calc( $width-full / $sidebar-div + $unit1 )
-		section#sidebar
+		> *:last-child
+			@mixin big-vert-padding-bottom
+		aside#sidebar
 			@media ($not-tablet)
 				padding-top: 0
 				padding-bottom: 0

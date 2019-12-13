@@ -21,6 +21,8 @@ main
 		margin-top: $header-height-mobile
 	> *:first-child
 		min-height: 30em
+	> *:last-child
+		@mixin big-vert-padding-bottom
 
 </style>
 
