@@ -18,7 +18,7 @@
 					nuxt-link.button.secondary.ghost(to="/") contact
 					nuxt-link.button.secondary(to="/") reserve
 
-		nav(:class="{open: open, closed: !open}")
+		nav(:class="{open: open, closed: !open}" @click="bgclick")
 
 			.container.no-padding
 
@@ -71,6 +71,12 @@
 				},
 			],
 		}),
+		methods: {
+			bgclick(){
+				if(this.open)
+					this.open = false
+			}
+		}
 	}
 
 </script>
