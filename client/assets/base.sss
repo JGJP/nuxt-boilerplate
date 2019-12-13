@@ -191,10 +191,15 @@ body
 		&.bigger
 			font-size: 1.5em
 
-		a
-			color: inherit
-			@mixin hover-opacity
-			@mixin highlight
+	main
+		section:not(#title)
+			a:not(.button)
+				color: inherit
+				@mixin hover-opacity
+				@mixin highlight
+			ul
+				li
+					color: color( $body-bg a(85%) )
 
 	.smaller
 		font-size: 0.9em
@@ -224,10 +229,12 @@ body
 		font-size: 1.8em
 	h3,
 	.h3
-		font-size: 1.5em
+		font-size: 1.25em
 		position: relative
 		padding-left: 1em
 		border-bottom: $border-width dotted $bg--1
+		display: inline-block
+		clear: after
 		&::before
 			content: ""
 			position: absolute
@@ -241,8 +248,13 @@ body
 
 	.list
 		list-style: circle
-		li
-			margin-left: $unit1
+		list-style-position: inside
+
+	ul,
+	ol
+		&.inline
+			> li
+				display: inline
 
 // resets and compatibility
 
@@ -328,8 +340,8 @@ button,
 			@mixin gradient-bg $bg
 			color: $color
 		&.ghost
-			border-color: $bg
-			color: $bg
+			border-color: $bg--2
+			color: $bg--2
 
 	&.ghost
 		background: none
