@@ -1,6 +1,6 @@
 <template lang="pug">
 
-	.layout.sidebar
+	#layout-sidebar.layout
 
 		HeaderDouble
 		main
@@ -23,31 +23,27 @@ $sidebar-div: 4
 
 .layout
 	main
-		margin-top: $header-height
-		@media ($nav-breakpoint)
-			margin-top: $header-height-mobile
 		> *:first-child
-			min-height: 50em
+			@media ($not-phone)
+				@mixin big-vert-padding-bottom
 
-.layout.sidebar
+#layout-sidebar
 	main
-		@media ($not-tablet)
+		@media ($not-phone)
 			position: relative
 			display: flex
 			flex-direction: column-reverse
 		> *:first-child
 			.container
-				@media ($not-tablet)
+				@media ($not-phone)
 					padding-right: calc( $width-full / $sidebar-div + $unit1 )
-		> *:last-child
-			@mixin big-vert-padding-bottom
 		aside#sidebar
-			@media ($not-tablet)
+			@media ($not-phone)
 				padding-top: 0
 				padding-bottom: 0
 			.container
 				aside
-					@media ($not-tablet)
+					@media ($not-phone)
 						@mixin medium-vert-padding-top
 						position: absolute
 						top: 0

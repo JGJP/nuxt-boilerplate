@@ -1,6 +1,6 @@
 <template lang="pug">
 
-	.layout
+	#layout-default.layout
 
 		HeaderDouble
 		main
@@ -15,14 +15,10 @@
 
 @import "../assets/vars.sss"
 
-main
-	margin-top: $header-height
-	@media ($tablet)
-		margin-top: $header-height-mobile
-	> *:first-child
-		min-height: 30em
-	> *:last-child
-		@mixin big-vert-padding-bottom
+#layout-default
+	main
+		> *:first-child
+			@mixin big-vert-padding-bottom
 
 </style>
 
