@@ -224,7 +224,7 @@
 
 					> li:hover
 						ul
-							max-height: 10em
+							max-height: 20em
 						ul.shorter
 							max-height: 5em
 

@@ -4,6 +4,12 @@
 .layout
 	overflow: hidden
 	position: relative
+	main
+		margin-top: $header-height
+		@media ($nav-breakpoint)
+			margin-top: $header-height-mobile
+		> *:first-child
+			min-height: 50em
 
 .no-mobile
 	@media ($phone)
@@ -91,6 +97,9 @@ body
 
 	.space-items-horz > *:not(:last-child)
 		margin-right: $unit1
+
+	.space-before
+		margin-top: $unit2
 
 	.reader
 		@util hide-visually
@@ -217,6 +226,8 @@ body
 			text-align: center
 		&.highlight
 			@mixin highlight
+		&.right
+			text-align: right
 
 	h1,
 	.h1
@@ -246,8 +257,17 @@ body
 			border: 2px solid $fg
 			transform: translateY(-65%)
 
-	.list
+	h4,
+	.h4
+		border-bottom: $border-width dotted $bg--1
+		display: inline-block
+
+	ul.list
 		list-style: circle
+		list-style-position: inside
+
+	ol.list
+		list-style: numbered
 		list-style-position: inside
 
 	ul,
