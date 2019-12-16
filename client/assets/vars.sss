@@ -19,7 +19,6 @@ $width-full:         	66em
 $width-medium:       	45em
 $width-narrow:       	30em
 $width-super-narrow: 	20em
-$border-width:       	2px
 $unit01:				0.1rem
 $unit025:				0.25rem
 $unit05:				0.5rem
@@ -28,6 +27,8 @@ $unit2:					1.5rem
 $unit3:					3.5rem
 $unit4:					4.5rem
 $unit5:					5.5rem
+$border-width:       	2px
+$border-radius:       	$unit025
 
 // colors
 // postcss-color-function
@@ -140,7 +141,7 @@ $shadow-2: color( $black a(16%) )
 @define-mixin gradient-bg-opposite $color
 	background: linear-gradient(color( $color shade(15%) ), $color)
 
-@define-mixin rounded $radius: $unit025
+@define-mixin rounded $radius: $border-radius
 	border-radius: $radius
 
 @define-mixin box-shadow-down

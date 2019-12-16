@@ -379,3 +379,50 @@ button,
 		&.ghost
 			background: none
 			color: $bg
+
+// tables
+$table-border: 1px solid $bg--2
+table
+	&.borders
+		border-spacing: 0
+		border-collapse: separate
+		tr
+
+			td,
+			th
+				border-left: $table-border
+				border-bottom: $table-border
+				padding: $unit025 $unit05
+				&:last-child
+					border-right: $table-border
+		tr:first-child
+			td,
+			th
+				border-top: $table-border
+
+			th
+				font-weight: $font-weight-normal
+				color: $bg
+				background: $fg
+				border-bottom: none
+				border-color: $fg
+
+			th:not(:first-child)
+				border-left-color: $fg-2
+
+
+	// rounding
+	tr:first-child
+		td:first-child,
+		th:first-child
+			border-top-left-radius: $border-radius
+		td:last-child,
+		th:last-child
+			border-top-right-radius: $border-radius
+	tr:last-child
+		td:first-child,
+		th:first-child
+			border-bottom-left-radius: $border-radius
+		td:last-child,
+		th:last-child
+			border-bottom-right-radius: $border-radius
