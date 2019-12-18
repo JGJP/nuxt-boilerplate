@@ -94,6 +94,8 @@ body
 
 	.space-items > *:not(:last-child)
 		margin-bottom: $unit1
+		&.no-margin
+			margin-bottom: 0
 
 	.space-items-horz > *:not(:last-child)
 		margin-right: $unit1
@@ -245,7 +247,6 @@ body
 		padding-left: 1em
 		border-bottom: $border-width dotted $bg--1
 		display: inline-block
-		clear: after
 		&::before
 			content: ""
 			position: absolute
