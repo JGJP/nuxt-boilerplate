@@ -427,3 +427,44 @@ table
 		td:last-child,
 		th:last-child
 			border-bottom-right-radius: $border-radius
+
+dl.borders
+	display: table
+	border-spacing: 0
+	border-collapse: separate
+
+	.row
+		display: table-row
+		dt,
+		dd
+			display: table-cell
+			border-left: $table-border
+			border-bottom: $table-border
+			padding: $unit025 $unit05
+		dd
+			border-right: $table-border
+		dt
+			color: $bg
+			background: $fg
+			border-right: none
+			border-color: $fg
+
+	.row:first-child
+		dt,
+		dd
+			border-top: $table-border
+
+	.row:not(:last-child)
+		dt
+			border-bottom-color: $fg-2
+
+	.row:first-child
+		dt
+			border-top-left-radius: $border-radius
+		dd
+			border-top-right-radius: $border-radius
+	.row:last-child
+		dt
+			border-bottom-left-radius: $border-radius
+		dd
+			border-bottom-right-radius: $border-radius
