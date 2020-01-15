@@ -14,8 +14,8 @@
 				.space-items-horz
 					button.secondary button
 					button.secondary.ghost button
-		section#inverted
-			.container.space-items.inverted
+		section.inverted
+			.container.space-items
 				p inverted
 				.space-items-horz
 					button button
@@ -58,8 +58,5 @@
 <style lang="sss" scoped>
 
 	@import "../assets/vars.sss"
-
-	section#inverted
-		background: $body-bg
 
 </style>

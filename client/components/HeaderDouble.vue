@@ -40,8 +40,8 @@
 			open: false,
 			menu: [
 				{
-					label: "buttons",
-					link: "/buttons/",
+					label: "components",
+					link: "/components/",
 					submenu: [
 						{
 							label: "child",
