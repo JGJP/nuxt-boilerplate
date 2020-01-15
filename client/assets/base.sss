@@ -194,7 +194,8 @@ body
 	strong
 		display: block
 	p
-		color: color( $body-bg a(85%) )
+		color: inherit
+		opacity: 0.7
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
@@ -370,16 +371,22 @@ button,
 
 // inverted
 .inverted
-	color: $bg
+	$inverted-bg: $body-bg
+	$inverted-fg: $bg
+
+	background: $inverted-bg
+	color: $inverted-fg
 
 	button,
 	.button
 		@mixin gradient-bg $bg
-		color: $body-bg
-		border-color: $bg
+		color: $inverted-bg
+		border-color: $inverted-fg
+		&:not(.ghost):not(.plain)
+			color: $inverted-bg
 		&.ghost
 			background: none
-			color: $bg
+			color: $inverted-fg
 
 // tables
 $table-border: 1px solid $bg--2
