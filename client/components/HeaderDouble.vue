@@ -134,7 +134,7 @@
 						@media ($not-nav-breakpoint)
 							display: none
 						margin-left: $unit05
-						background: $nav-fg
+						background: $double-nav-fg
 						position: relative
 						padding-bottom: 0.6em
 						cursor: pointer
@@ -162,16 +162,16 @@
 							border-radius: 0
 
 		nav
-			background: $nav-bg
+			background: $double-nav-bg
 			@mixin box-shadow
-			border-top: 1px solid color( $nav-bg shade(10%) )
+			border-top: 1px solid color( $double-nav-bg shade(10%) )
 
 			.container
 				display: flex
 				align-items: stretch
 
 				> ul
-					color: $nav-color
+					color: $double-nav-color
 					height: $nav-height
 					width: 100%
 					display: flex
@@ -182,9 +182,9 @@
 					> li
 						flex-grow: 1
 						position: relative
-						border-left: 1px solid color( $nav-bg shade(10%) )
+						border-left: 1px solid color( $double-nav-bg shade(10%) )
 						&:last-child
-							border-right: 1px solid color( $nav-bg shade(10%) )
+							border-right: 1px solid color( $double-nav-bg shade(10%) )
 						a
 							@mixin hover-opacity
 							@mixin hover-scale
@@ -209,14 +209,14 @@
 							overflow: hidden
 							max-height: 0
 							@mixin transition max-height
-							background: $nav-bg
+							background: $double-nav-bg
 							@mixin box-shadow-down
 							@mixin rounded
 							border-top-right-radius: 0
 							border-top-left-radius: 0
 
 							li
-								border-top: 1px solid color( $nav-bg shade(10%) )
+								border-top: 1px solid color( $double-nav-bg shade(10%) )
 								a
 									padding: $unit05 $unit2
 									text-align: left
@@ -256,7 +256,7 @@
 					visibility: visible
 					opacity: 1
 					transition: opacity $trans-time $ease-out
-					background: $nav-bg-transparent
+					background: $double-nav-bg-transparent
 
 				.container
 					flex-direction: column
@@ -273,12 +273,12 @@
 
 						li
 							flex: 1
-							background: $nav-bg
+							background: $double-nav-bg
 							@mixin rounded
 							width: 20em
 							margin: 0.25em
 							max-width: 100%
-							border: 1px solid $nav-bg-rim
+							border: 1px solid $double-nav-bg-rim
 
 							a
 								padding: 0
