@@ -111,7 +111,7 @@ export default {
 	vendor: ["babel-polyfill", "image-webpack-loader"],
 	// modules: ["@nuxtjs/axios"],
 	head: {
-		titleTemplate: "NUXT | %s",
+		titleTemplate: "%s | NUXT",
 		meta: [
 			{ charset: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
