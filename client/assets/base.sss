@@ -403,17 +403,16 @@ table
 				padding: $unit025 $unit05
 				&:last-child
 					border-right: $table-border
-		tr:first-child
-			td,
-			th
-				border-top: $table-border
-
 			th
 				font-weight: $font-weight-normal
 				color: $bg
 				background: $fg
-				border-bottom: none
-				border-color: $fg
+				border-color: $fg-1
+
+		tr:first-child
+			td,
+			th
+				border-top: $table-border
 
 			th:not(:first-child)
 				border-left-color: $fg-2
