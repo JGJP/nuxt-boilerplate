@@ -81,7 +81,7 @@
 
 </script>
 
-<style lang="sss">
+<style lang="sss" scoped>
 
 	@import "../assets/vars.sss"
 	@import "../assets/burgermenu.sss"

@@ -46,7 +46,7 @@
 
 </script>
 
-<style lang="sss">
+<style lang="sss" scoped>
 
 	@import "../assets/vars.sss"
 	@import "../assets/burgermenu.sss"
@@ -60,7 +60,7 @@
 			a
 				img
 					display: block
-					padding: $unit1
+					padding: $unit05
 					position: relative
 					right: $unit1
 
@@ -74,7 +74,7 @@
 				align-items: stretch
 
 				> ul
-					color: $white
+					color: $nav-color
 					height: $nav-height
 
 				.logo a img
