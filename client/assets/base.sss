@@ -403,20 +403,44 @@ button,
 // tables
 $table-border: 1px solid $bg--2
 table
+	&.simple,
+	&.simple2,
 	&.borders
 		border-spacing: 0
 		border-collapse: separate
 		tr
+			td,
+			th
+				padding: $unit025 $unit1
+				font-weight: $font-weight-normal
 
+	&.simple,
+	&.borders
+		tr
+			th
+				color: $bg
+				background: $fg
+				@mixin rounded
+
+	&.simple2
+		&:not(.horz)
+			tr
+				th
+					border-bottom: $unit025 solid $bg--1
+		&.horz
+			tr
+				th
+					border-right: $unit025 solid $bg--1
+
+	&.borders
+		tr
 			td,
 			th
 				border-left: $table-border
 				border-bottom: $table-border
-				padding: $unit025 $unit05
 				&:last-child
 					border-right: $table-border
 			th
-				font-weight: $font-weight-normal
 				color: $bg
 				background: $fg
 				border-color: $fg-1
@@ -430,21 +454,21 @@ table
 				border-left-color: $fg-2
 
 
-	// rounding
-	tr:first-child
-		td:first-child,
-		th:first-child
-			border-top-left-radius: $border-radius
-		td:last-child,
-		th:last-child
-			border-top-right-radius: $border-radius
-	tr:last-child
-		td:first-child,
-		th:first-child
-			border-bottom-left-radius: $border-radius
-		td:last-child,
-		th:last-child
-			border-bottom-right-radius: $border-radius
+		// rounding
+		tr:first-child
+			td:first-child,
+			th:first-child
+				border-top-left-radius: $border-radius
+			td:last-child,
+			th:last-child
+				border-top-right-radius: $border-radius
+		tr:last-child
+			td:first-child,
+			th:first-child
+				border-bottom-left-radius: $border-radius
+			td:last-child,
+			th:last-child
+				border-bottom-right-radius: $border-radius
 
 dl.borders
 	display: table

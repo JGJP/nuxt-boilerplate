@@ -28,6 +28,7 @@ $unit3:					3.5rem
 $unit4:					4.5rem
 $unit5:					5.5rem
 $border-width:       	2px
+$border-width-big:      $unit05
 $border-radius:       	$unit025
 
 // colors
@@ -125,7 +126,7 @@ $shadow-2: color( $black a(16%) )
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 
 @define-mixin highlight $color: $highlight-color
-	background: linear-gradient(0deg, $color $unit05, transparent $unit05) 
+	background: linear-gradient(0deg, $color $border-width-big, transparent $border-width-big) 
 
 @define-mixin space-equal-padding $padding
 	> *
