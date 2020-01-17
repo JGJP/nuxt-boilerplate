@@ -8,6 +8,13 @@ export default {
 		"@/assets/base.sss", 
 		"@/assets/transitions.sss",
 	],
+	generate: {
+		routes: [
+			"/",
+			"/components/",
+			"/colors/",
+		],
+	},
 	router: {
 		linkActiveClass: "active",
 	},
