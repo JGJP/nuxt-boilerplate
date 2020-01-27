@@ -126,7 +126,7 @@ export default {
 		],
 		link: [
 			{ rel: "icon", type: "image/x-icon", href: "/favicon.png" },
-			// { rel: "stylesheet", href: "https://fonts.googleapis.com/earlyaccess/notosansjp.css" },
+			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP" },
 			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:300,500,700,900" },
 		],
 		script: [
