@@ -5,6 +5,7 @@
 		section#prefooter.small-padding
 
 			.container.center.space-items-horz
+				p.email(data-website="moc.liame" data-user="resu")
 
 		section#footer.inverted
 
@@ -26,6 +27,11 @@
 	footer
 		#prefooter
 			background: $bg--1
+			.email
+				&:after
+					content: attr(data-website) "\0040" attr(data-user) " ta tcatnoc"
+					unicode-bidi: bidi-override
+					direction: rtl
 
 		#footer
 			background: $footer-bg
