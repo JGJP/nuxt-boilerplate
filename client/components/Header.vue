@@ -6,7 +6,7 @@
 			
 			.logo
 				nuxt-link(to="/") 
-					img(src="~/assets/images/logo.png" alt="logo")
+					img(src="~/assets/images/logo.gif" alt="logo")
 
 			.menu-button(@click="open = !open")
 				.bars(:class="{open: open}")
@@ -17,7 +17,7 @@
 
 				.logo
 					nuxt-link(to="/")
-						img(src="~/assets/images/logo.png" alt="logo")
+						img(src="~/assets/images/logo.gif" alt="logo")
 
 				ul
 					li
