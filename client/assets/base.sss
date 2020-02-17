@@ -384,6 +384,38 @@ button,
 		background: none
 		color: $fg
 
+// forms
+form
+	input,
+	select
+		display: inline-block
+		font-family: inherit
+		padding: $unit05 $unit2
+		border: $border-width solid $bg--1
+		@mixin rounded
+		&:focus,
+		&:active
+			border-color: $fg-accent
+			background: color($fg-accent a(10%))
+	.required,
+	.optional
+		&::after
+			font-size: 0.8em 
+			vertical-align: middle
+			padding: 0.1em $unit05
+			margin-left: $unit1
+			@mixin rounded
+	.required
+		&::after
+			content: "必須"
+			border: 1px solid color($red a(50%))
+			color: $red
+	.optional
+		&::after
+			content: "任意"
+			border: 1px solid color($fg2 a(50%))
+			color: $fg2
+
 // inverted
 .inverted
 	$inverted-bg: $body-bg
