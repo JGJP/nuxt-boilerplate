@@ -28,6 +28,38 @@ export default {
 		"@nuxtjs/router",
 	],
 	build: {
+		// transpile: [
+		// 	/(.+)(@nuxtjs\\axios\\lib\\)(.+)(\.js)$/,
+		// ],
+		babel: {
+			presets: function ({isServer}, [preset, options]) {
+				const r = [
+					[
+						preset, {
+							buildTarget: isServer ? 'server' : 'client',
+							...options
+						}
+					]
+				]
+				r[0][1].targets = {
+					"browsers": ["> 1%", "last 2 versions"],
+					ie: 11
+				}
+				r[0][1].polyfills = [
+					// 'es6.array.iterator',
+					// 'es6.promise',
+					// 'es6.object.assign',
+					// 'es7.promise.finally',
+					// 'es6.symbol',
+					// 'es6.array.find',
+					'es6.array.from',
+				]
+				return r
+			},
+			plugins: [
+				'@babel/plugin-transform-runtime'
+			],
+		},
 		extractCSS: true,
 		extend (config, { isDev, isClient, isServer }) {
 			if (!isDev) {
@@ -136,14 +168,14 @@ export default {
 			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP" },
 			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:300,500,700,900" },
 		],
-		script: [
-			{ src: "https://cdn.polyfill.io/v2/polyfill.js?features="+
-				"String.prototype.includes,"+
-				"Array.prototype.find,"+
-				"Array.prototype.from,"+
-				"Promise,"+
-				"Object.assign"
-			},
-		],
+		// script: [
+		// 	{ src: "https://cdn.polyfill.io/v2/polyfill.js?features="+
+		// 		"String.prototype.includes,"+
+		// 		"Array.prototype.find,"+
+		// 		"Array.prototype.from,"+
+		// 		"Promise,"+
+		// 		"Object.assign"
+		// 	},
+		// ],
 	},
 }
