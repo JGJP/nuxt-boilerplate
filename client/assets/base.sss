@@ -393,7 +393,8 @@ button,
 // forms
 form
 	input,
-	select
+	select,
+	textarea
 		display: inline-block
 		background: $bg
 		font-family: inherit
@@ -408,10 +409,13 @@ form
 			&:not(:first-child)
 				margin-left: $unit1
 			margin-right: $unit025
+		&[type="checkbox"]
+			margin-right: $unit05
 	.required,
 	.optional
 		&::after
 			font-size: 0.8em 
+			white-space: nowrap
 			vertical-align: middle
 			padding: 0.1em $unit05
 			margin-left: $unit1
