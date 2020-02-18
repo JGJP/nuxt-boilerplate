@@ -21,6 +21,10 @@ body
 	color: $color
 	@mixin font-range
 
+	.flex
+		display: flex
+		align-items: center
+
 	.english
 		font-family: $font-english
 
@@ -281,11 +285,13 @@ body
 
 	ul.list
 		list-style: circle
-		list-style-position: inside
+		list-style-position: outside
+		padding-left: 1em
 
 	ol.list
 		list-style: numbered
-		list-style-position: inside
+		list-style-position: outside
+		padding-left: 1em
 
 	ul,
 	ol
