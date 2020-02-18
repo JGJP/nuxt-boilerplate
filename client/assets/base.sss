@@ -397,6 +397,10 @@ form
 		&:active
 			border-color: $fg-accent
 			background: color($fg-accent a(10%))
+		&[type="radio"]
+			&:not(:first-child)
+				margin-left: $unit1
+			margin-right: $unit025
 	.required,
 	.optional
 		&::after
