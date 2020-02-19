@@ -9,6 +9,11 @@ Vue.use(Router)
 export function createRouter() {
 	return new Router({
 		mode: "history",
+		scrollBehavior: () => ({
+			x: 0,
+			y: 0,
+		}),
+		base: "/",
 		routes: [
 			{ path: "/", component: top },
 			{ path: "/components/", component: components },

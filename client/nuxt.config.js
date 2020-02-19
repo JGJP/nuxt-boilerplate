@@ -17,6 +17,7 @@ export default {
 	},
 	router: {
 		linkActiveClass: "active",
+		base: "/",
 	},
 	plugins: [
 		// "~/plugins/vue-scrollto",
