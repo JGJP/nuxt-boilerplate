@@ -14,6 +14,7 @@ export function createRouter() {
 			y: 0,
 		}),
 		base: "/",
+		linkActiveClass: "active",
 		routes: [
 			{ path: "/", component: top },
 			{ path: "/components/", component: components },
