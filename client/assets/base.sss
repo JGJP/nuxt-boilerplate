@@ -107,6 +107,11 @@ body
 		&.no-margin
 			margin-bottom: 0
 
+	.space-items-small > *:not(:last-child)
+		margin-bottom: $unit05
+		&.no-margin
+			margin-bottom: 0
+
 	.space-items-horz > *:not(:last-child)
 		margin-right: $unit1
 
@@ -210,8 +215,7 @@ body
 	strong
 		display: block
 	p
-		color: inherit
-		opacity: 0.9
+		@mixin light-text
 		line-height: 1.5em
 		margin: 1em 0
 		letter-spacing: 0.05em
@@ -227,8 +231,7 @@ body
 				@mixin highlight
 			ul
 				li
-					color: inherit
-					opacity: 0.9
+					@mixin light-text
 
 	.smaller
 		font-size: 0.9em
