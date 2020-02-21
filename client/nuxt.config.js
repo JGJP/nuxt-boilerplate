@@ -116,7 +116,14 @@ export default {
 		presets: ["env"],
 	},
 	vendor: ["babel-polyfill", "image-webpack-loader"],
-	// modules: ["@nuxtjs/axios"],
+	modules: [
+		// "@nuxtjs/axios",
+		["vue-scrollto/nuxt", {
+			duration: 800,
+			easing: "ease out",
+			offset: -300,
+		}],
+	]
 	head: {
 		titleTemplate: "%s | NUXT",
 		meta: [
