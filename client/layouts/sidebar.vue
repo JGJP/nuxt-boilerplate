@@ -2,7 +2,7 @@
 
 	#layout-sidebar.layout
 
-		HeaderDouble
+		Header
 		main
 			nuxt
 			aside#sidebar
@@ -63,13 +63,13 @@ $sidebar-div: 4
 
 <script>
 
-	import HeaderDouble from "~/components/HeaderDouble";
+	import Header from "~/components/Header";
 	import Footer from "~/components/Footer";
 	import Sidebar from "~/components/Sidebar";
 
 	export default {
 		components: {
-			HeaderDouble,
+			Header,
 			Footer,
 			Sidebar,
 			},
