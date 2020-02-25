@@ -166,6 +166,9 @@ export default {
 		}],
 	],
 	head: {
+		htmlAttrs: {
+			lang: "en",
+		},
 		titleTemplate: "%s | NUXT",
 		meta: [
 			{ charset: "utf-8" },
