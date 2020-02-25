@@ -64,13 +64,18 @@ export default {
 		extractCSS: true,
 		extend (config, { isDev, isClient, isServer }) {
 			if (!isDev) {
+				const ruleString = "/\\.(png|jpe?g|gif|svg|webp)$/i"
+				if(!config.module.rules
+					.filter(rule => rule.test.toString() === ruleString)
+					.length)
+					throw "failed to find webpack images rule"
 				config.module.rules.forEach((rule) => {
-					if (rule.test.toString() === "/\\.(png|jpe?g|gif|svg)$/") {
+					if (rule.test.toString() === ruleString) {
 						rule.use = [
 							{
 								loader: "url-loader",
 								options: {
-									limit: 10000,
+									limit: 1000,
 									name: "img/[name].[hash:7].[ext]",
 								},
 							},
@@ -79,15 +84,18 @@ export default {
 								options: {
 									mozjpeg: {
 										progressive: true,
-										quality: 65,
+										quality: 50,
 									},
 									optipng: {
 										enabled: true,
 									},
 									pngquant: {
-										quality: "65-90",
+										quality: [0.5, 0.5],
 										speed: 1,
 										verbose: true,
+									},
+									webp: {
+										quality: 75,
 									},
 								},
 							},

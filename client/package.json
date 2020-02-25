@@ -23,7 +23,7 @@
     "@babel/preset-env": "^7.0.0-beta.44",
     "@nuxtjs/router": "^1.5.0",
     "css-mqpacker": "^6.0.2",
-    "image-webpack-loader": "^4.2.0",
+    "image-webpack-loader": "^6.0.0",
     "node-sass": "^4.9.0",
     "postcss-color-function": "^4.1.0",
     "postcss-color-short": "^0.2.4",
