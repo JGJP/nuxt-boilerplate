@@ -9,7 +9,8 @@
 		@media ($nav-breakpoint)
 			margin-top: $header-height-mobile
 		> *:first-child
-			min-height: 50em
+			@media ($not-phone)
+				min-height: 50em
 
 .no-mobile
 	@media ($phone)
