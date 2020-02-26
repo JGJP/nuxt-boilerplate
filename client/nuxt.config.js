@@ -1,4 +1,8 @@
 export default {
+	render: {
+		injectScripts: true,
+		resourceHints: false,
+	},
 	loading: false,
 	pageTransition: {
 		name: "page",
