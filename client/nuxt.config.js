@@ -32,6 +32,7 @@ export default {
 		// transpile: [
 		// 	/(.+)(@nuxtjs\\axios\\lib\\)(.+)(\.js)$/,
 		// ],
+		hardSource: true,
 		babel: {
 			presets: function ({isServer}, [preset, options]) {
 				const r = [
