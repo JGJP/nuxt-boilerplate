@@ -156,7 +156,7 @@ export default {
 			easing: "ease out",
 			offset: -300,
 		}],
-	]
+	],
 	head: {
 		titleTemplate: "%s | NUXT",
 		meta: [
