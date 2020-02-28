@@ -91,17 +91,17 @@ export default {
 										progressive: true,
 										quality: 50,
 									},
-									optipng: {
-										enabled: true,
-									},
+									// optipng: {
+									// 	enabled: true,
+									// },
 									pngquant: {
 										quality: [0.5, 0.5],
 										speed: 1,
 										verbose: true,
 									},
-									webp: {
-										quality: 75,
-									},
+									// webp: {
+									// 	quality: 75,
+									// },
 								},
 							},
 						]
