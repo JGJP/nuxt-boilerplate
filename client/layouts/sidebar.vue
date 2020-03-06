@@ -15,7 +15,7 @@
 
 
 
-<style lang="sss">
+<style lang="sss" scoped>
 
 @import "../assets/vars.sss"
 
