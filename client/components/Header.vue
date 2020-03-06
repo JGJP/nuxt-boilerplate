@@ -6,7 +6,7 @@
 			
 			.logo
 				nuxt-link(to="/") 
-					img(src="~/assets/images/logo.gif" alt="logo")
+					img(src="~/assets/images/logo.gif" alt="logo" loading="lazy")
 
 			.menu-button(@click="open = !open")
 				.bars(:class="{open: open}")
@@ -49,6 +49,10 @@
 							link: "/child/",
 						},
 					]
+				},
+				{
+					label: "images",
+					link: "/images/",
 				},
 			],
 		}),

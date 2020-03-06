@@ -3,6 +3,7 @@ import Router from "vue-router"
 
 import top from "~/pages/index.vue"
 import components from "~/pages/components.vue"
+import images from "~/pages/images.vue"
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ export function createRouter() {
 		routes: [
 			{ path: "/", component: top },
 			{ path: "/components/", component: components },
+			{ path: "/images/", component: images },
 		]
 	})
 }
