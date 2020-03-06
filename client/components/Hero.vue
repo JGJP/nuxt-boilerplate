@@ -16,7 +16,7 @@
 		.container
 			height: 100%
 		.container.superwide
-			height: 40em
+			height: 30em
 			max-height: 140vw
 			@mixin background-image '../assets/images/hero.jpg'
 
