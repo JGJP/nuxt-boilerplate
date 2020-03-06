@@ -8,7 +8,7 @@
 
 				.logo
 					nuxt-link(to="/")
-						img(src="~/assets/images/logo.gif" alt="logo" loading="lazy")
+						img(src="~/assets/images/logo.png" alt="logo" loading="lazy")
 
 					.mobile(@click="open = !open")
 						.menu-button
