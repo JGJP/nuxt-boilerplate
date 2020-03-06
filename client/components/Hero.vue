@@ -1,7 +1,7 @@
 <template lang="pug">
 	
 	section#hero.no-padding
-		.container
+		.container.superwide
 
 </template>
 
@@ -14,6 +14,8 @@
 	#hero
 		background: $bg--1
 		.container
+			height: 100%
+		.container.superwide
 			height: 40em
 			max-height: 140vw
 			@mixin background-image '../assets/images/hero.jpg'

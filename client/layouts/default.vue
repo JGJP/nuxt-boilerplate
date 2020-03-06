@@ -17,8 +17,9 @@
 
 #layout-default
 	main
-		> *:first-child
-			@mixin big-vert-padding-bottom
+		> *
+			> *:last-child
+				@mixin big-vert-padding-bottom
 
 </style>
 
