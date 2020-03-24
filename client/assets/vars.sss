@@ -172,7 +172,7 @@ $hover-opacity:      	0.6
 
 // mixins
 
-$shadow: color( $black a(8%) )
+$shadow: color( $black a(24%) )
 $shadow-2: color( $black a(16%) )
 
 @define-mixin light-text
@@ -184,6 +184,14 @@ $shadow-2: color( $black a(16%) )
 
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
+.box-shadow
+	@mixin box-shadow
+
+@define-mixin box-shadow-big
+	box-shadow: 0 20px 40px $shadow, 0 15px 12px $shadow-2
+	// box-shadow: 0 6px 20px rgba(0, 26, 14, 0.24), 0 8px 8px rgba(0, 26, 14, 0.16)
+.box-shadow-big
+	@mixin box-shadow-big
 
 @define-mixin highlight $color: $highlight-color
 	background: linear-gradient(0deg, $color $border-width-big, transparent $border-width-big) 
