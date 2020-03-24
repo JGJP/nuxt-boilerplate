@@ -257,6 +257,24 @@ $shadow-2: color( $black a(16%) )
 	top: 0
 	left: 0
 
+@define-mixin super-big-vert-padding
+	@mixin super-big-vert-padding-top
+	@mixin super-big-vert-padding-bottom
+
+@define-mixin super-big-vert-padding-top
+	padding-top: $unit6
+	@media ($tablet)
+		padding-top: $unit4
+	@media ($phone)
+		padding-top: $unit3
+
+@define-mixin super-big-vert-padding-bottom
+	padding-bottom: $unit6
+	@media ($tablet)
+		padding-bottom: $unit4
+	@media ($phone)
+		padding-bottom: $unit3
+
 @define-mixin big-vert-padding
 	@mixin big-vert-padding-top
 	@mixin big-vert-padding-bottom
