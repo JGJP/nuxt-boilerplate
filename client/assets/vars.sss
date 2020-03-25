@@ -80,6 +80,7 @@ $emunit05:				$emunit-2
 $border-width:       	2px
 $border-width-big:      $unit05
 $border-radius:       	$unit025
+$border-radius-big: 	$unit05
 
 // colors
 // postcss-color-function
@@ -220,6 +221,13 @@ $shadow-2: color( $black a(16%) )
 
 @define-mixin rounded $radius: $border-radius
 	border-radius: $radius
+.rounded
+	@mixin rounded
+
+@define-mixin rounded-big $radius: $border-radius-big
+	border-radius: $radius
+.rounded-big
+	@mixin rounded-big
 
 @define-mixin box-shadow-down
 	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
