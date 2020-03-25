@@ -422,6 +422,7 @@ form
 		display: inline-block
 		background: $bg
 		font-family: inherit
+		font-size: inherit
 		padding: $unit05 $unit2
 		border: $border-width solid $bg--1
 		@mixin rounded
@@ -435,6 +436,8 @@ form
 			margin-right: $unit025
 		&[type="checkbox"]
 			margin-right: $unit05
+		&.full
+			width: 100%
 	.required,
 	.optional
 		&::after
