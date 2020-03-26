@@ -25,7 +25,7 @@ export default {
 	},
 	plugins: [
 		// "~/plugins/vue-scrollto",
-		// "~/plugins/vue-youtube-embed",
+		{ src: "~/plugins/vue-youtube-embed", ssr: true },
 		{ src: "~/plugins/vue-textarea-autosize", ssr: true },
 		{ src: "~/plugins/vue-scroll-reveal", ssr: false },
 	],
@@ -33,9 +33,10 @@ export default {
 		"@nuxtjs/router",
 	],
 	build: {
-		// transpile: [
-		// 	/(.+)(@nuxtjs\\axios\\lib\\)(.+)(\.js)$/,
-		// ],
+		transpile: [
+			// /(.+)(@nuxtjs\\axios\\lib\\)(.+)(\.js)$/,
+			"vue-youtube-embed",
+		],
 		// hardSource: true,
 		babel: {
 			presets: function ({isServer}, [preset, options]) {

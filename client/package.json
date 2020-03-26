@@ -16,7 +16,8 @@
     "nuxt": "^2.11.0",
     "vue-scroll-reveal": "^1.0.6",
     "vue-scrollto": "^2.17.1",
-    "vue-textarea-autosize": "^1.1.1"
+    "vue-textarea-autosize": "^1.1.1",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",

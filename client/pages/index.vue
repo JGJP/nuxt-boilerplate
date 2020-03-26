@@ -26,6 +26,7 @@
 				],
 			}
 		},
+		layout: "video",
 		scrollToTop: true,
 		components: {
 			Hero,
