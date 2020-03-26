@@ -164,6 +164,7 @@ body
 // grids
 
 .grid,
+.grid-desktop-only,
 .grid-column
 	display: flex
 	justify-content: center
@@ -173,7 +174,8 @@ body
 	> .grow
 		flex-grow: 1
 
-.grid
+.grid,
+.grid-desktop-only
 	@media ($not-phone)
 		@mixin space-equal-padding-horz $unit1
 	.half
@@ -184,7 +186,18 @@ body
 		width: 33.33%
 	.quarter
 		width: 25%
+.grid
 	@media ($phone)
+		&:not(.mobile):not(.column)
+			display: block
+			.half,
+			.two-thirds,
+			.third,
+			.quarter
+				width: 100%
+			@mixin space-equal-padding $unit1
+.grid-desktop-only
+	@media ($tablet)
 		&:not(.mobile):not(.column)
 			display: block
 			.half,
