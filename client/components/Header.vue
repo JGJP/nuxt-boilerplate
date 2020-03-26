@@ -91,6 +91,8 @@
 				img
 					display: block
 					padding: $unit05
+					@media ($phone)
+						padding-left: $unit1
 					position: relative
 					right: $unit1
 
