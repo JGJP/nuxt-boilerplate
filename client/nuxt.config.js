@@ -26,7 +26,7 @@ export default {
 	plugins: [
 		// "~/plugins/vue-scrollto",
 		// "~/plugins/vue-youtube-embed",
-		{ src: "~/plugins/vue-textarea-autosize", ssr: false },
+		{ src: "~/plugins/vue-textarea-autosize", ssr: true },
 		{ src: "~/plugins/vue-scroll-reveal", ssr: false },
 	],
 	buildModules: [

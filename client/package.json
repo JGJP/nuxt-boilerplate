@@ -15,7 +15,8 @@
     "core-js": "^2.5.4",
     "nuxt": "^2.11.0",
     "vue-scroll-reveal": "^1.0.6",
-    "vue-scrollto": "^2.17.1"
+    "vue-scrollto": "^2.17.1",
+    "vue-textarea-autosize": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",
@@ -37,8 +38,7 @@
     "precss": "^3.1.2",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
-    "sugarss": "^1.0.1",
-    "vue-textarea-autosize": "^1.1.1"
+    "sugarss": "^1.0.1"
   },
   "author": "",
   "license": "ISC"
