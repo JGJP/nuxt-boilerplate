@@ -166,9 +166,9 @@ export default {
 	modules: [
 		// "@nuxtjs/axios",
 		["vue-scrollto/nuxt", {
-			duration: 800,
+			duration: 600,
 			easing: "ease out",
-			offset: -300,
+			offset: -150,
 		}],
 	],
 	head: {
