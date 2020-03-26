@@ -55,3 +55,23 @@ $pageTransform3: translateY(30px)
 	transition: opacity 0.2s 0.3s
 .single-enter, .single-leave-to
 	opacity: 0
+
+.max-height-enter-active,
+.max-height-leave-active
+	transition: max-height .5s
+.max-height-enter,
+.max-height-leave-to
+	max-height: 0
+
+.slide-right-enter-active,
+.slide-right-leave-active
+	transition: all 0.3s
+.slide-right-enter,
+.slide-right-leave-active
+	opacity: 0
+.slide-right-enter
+	transform: translateX(-0.5rem)
+.slide-right-leave-active
+	transform: translateX(0.5rem)
+
+
