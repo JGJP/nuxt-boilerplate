@@ -181,6 +181,11 @@ $shadow-2: color( $black a(16%) )
 	> *
 		margin-top: $spacing
 
+@define-mixin space-items-wrap-horz $spacing: $unit1
+	margin-left: calc ( $spacing * -1 )
+	> *
+		margin-left: $spacing
+
 @define-mixin light-text
 	color: inherit
 	opacity: 90%

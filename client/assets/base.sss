@@ -132,6 +132,9 @@ body
 	.space-items-wrap
 		@mixin space-items-wrap
 
+	.space-items-wrap-horz
+		@mixin space-items-wrap-horz
+
 	.space-before
 		margin-top: $unit2
 	.space-after
@@ -176,7 +179,10 @@ body
 
 .grid,
 .grid-desktop-only
-	@media ($not-phone)
+	&:not(.mobile)
+		@media ($not-phone)
+			@mixin space-equal-padding-horz $unit1
+	&.mobile
 		@mixin space-equal-padding-horz $unit1
 	.half
 		width: 50%
