@@ -1,6 +1,7 @@
 <template lang="pug">
 	
 	#video.inverted.center
+		a.bg(href="#" @click="close")
 		a.close(href="#" @click="close")
 			img(src="~/assets/images/close.png")
 		.youtube-el
@@ -25,7 +26,7 @@
 				this.player = player
 			},
 			close(){
-				this.player.pauseVideo()
+				this.player.stopVideo()
 			},
 		}
 	}
@@ -48,6 +49,10 @@
 		width: 100vw
 		background: color( $black a(90%) )
 		z-index: 100
+		.bg
+			cursor: default
+			display: block
+			@mixin position-absolute
 		.youtube-el
 			width: 60em
 			max-width: 100%
