@@ -11,13 +11,15 @@
 
 
 
-<style lang="sss" scoped>
+<style lang="sss">
 
 @import "../assets/vars.sss"
 
 #layout-default
 	main
 		> *
+			> *:first-child
+				@mixin super-big-vert-padding-top
 			> *:last-child
 				@mixin big-vert-padding-bottom
 
