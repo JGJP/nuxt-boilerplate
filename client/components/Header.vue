@@ -4,7 +4,7 @@
 
 		.mobile
 			
-			.logo
+			.logo(@click="open = false")
 				nuxt-link(to="/") 
 					img(src="~/assets/images/logo.png" alt="logo" loading="lazy")
 
@@ -20,11 +20,11 @@
 						img(src="~/assets/images/logo.png" alt="logo")
 
 				ul
-					li(v-for="item in menu" :class="item.class")
+					li(v-for="item in menu" :class="item.class" @click="open = !open")
 						nuxt-link(:to="item.link")
 							span {{ item.label }}
 						ul(v-if="item.submenu")
-							li(v-for="child in item.submenu")
+							li(v-for="child in item.submenu" @click="open = !open")
 								nuxt-link(:to="child.link")
 									span {{ child.label }}
 
