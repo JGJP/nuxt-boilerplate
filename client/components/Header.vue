@@ -54,6 +54,10 @@
 					label: "images",
 					link: "/images/",
 				},
+				{
+					label: "text",
+					link: "/text/",
+				},
 			],
 		}),
 	}
