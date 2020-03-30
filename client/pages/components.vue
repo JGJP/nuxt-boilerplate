@@ -71,7 +71,7 @@
 	export default {
 		head(){
 			return {
-				title: 'page 2',
+				title: 'componenets',
 				meta: [
 					{ hid: 'description', name: 'description', content: 'description text' }
 				],

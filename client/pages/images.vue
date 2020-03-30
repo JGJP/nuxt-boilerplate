@@ -47,7 +47,5 @@
 <style lang="sss" scoped>
 
 	@import "../assets/vars.sss"
-	section
-		padding-bottom: 100em
 
 </style>
