@@ -4,18 +4,28 @@
 		section
 			.container.space-items
 				h1 colors
-				p red:
-				.color.red
-				p blue:
-				.color.blue
-				p green:
-				.color.green
-				p orange:
-				.color.orange
-				p yellow:
-				.color.yellow
-				p purple:
-				.color.purple
+				.grid
+					.quarter.space-items
+						p red:
+						.color.red
+					.quarter.space-items
+						p blue:
+						.color.blue
+					.quarter.space-items
+						p green:
+						.color.green
+					.quarter.space-items
+						p orange:
+						.color.orange
+				.grid
+					.quarter.space-items
+						p yellow:
+						.color.yellow
+					.quarter.space-items
+						p purple:
+						.color.purple
+					.quarter.space-items
+					.quarter.space-items
 
 </template>
 
@@ -48,7 +58,7 @@
 
 	@import "../assets/vars.sss"
 	.color
-		height: $unit3
+		height: $unit5
 		&.red
 			background: $red
 		&.blue

@@ -62,6 +62,10 @@
 					label: "colors",
 					link: "/colors/",
 				},
+				{
+					label: "shadows",
+					link: "/shadows/",
+				},
 			],
 		}),
 	}
