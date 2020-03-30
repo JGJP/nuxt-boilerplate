@@ -123,9 +123,10 @@ $fg-accent:				$orange
 $body-bg:				$fg--2
 
 // nav
+$header-padding:		0
 $logo-bar-height:		$unit5
 $nav-height:			$unit5
-$header-height:			$unit5 // logo-bar + nav-height
+$header-height:			calc( $unit5 + $header-padding * 2 )
 $header-height-mobile:	$logo-bar-height // logo-bar (logo and cta stacked)
 $nav-bg:             	$fg
 $nav-color:				$bg
