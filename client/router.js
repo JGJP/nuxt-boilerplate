@@ -5,6 +5,7 @@ import top from "~/pages/index.vue"
 import components from "~/pages/components.vue"
 import images from "~/pages/images.vue"
 import text from "~/pages/text.vue"
+import colors from "~/pages/colors.vue"
 
 Vue.use(Router)
 
@@ -22,6 +23,7 @@ export function createRouter() {
 			{ path: "/components/", component: components },
 			{ path: "/images/", component: images },
 			{ path: "/text/", component: text },
+			{ path: "/colors/", component: colors },
 		]
 	})
 }

@@ -58,6 +58,10 @@
 					label: "text",
 					link: "/text/",
 				},
+				{
+					label: "colors",
+					link: "/colors/",
+				},
 			],
 		}),
 	}
