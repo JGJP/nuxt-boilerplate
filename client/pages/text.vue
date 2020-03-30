@@ -3,6 +3,7 @@
 	#text
 		section
 			.container.space-items
+				img.large(src="~/assets/images/sample01.jpg")
 				h1 text
 				p here is some text content, wow, glorious
 				p here is some text content, wow, glorious
