@@ -88,6 +88,8 @@
 
 		nav
 			background: $nav-bg
+			@media ($not-phone)
+				padding: $header-padding 0
 
 			.container
 				display: flex
