@@ -39,16 +39,6 @@
 				{
 					label: "components",
 					link: "/components/",
-					submenu: [
-						{
-							label: "child",
-							link: "/child/",
-						},
-						{
-							label: "child",
-							link: "/child/",
-						},
-					]
 				},
 				{
 					label: "images",
@@ -63,8 +53,18 @@
 					link: "/colors/",
 				},
 				{
-					label: "shadows",
-					link: "/shadows/",
+					label: "boxes",
+					link: "#",
+					submenu: [
+						{
+							label: "shadows",
+							link: "/shadows/",
+						},
+						{
+							label: "rounding",
+							link: "/rounding/",
+						},
+					]
 				},
 			],
 		}),
