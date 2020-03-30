@@ -18,7 +18,7 @@
 #layout-default
 	main
 		> *
-			> *:first-child
+			> *:first-child:not(#hero)
 				@mixin super-big-vert-padding-top
 			> *:last-child
 				@mixin big-vert-padding-bottom
