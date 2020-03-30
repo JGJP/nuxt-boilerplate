@@ -227,6 +227,7 @@
 							a
 								padding: 0
 								font-size: 1em
+								align-items: center
 				.logo
 					display: none
 
