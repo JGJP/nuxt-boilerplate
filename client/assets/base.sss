@@ -18,6 +18,7 @@
 
 body
 	font-family: $font
+	font-weight: $font-weight
 	background: $body-bg
 	color: $color
 	@mixin font-range
@@ -28,6 +29,8 @@ body
 
 	.english
 		font-family: $font-english
+	.japanese
+		font-family: $font-japanese
 
 	.no-phone
 		@media ($phone)
@@ -217,13 +220,16 @@ body
 
 	h1, h2, h3, h4, h5, h6, p:not(.br),
 	.h1, .h2, .h3, .h4, .h5, .h6
+		font-family: $font-header
 		white-space: pre-line
 		margin-top: 0
 		margin-bottom: 0
 
 	strong
 		display: block
-	p
+	p,
+	ul.list,
+	ol.list
 		@mixin light-text
 		line-height: 1.5em
 		margin: 1em 0
@@ -467,8 +473,7 @@ table
 			td,
 			th
 				padding: $unit025 $unit1
-				font-weight: $font-weight-normal
-
+				font-weight: inherit
 	&.simple,
 	&.borders
 		tr
