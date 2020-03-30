@@ -249,14 +249,13 @@ body
 			line-height: $unit4
 
 	main
-		section:not(#title)
+		p,
+		ul.list,
+		ol.list
 			a:not(.button)
 				color: inherit
 				@mixin hover-opacity
 				@mixin highlight
-			ul
-				li
-					@mixin light-text
 
 	.smaller
 		font-size: 0.9em

@@ -194,8 +194,8 @@ $shadow-2: color( $black a(16%) )
 .box-shadow-big
 	@mixin box-shadow-big
 
-@define-mixin highlight $color: $highlight-color
-	background: linear-gradient(0deg, $color $border-width-big, transparent $border-width-big) 
+@define-mixin highlight $color: $highlight-color, $width: $unit-6
+	background: linear-gradient(0deg, $color $width, transparent $width) 
 
 @define-mixin space-equal-padding $padding
 	> *
