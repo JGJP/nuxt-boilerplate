@@ -8,6 +8,7 @@ import text from "~/pages/text.vue"
 import colors from "~/pages/colors.vue"
 import shadows from "~/pages/shadows.vue"
 import rounding from "~/pages/rounding.vue"
+import form from "~/pages/form.vue"
 
 Vue.use(Router)
 
@@ -28,6 +29,7 @@ export function createRouter() {
 			{ path: "/colors/", component: colors },
 			{ path: "/shadows/", component: shadows },
 			{ path: "/rounding/", component: rounding },
+			{ path: "/form/", component: form },
 		]
 	})
 }
