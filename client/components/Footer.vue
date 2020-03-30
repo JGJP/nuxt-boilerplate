@@ -5,7 +5,7 @@
 		section#prefooter.small-padding
 
 			.container.center.space-items-horz
-				p.email(data-website="moc.liame" data-user="resu")
+				p.email.smaller(data-website="moc.liame" data-user="resu")
 
 		section#footer.inverted
 
@@ -14,7 +14,7 @@
 		section#socket.small-padding.inverted
 
 			.container.center
-				span copyright etc
+				span.smaller copyright etc
 		
 </template>
 
