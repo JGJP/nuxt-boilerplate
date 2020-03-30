@@ -50,6 +50,33 @@ $unit01:				$unit-7
 $unit025:				$unit-5
 $unit05:				$unit-2
 
+$emunit-7:				0.134em
+$emunit-6:				0.178em
+$emunit-5:				0.238em
+$emunit-4:				0.317em
+$emunit-3:				0.422em
+$emunit-2:				0.563em
+$emunit-1:				0.75em
+$emunit1:				1em
+$emunit2:				1.333em
+$emunit3:				1.777em
+$emunit4:				2.369em
+$emunit5:				3.157em
+$emunit6:				4.209em
+$emunit7:				5.61em
+$emunit8:				7.478em
+$emunit9:				9.969em
+$emunit10:				13.288em
+$emunit11:				17.713em
+$emunit12:				23.612em
+$emunit13:				31.476em
+$emunit14:				41.956em
+$emunit15:				55.927em
+
+$emunit01:				$emunit-7
+$emunit025:				$emunit-5
+$emunit05:				$emunit-2
+
 $border-width:       	2px
 $border-width-big:      $unit05
 $border-radius:       	$unit025
@@ -186,7 +213,7 @@ $shadow-2: color( $black a(16%) )
 @define-mixin box-shadow-down
 	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
 
-@define-mixin font-range $min: 0.8em, $max: 1em, $range: 12em 54em
+@define-mixin font-range $min: $unit-1, $max: $unit1, $range: 12em 54em
 	font-size: responsive $min $max
 	font-range: $range
 
