@@ -39,33 +39,44 @@ export default {
 		],
 		// hardSource: true,
 		babel: {
-			presets: function ({isServer}, [preset, options]) {
-				const r = [
-					[
-						preset, {
-							buildTarget: isServer ? 'server' : 'client',
-							...options
-						}
-					]
+			// presets({isServer}, [preset, options]) {
+			// 	const r = [
+			// 		[
+			// 			preset, {
+			// 				buildTarget: isServer ? 'server' : 'client',
+			// 				...options
+			// 			}
+			// 		]
+			// 	]
+			// 	r[0][1].targets = {
+			// 		"browsers": ["> 1%", "last 2 versions"],
+			// 		ie: 11
+			// 	}
+			// 	r[0][1].polyfills = [
+			// 		// 'es6.array.iterator',
+			// 		// 'es6.promise',
+			// 		// 'es6.object.assign',
+			// 		// 'es7.promise.finally',
+			// 		// 'es6.symbol',
+			// 		// 'es6.array.find',
+			// 		'es6.array.from',
+			// 	]
+			// 	return r
+			// },
+			// plugins: [
+			// 	'@babel/plugin-transform-runtime'
+			// ],
+			presets() {
+				return [
+				  [
+					'@nuxt/babel-preset-app',
+					{
+					  corejs: { version: 3 },
+					  bugfixes: true
+					}
+				  ]
 				]
-				r[0][1].targets = {
-					"browsers": ["> 1%", "last 2 versions"],
-					ie: 11
-				}
-				r[0][1].polyfills = [
-					// 'es6.array.iterator',
-					// 'es6.promise',
-					// 'es6.object.assign',
-					// 'es7.promise.finally',
-					// 'es6.symbol',
-					// 'es6.array.find',
-					'es6.array.from',
-				]
-				return r
-			},
-			plugins: [
-				'@babel/plugin-transform-runtime'
-			],
+			  }			
 		},
 		extractCSS: true,
 		extend (config, { isDev, isClient, isServer }) {
@@ -159,9 +170,9 @@ export default {
 			})		
 		},
 	},
-	babel: {
-		presets: ["env"],
-	},
+	// babel: {
+	// 	presets: ["env"],
+	// },
 	vendor: ["babel-polyfill", "image-webpack-loader"],
 	modules: [
 		// "@nuxtjs/axios",
