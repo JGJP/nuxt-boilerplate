@@ -71,7 +71,7 @@ export default {
 				  [
 					'@nuxt/babel-preset-app',
 					{
-					  corejs: { version: 3 },
+					  corejs: { version: '3.12.1' },
 					  bugfixes: true
 					}
 				  ]
@@ -128,7 +128,7 @@ export default {
 				options: {
 					sourceMap: true,
 					importLoaders: 2,
-					onlyLocals: false
+					// onlyLocals: false
 				}
 			}
 			const postcss = {

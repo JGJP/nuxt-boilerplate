@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "5.13.1",
-    "nuxt": "2.14.12",
+    "nuxt": "2.15.5",
     "vue-scroll-reveal": "^1.0.6",
     "vue-scrollto": "^2.20.0",
     "vue-textarea-autosize": "^1.1.1",
