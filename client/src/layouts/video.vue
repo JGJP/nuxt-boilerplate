@@ -11,19 +11,19 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue'
-	import Header from '../components/Header.vue';
-	import Footer from '../components/Footer.vue';
-	import Video from '../components/Video.vue';
+import Vue from "vue"
+import Header from "../components/Header.vue"
+import Footer from "../components/Footer.vue"
+import Video from "../components/Video.vue"
 
-	export default Vue.extend({
-		components: {
-			Header,
-			Footer,
-			Video,
-			},
-		}
-	)
+export default Vue.extend({
+	components: {
+		Header,
+		Footer,
+		Video,
+	},
+},
+)
 
 </script>
 
@@ -38,4 +38,3 @@
 				@mixin big-vert-padding-bottom
 
 </style>
-

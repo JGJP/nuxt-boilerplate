@@ -29,31 +29,27 @@
 
 </template>
 
-
-
 <script lang="ts">
-	
-	import Footer from '../components/Footer.vue'
-	import Vue from "vue"
 
-	export default Vue.extend({
-		head(){
-			return {
-				title: 'colors',
-				meta: [
-					{ hid: 'description', name: 'description', content: 'description text' }
-				],
-			}
-		},
-		scrollToTop: true,
-		components: {
-			Footer,
-		},
-	})
+import Vue from "vue"
+import Footer from "../components/Footer.vue"
+
+export default Vue.extend({
+	components: {
+		Footer,
+	},
+	scrollToTop: true,
+	head() {
+		return {
+			title: "colors",
+			meta: [
+				{ hid: "description", name: "description", content: "description text" },
+			],
+		}
+	},
+})
 
 </script>
-
-
 
 <style lang="sss" scoped>
 

@@ -1,12 +1,12 @@
 <template lang="pug">
-	
+
 	#video.inverted.center
 		a.bg(href="#" @click="close")
 		a.close(href="#" @click="close")
 			img(src="~/assets/images/close.png")
 		.youtube-el
 			.inner
-				youtube(:video-id="'vmV1G1Wn0uo'" 
+				youtube(:video-id="'vmV1G1Wn0uo'"
 					player-width="100%"
 					player-height="100%"
 					v-on:ready="ready"
@@ -14,28 +14,27 @@
 
 </template>
 
-
 <script lang="ts">
-	import Vue from "vue"
-	
-	export default Vue.extend({
-		data: () => ({
-			player: {}
-		}),
-		methods: {
-			ready(player: Object){
-				this.player = player
-			},
-			// close(){
-			// 	this.player.stopVideo()
-			// },
-		}
-	})
+import Vue from "vue"
+
+export default Vue.extend({
+	data: () => ({
+		player: {},
+	}),
+	methods: {
+		ready(player: Object) {
+			this.player = player
+		},
+		// close(){
+		// 	this.player.stopVideo()
+		// },
+	},
+})
 
 </script>
 
 <style lang="sss">
-	
+
 	@import "../assets/vars.sss"
 
 	#video

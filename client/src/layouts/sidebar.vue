@@ -14,22 +14,21 @@
 </template>
 
 <script lang="ts">
-	import Vue from "vue"
-	import Header from "../components/Header.vue";
-	import Footer from "../components/Footer.vue";
-	import Sidebar from "../components/Sidebar.vue";
+import Vue from "vue"
+import Header from "../components/Header.vue"
+import Footer from "../components/Footer.vue"
+import Sidebar from "../components/Sidebar.vue"
 
-	export default Vue.extend({
-		components: {
-			Header,
-			Footer,
-			Sidebar,
-			},
-		}
-	)
+export default Vue.extend({
+	components: {
+		Header,
+		Footer,
+		Sidebar,
+	},
+},
+)
 
 </script>
-
 
 <style lang="sss" scoped>
 
@@ -65,7 +64,7 @@ $sidebar-div: 4
 						top: 0
 						right: 0
 						width: calc( $width-full / $sidebar-div )
-						padding-left: $unit1 
+						padding-left: $unit1
 					.inner
 						background: $bg
 						@mixin box-shadow

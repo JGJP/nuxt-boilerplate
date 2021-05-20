@@ -3,9 +3,9 @@
 	header
 
 		.mobile
-			
+
 			.logo(@click="open = false")
-				nuxt-link(to="/") 
+				nuxt-link(to="/")
 					img(src="~/assets/images/logo.png" alt="logo" loading="lazy")
 
 			.menu-button(@click="open = !open")
@@ -32,49 +32,49 @@
 
 <script lang="ts">
 
-	import Vue from "vue"
-	
-	export default Vue.extend({
-		data: () => ({
-			open: false,
-			menu: [
-				{
-					label: "components",
-					link: "/components/",
-				},
-				{
-					label: "images",
-					link: "/images/",
-				},
-				{
-					label: "text",
-					link: "/text/",
-				},
-				{
-					label: "colors",
-					link: "/colors/",
-				},
-				{
-					label: "boxes",
-					link: "#",
-					submenu: [
-						{
-							label: "shadows",
-							link: "/shadows/",
-						},
-						{
-							label: "rounding",
-							link: "/rounding/",
-						},
-					]
-				},
-				{
-					label: "form",
-					link: "/form/",
-				},
-			],
-		}),
-	})
+import Vue from "vue"
+
+export default Vue.extend({
+	data: () => ({
+		open: false,
+		menu: [
+			{
+				label: "components",
+				link: "/components/",
+			},
+			{
+				label: "images",
+				link: "/images/",
+			},
+			{
+				label: "text",
+				link: "/text/",
+			},
+			{
+				label: "colors",
+				link: "/colors/",
+			},
+			{
+				label: "boxes",
+				link: "#",
+				submenu: [
+					{
+						label: "shadows",
+						link: "/shadows/",
+					},
+					{
+						label: "rounding",
+						link: "/rounding/",
+					},
+				],
+			},
+			{
+				label: "form",
+				link: "/form/",
+			},
+		],
+	}),
+})
 
 </script>
 

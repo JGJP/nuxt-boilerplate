@@ -9,7 +9,7 @@ export default {
 		mode: "out-in",
 	},
 	css: [
-		"@/assets/base.sss", 
+		"@/assets/base.sss",
 		"@/assets/transitions.sss",
 	],
 	generate: {
@@ -31,7 +31,7 @@ export default {
 	],
 	buildModules: [
 		"@nuxtjs/router",
-		'@nuxt/typescript-build'
+		"@nuxt/typescript-build",
 	],
 	build: {
 		transpile: [
@@ -69,25 +69,27 @@ export default {
 			// ],
 			presets() {
 				return [
-				  [
-					'@nuxt/babel-preset-app',
-					{
-					  corejs: { version: '3.12.1' },
-					  bugfixes: true
-					}
-				  ]
+					[
+						"@nuxt/babel-preset-app",
+						{
+							corejs: { version: "3.12.1" },
+							bugfixes: true,
+						},
+					],
 				]
-			  }			
+			},
 		},
 		extractCSS: true,
-		extend (config, { isDev, isClient, isServer }) {
+		extend(config, { isDev }) {
 			if (!isDev) {
 				const ruleString = "/\\.(png|jpe?g|gif|svg|webp)$/i"
-				if(!config.module.rules
+				if (!config.module.rules
 					.filter(rule => rule.test.toString() === ruleString)
-					.length)
+					.length) {
 					throw "failed to find webpack images rule"
-				config.module.rules.forEach((rule) => {
+				}
+
+				config.module.rules.forEach(rule => {
 					if (rule.test.toString() === ruleString) {
 						rule.use = [
 							{
@@ -130,14 +132,14 @@ export default {
 					sourceMap: true,
 					importLoaders: 2,
 					// onlyLocals: false
-				}
+				},
 			}
 			const postcss = {
 				loader: "postcss-loader",
 				options: {
 					parser: "sugarss",
 					sourceMap: true,
-					plugins: loader => [
+					plugins: () => [
 						require("postcss-easy-import")({ extensions: [".sss"] }),
 						require("postcss-mixins"),
 						require("precss"),
@@ -151,8 +153,8 @@ export default {
 						require("postcss-responsive-type"),
 						require("css-mqpacker"),
 					],
-					order: "presetEnvAndCssnanoLast"
-				}
+					order: "presetEnvAndCssnanoLast",
+				},
 			}
 			const cssModule = {
 				...css,
@@ -168,7 +170,7 @@ export default {
 					{ resourceQuery: /module/, use: [vueStyle, cssModule, postcss] },
 					{ use: [vueStyle, css, postcss] },
 				],
-			})		
+			})
 		},
 	},
 	// babel: {
@@ -192,7 +194,7 @@ export default {
 			{ charset: "utf-8" },
 			{ name: "robots", content: "noindex, nofollow, noimageindex, noarchive" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" },
-			{ hid: "description", name: "description", content: "description content", },
+			{ hid: "description", name: "description", content: "description content" },
 		],
 		link: [
 			{ rel: "icon", type: "image/x-icon", href: "/favicon.png" },

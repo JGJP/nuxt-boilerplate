@@ -34,51 +34,50 @@
 </template>
 
 <script lang="ts">
-	import Vue from "vue"
+import Vue from "vue"
 
-	export default Vue.extend({
-		data: () => ({
-			open: false,
-			menu: [
-				{
-					label: "components",
-					link: "/components/",
-					submenu: [
-						{
-							label: "child",
-							link: "/child/",
-						},
-						{
-							label: "child",
-							link: "/child/",
-						},
-					]
-				},
-				{
-					label: "buttons",
-					link: "/buttons/",
-				},
-				{
-					label: "buttons",
-					link: "/buttons/",
-				},
-				{
-					label: "buttons",
-					link: "/buttons/",
-				},
-				{
-					label: "colors",
-					link: "/colors/",
-				},
-			],
-		}),
-		methods: {
-			bgclick() {
-				if(this.open)
-					this.open = false
-			}
-		}
-	})
+export default Vue.extend({
+	data: () => ({
+		open: false,
+		menu: [
+			{
+				label: "components",
+				link: "/components/",
+				submenu: [
+					{
+						label: "child",
+						link: "/child/",
+					},
+					{
+						label: "child",
+						link: "/child/",
+					},
+				],
+			},
+			{
+				label: "buttons",
+				link: "/buttons/",
+			},
+			{
+				label: "buttons",
+				link: "/buttons/",
+			},
+			{
+				label: "buttons",
+				link: "/buttons/",
+			},
+			{
+				label: "colors",
+				link: "/colors/",
+			},
+		],
+	}),
+	methods: {
+		bgclick() {
+			if (this.open) { this.open = false }
+		},
+	},
+})
 
 </script>
 
@@ -148,7 +147,6 @@
 							position: absolute
 							left: 0
 							bottom: 0.2em
-						
 
 				.ctas
 					@media ($nav-breakpoint)
@@ -233,7 +231,6 @@
 						ul
 							right: 0
 							left: auto
-
 
 		nav
 			@media ($nav-breakpoint)

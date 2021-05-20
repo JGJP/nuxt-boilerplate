@@ -1,5 +1,5 @@
 <template lang="pug">
-	
+
 	footer
 
 		section#prefooter.small-padding
@@ -25,7 +25,7 @@
 							li
 								nuxt-link(to="/colors/") colors
 							li
-								nuxt-link(to="/shadows/") shadows 
+								nuxt-link(to="/shadows/") shadows
 							li
 								nuxt-link(to="/form/") form
 					.quarter.space-items
@@ -56,20 +56,18 @@
 
 			.container.center
 				span.smaller copyright etc
-		
+
 </template>
 
 <script lang="ts">
-	import Vue from "vue"
+import Vue from "vue"
 
-	export default Vue.extend({})
+export default Vue.extend({})
 
 </script>
 
-
-
 <style lang="sss">
-	
+
 	@import "../assets/vars.sss"
 
 	footer

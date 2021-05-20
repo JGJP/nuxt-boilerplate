@@ -1,14 +1,12 @@
 <template lang="pug">
-	
+
 	section#hero.no-padding
 		.container.superwide
 
 </template>
 
-
-
 <style lang="sss">
-	
+
 	@import "../assets/vars.sss"
 
 	#hero

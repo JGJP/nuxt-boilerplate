@@ -10,17 +10,17 @@
 
 <script lang="ts">
 
-	import Vue from "vue"
+import Vue from "vue"
 
-	export default Vue.extend({
-		props: ["error"],
-		layout: "default",
-		head(){
-			return {
-				title: "error",
-			}
-		},
-	})
+export default Vue.extend({
+	layout: "default",
+	props: ["error"],
+	head() {
+		return {
+			title: "error",
+		}
+	},
+})
 
 </script>
 
@@ -34,7 +34,3 @@
 			min-height: 50vh
 
 </style>
-
-
-
-

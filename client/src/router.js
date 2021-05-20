@@ -30,6 +30,6 @@ export function createRouter() {
 			{ path: "/shadows/", component: shadows },
 			{ path: "/rounding/", component: rounding },
 			{ path: "/form/", component: form },
-		]
+		],
 	})
 }

@@ -59,33 +59,28 @@
 						td cell
 						td cell
 
-
 </template>
 
-
-
 <script lang="ts">
-	import Vue from "vue"
-	import Footer from '../components/Footer.vue'
+import Vue from "vue"
+import Footer from "../components/Footer.vue"
 
-	export default Vue.extend({
-		head(){
-			return {
-				title: 'components',
-				meta: [
-					{ hid: 'description', name: 'description', content: 'description text' }
-				],
-			}
-		},
-		scrollToTop: true,
-		components: {
-			Footer,
-		},
-	})
+export default Vue.extend({
+	components: {
+		Footer,
+	},
+	scrollToTop: true,
+	head() {
+		return {
+			title: "components",
+			meta: [
+				{ hid: "description", name: "description", content: "description text" },
+			],
+		}
+	},
+})
 
 </script>
-
-
 
 <style lang="sss" scoped>
 

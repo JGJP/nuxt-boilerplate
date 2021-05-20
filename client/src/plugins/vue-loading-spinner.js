@@ -1,4 +1,4 @@
-import Vue from 'vue';
-import {Spinner} from 'vue-loading-spinner';
+import Vue from "vue"
+import { Spinner } from "vue-loading-spinner"
 
-Vue.component('spinner', Spinner);
+Vue.component("Spinner", Spinner)
