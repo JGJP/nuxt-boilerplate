@@ -1,0 +1,12 @@
+**/.DS_Store
+**/.nuxt
+**/dist
+**/node_modules
+
+.idea
+.vscode
+coverage
+
+# cypress
+cypress/screenshots
+cypress/videos

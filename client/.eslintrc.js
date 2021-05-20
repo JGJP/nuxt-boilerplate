@@ -1,0 +1,26 @@
+module.exports = {
+	root: true,
+	env: {
+		browser: true,
+		node: true,
+	},
+	extends: ["@nuxtjs/eslint-config-typescript", "plugin:nuxt/recommended"],
+	plugins: ["vue"],
+	rules: {
+		"arrow-parens": [2, "as-needed"],
+		"no-tabs": 0,
+		indent: [2, "tab", { SwitchCase: 1 }],
+		quotes: [2, "double"],
+		"comma-dangle": [2, "always-multiline"],
+		"space-before-function-paren": [2, { anonymous: "always", named: "never" }],
+		"no-unused-vars": [1],
+		"@typescript-eslint/no-unused-vars": [1],
+		"import/no-mutable-exports": [0],
+		"vue/order-in-components": [2],
+		"require-await": [1],
+		"brace-style": [2, "stroustrup", { allowSingleLine: true }],
+		"operator-linebreak": [2, "before"],
+		"import/no-webpack-loader-syntax": [0],
+		camelcase: [0, { properties: "never" }],
+	},
+}
