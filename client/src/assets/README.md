@@ -20,9 +20,10 @@ git remote add werks-ui --fetch https://git.werks.co.jp/_werks/ui.git
 ```
 * `git remote add <alias name> --fetch <git clone link>`
 
-**Note: Before running the next command, be sure to do the following**
+## **Note: Before running the next command, be sure to do the following:**
 - You must not have any new changes on the working branch. Either commit the changes or stash them away before running the next command.
 - The folder you're going to be adding using `git subtree` must not exist already.
+- (location-of-assets-folder) takes the root in mind. For example, writing `--prefix="client/assets" works.
 
 2. Next write in the `git subtree` command
 ```
