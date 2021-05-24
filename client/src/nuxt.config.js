@@ -67,17 +67,20 @@ export default {
 			// plugins: [
 			// 	'@babel/plugin-transform-runtime'
 			// ],
-			presets() {
-				return [
-					[
-						"@nuxt/babel-preset-app",
-						{
-							corejs: { version: "3.12.1" },
-							bugfixes: true,
-						},
-					],
-				]
-			},
+			// presets() {
+			// 	return [
+			// 		[
+			// 			"@nuxt/babel-preset-app",
+			// 			{
+			// 				corejs: { version: "3.12.1" },
+			// 				bugfixes: true,
+			// 			},
+			// 		],
+			// 		"@babel/preset-typescript"
+			// 	]
+			// },
+			cacheDirectory: false,
+			configFile: true
 		},
 		extractCSS: true,
 		extend(config, { isDev }) {
