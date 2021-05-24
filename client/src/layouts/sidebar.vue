@@ -15,9 +15,9 @@
 
 <script lang="ts">
 import Vue from "vue"
-import Header from "../components/Header.vue"
-import Footer from "../components/Footer.vue"
-import Sidebar from "../components/Sidebar.vue"
+import Header from "~/components/Header.vue"
+import Footer from "~/components/Footer.vue"
+import Sidebar from "~/components/Sidebar.vue"
 
 export default Vue.extend({
 	components: {
