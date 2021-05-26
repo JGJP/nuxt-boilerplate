@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "nuxt src",
     "generate": "nuxt generate src",
-    "build": "nuxt generate src",
+    "build": "nuxt build src",
     "lint": "eslint --ext .ts,.js,.vue .",
     "lintfix": "eslint --fix --ext .ts,.js,.vue .",
-    "test": "mocha test/test.js --timeout 60000",
-    "rebase": "node test/rebase.js"
+    "test": "mocha cypress/test.js --timeout 60000",
+    "rebase": "node cypress/rebase.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "5.13.1",

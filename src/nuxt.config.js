@@ -85,10 +85,9 @@ export default {
 		extractCSS: true,
 		extend(config, { isDev }) {
 			if (!isDev) {
-				const ruleString = "/\\.(png|jpe?g|gif|svg|webp)$/i"
-				if (!config.module.rules
-					.filter(rule => rule.test.toString() === ruleString)
-					.length) {
+				const ruleString = "/\\.(png|jpe?g|gif|svg|webp|avif)$/i"
+
+				if (!config.module.rules.filter(rule => rule.test.toString() === ruleString).length) {
 					throw "failed to find webpack images rule"
 				}
 

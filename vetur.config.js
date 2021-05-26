@@ -14,10 +14,10 @@ module.exports = {
     projects: [
       // './client', // shorthand for only root.
       {
-        root: './client',
+        root: './src',
         // Below configs are relative to root property.
-        package: './package.json',
-        tsconfig: './src/tsconfig.json',
+        package: '../package.json',
+        tsconfig: './tsconfig.json',
       }
     ]
   }
