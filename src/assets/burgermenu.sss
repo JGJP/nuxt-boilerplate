@@ -1,0 +1,55 @@
+@import "vars.sss"
+
+$barwidth: 24px
+$barheight: 2px
+$barspacing: 8px
+$color: $white
+
+.menu-button
+	$padding: $unit05
+	padding: $padding
+	width: calc($barwidth + $padding*2)
+	height: calc($barheight + $barspacing*2 + $padding*2)
+	cursor: pointer
+
+	.bars,
+	.bars:after,
+	.bars:before
+		width: $barwidth
+		height: $barheight
+
+	.bars
+		position: relative
+		transform: translateY($barspacing)
+		background: $color
+		transition: all 0ms 100ms
+
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			background: $color
+		&:before
+			bottom: $barspacing
+			transition: bottom 300ms 100ms $ease-out, 
+				transform 100ms linear
+		&:after
+			top: $barspacing
+			transition: top 300ms 100ms $ease-out, 
+				transform 100ms linear
+
+		&.open
+			background: rgba(255, 255, 255, 0)
+
+			&:after
+				top: 0
+				transform: rotate(45deg)
+				transition: top 100ms linear, 
+					transform 300ms 100ms $ease-out
+
+			&:before
+				bottom: 0
+				transform: rotate(-45deg)
+				transition: bottom 100ms linear, 
+					transform 300ms 100ms $ease-out
