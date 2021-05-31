@@ -8209,6 +8209,13 @@ postcss-custom-selectors@^5.1.2:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
+postcss-define-function@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/postcss-define-function/-/postcss-define-function-0.1.2.tgz#8e2f0e44842f3a7c10322bb3a3ff2c6956b6bad1"
+  integrity sha512-M9wOAE3myqyhN/9nX0gYzjhp5t8t96V6qCtFSy5JnjNtTP2Fqmjyh+2VfmnPITrj1CNe0Hlf9QEX91LU0tU8fA==
+  dependencies:
+    postcss "^5.2.6"
+
 postcss-dir-pseudo-class@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/postcss-dir-pseudo-class/-/postcss-dir-pseudo-class-3.0.0.tgz#31a18af3b9b1b33be635599b998a9829896c3fed"
@@ -9019,7 +9026,7 @@ postcss@7.x.x, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17,
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^5.0.21, postcss@^5.0.5:
+postcss@^5.0.21, postcss@^5.0.5, postcss@^5.2.6:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   integrity sha512-zrUjRRe1bpXKsX1qAJNJjqZViErVuyEkMTRrwu4ud4sbTtIBRmtaYDrHmcGgmrbsW3MHfmtIf+vJumgQn+PrXg==
