@@ -191,8 +191,12 @@ export default {
 	head: {
 		htmlAttrs: {
 			lang: "en",
+			class: "werks-ui-html"
 		},
-		titleTemplate: "%s | NUXT",
+		bodyAttrs: {
+			class: "werks-ui"
+		},
+		titleTemplate: "%s | WERKS",
 		meta: [
 			{ charset: "utf-8" },
 			{ name: "robots", content: "noindex, nofollow, noimageindex, noarchive" },

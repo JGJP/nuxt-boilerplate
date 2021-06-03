@@ -1,36 +1,36 @@
 @import "./vars.sss"
 @import "./proprietary.sss"
 
-.layout
-	overflow: hidden
-	position: relative
-	main
-		background: $main-bg
-		min-height: 100vh - $header-height - $socket-height
-		max-height: 100vh - $header-height
-		overflow-x: auto
-		overflow-y: overlay
-		margin-top: $header-height
-		@media ($nav-breakpoint)
-			margin-top: $header-height-mobile
-		> *:first-child
-			@media ($not-phone)
-				min-height: 35em
-
 .no-mobile
 	@media ($phone)
 		display: none
 
-html
+.werks-ui-html
 	font-size: $unit1
 	@mixin font-range
 
-body
+.werks-ui
 	font-family: $font
 	font-weight: $font-weight
 	background: $socket-bg
 	color: $color
 	margin: 0
+
+	.layout
+		overflow: hidden
+		position: relative
+		main
+			background: $main-bg
+			min-height: 100vh - $header-height - $socket-height
+			max-height: 100vh - $header-height
+			overflow-x: auto
+			overflow-y: overlay
+			margin-top: $header-height
+			@media ($nav-breakpoint)
+				margin-top: $header-height-mobile
+			> *:first-child
+				@media ($not-phone)
+					min-height: 35em
 
 	.english
 		font-family: $font-english
@@ -162,21 +162,6 @@ body
 		> .space-after-big
 			margin-bottom: @callFn scaleSpace($this-space, 4)
 
-	/* .space-items > *:not(:last-child)
-		margin-bottom: $unit1
-		&.no-margin
-			margin-bottom: 0
-
-	.space-items-small > *:not(:last-child)
-		margin-bottom: $unit05
-		&.no-margin
-			margin-bottom: 0
-
-	.space-items-big > *:not(:last-child)
-		margin-bottom: $unit2
-		&.no-margin
-			margin-bottom: 0 */
-
 	.space-items
 		@mixin space $space
 	.space-items-small
@@ -185,9 +170,6 @@ body
 		@mixin space $space-medium
 	.space-items-big
 		@mixin space $space-big
-
-	/* .space-items-horz > *:not(:last-child)
-		margin-right: $unit1 */
 
 	@define-mixin spaceHorz $this-space
 		> *:not(:last-child)
@@ -236,105 +218,108 @@ body
 				display: none
 		&.mobile-only
 
-// grids
+	// grids
 
-.grid,
-.grid-desktop-only,
-.grid-column
-	display: flex
-	justify-content: center
-	align-items: center
-	&.start
-		align-items: flex-start
-	> .grow
-		flex-grow: 1
+	.grid,
+	.grid-desktop-only,
+	.grid-column
+		display: flex
+		justify-content: center
+		align-items: center
+		&.start
+			align-items: flex-start
+		> .grow
+			flex-grow: 1
 
-.grid,
-.grid-desktop-only
-	&:not(.mobile)
-		@media ($not-phone)
+	.grid,
+	.grid-desktop-only
+		&:not(.mobile)
+			@media ($not-phone)
+				@mixin space-equal-padding-horz $unit1
+		&.mobile
 			@mixin space-equal-padding-horz $unit1
-	&.mobile
-		@mixin space-equal-padding-horz $unit1
-	.half
-		width: 50%
-	.two-thirds
-		width: 66.66%
-	.third
-		width: 33.33%
-	.quarter
-		width: 25%
-	.three-quarters
-		width: 75%
-	.three-fifths
-		width: 60%
-	.two-fifths
-		width: 40%
-.grid
-	@media ($phone)
-		&:not(.mobile):not(.column)
-			display: block
-			.half,
-			.two-thirds,
-			.third,
-			.quarter
-				width: 100%
+		.half
+			width: 50%
+		.two-thirds
+			width: 66.66%
+		.third
+			width: 33.33%
+		.quarter
+			width: 25%
+		.three-quarters
+			width: 75%
+		.three-fifths
+			width: 60%
+		.two-fifths
+			width: 40%
+	.grid
+		@media ($phone)
+			&:not(.mobile):not(.column)
+				display: block
+				.half,
+				.two-thirds,
+				.third,
+				.quarter
+					width: 100%
+				@mixin space-equal-padding $unit1
+	.grid-desktop-only
+		@media ($tablet)
+			&:not(.mobile):not(.column)
+				display: block
+				.half,
+				.two-thirds,
+				.third,
+				.quarter
+					width: 100%
+				@mixin space-equal-padding $unit1
+
+	.grid-column
+		flex-direction: column
+		@media ($not-phone)
 			@mixin space-equal-padding $unit1
-.grid-desktop-only
-	@media ($tablet)
-		&:not(.mobile):not(.column)
-			display: block
-			.half,
-			.two-thirds,
-			.third,
-			.quarter
-				width: 100%
-			@mixin space-equal-padding $unit1
+		.half
+			height: 50%
+		.two-thirds
+			height: 66.66%
+		.third
+			height: 33.33%
+		.quarter
+			height: 25%
+		.three-quarters
+			height: 75%
+		.three-fifths
+			height: 60%
+		.two-fifths
+			height: 40%
 
-.grid-column
-	flex-direction: column
-	@media ($not-phone)
-		@mixin space-equal-padding $unit1
-	.half
-		height: 50%
-	.two-thirds
-		height: 66.66%
-	.third
-		height: 33.33%
-	.quarter
-		height: 25%
-	.three-quarters
-		height: 75%
-	.three-fifths
-		height: 60%
-	.two-fifths
-		height: 40%
+	.center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table):not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6)
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+	.center-text
+		text-align: center
+	.right:not(.tooltip)
+		display: flex
+		flex-direction: row-reverse
+	.right-text
+		text-align: right
 
-.center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table):not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6)
-	display: flex
-	flex-direction: column
-	justify-content: space-around
-	align-items: center
-.center-text
-	text-align: center
-.right:not(.tooltip)
-	display: flex
-	flex-direction: row-reverse
-.right-text
-	text-align: right
+	// z-indexes
 
-// z-indexes
-
-body
 	.container
 		z-index: 10
 	section
 		z-index: 10
 	header
 		z-index: 20
+		z-index: $z-index-header
+	nav,
+	.tooltip,
+	.dropdown-content
+		z-index: $z-index-nav
 
-// elements
-body
+	// elements
 	.panel
 		background: $bg
 		padding: $panel-padding
@@ -376,10 +361,7 @@ body
 		margin: 0 auto
 		max-width: 100%
 
-// type
-
-body
-
+	// type
 	h1, h2, h3, h4, h5, h6, p:not(.br),
 	.h1, .h2, .h3, .h4, .h5, .h6
 		white-space: pre-line
@@ -500,10 +482,7 @@ body
 	.nowrap
 		white-space: nowrap
 
-
-// resets and compatibility
-
-body
+	// resets and compatibility
 
 	overflow-y: scroll
 	margin: 0
@@ -538,345 +517,345 @@ body
 	input
 		margin: 0
 
-// buttons
-button:not(.nostyle),
-.button:not(.nostyle)
-	cursor: pointer
-	display: inline-block
-	font-family: inherit
-	padding: $unit-1 $unit6
-	border: none
-	text-align: center
-	&.full
-		width: 100%
-		text-align: center
-	&.wide
-		width: $unit18
-		text.align: center
-	&.inverted
-		background: $bg
-		color: $fg
-	&.concise
-		background: none
-		color: $color
-	&.pill
-		padding: $unit-5 $unit1
-		border-radius: $unit10
-		background: none
-		color: darken($bg--3, 15%)
-		border: 1px solid $bg--3		
-	&.big
-		padding: $unit1
-	&.inline
-		padding: $unit025 $unit05
-		margin-left: $unit025
-		margin-right: $unit025
-	&:not(.ghost)
-		@mixin gradient-bg $fg
-	&.ghost
-		padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
-		&.big
-			padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
-		&.inline
-			padding: calc($unit025 - $border-width) calc($unit05 - $border-width)
-		border: $border-width solid $fg
-		border-offset: -$border-width
-	font-size: inherit
-	@mixin hover-scale
-	@mixin hover-opacity
-	@mixin rounded
-	&:not(.ghost):not(.plain)
-		color: $bg
-
-	&.secondary
-		&:not(.ghost)
-			@mixin gradient-bg $fg2
-		&.ghost
-			color: $fg2
-			border-color: $fg2
-
-	&.cta
-		&:not(.ghost)
-			@mixin gradient-bg $fg-accent
-		&.ghost
-			border-color: $fg-accent
-			color: $fg-accent
-
-	&.plain
-		&:not(.ghost)
-			@mixin gradient-bg $bg
-			color: $color
-		&.ghost
-			border-color: $bg--2
-			color: $bg--2
-
-	&.ghost
-		background: none
-		color: $fg
-
-// forms
-form
-	input,
-	select,
-	textarea
-		font-family: inherit
-		font-size: inherit
-		font-weight: inherit
-form,
-.form
-	input,
-	select,
-	textarea
-		max-width: 100%
+	// buttons
+	button:not(.nostyle),
+	.button:not(.nostyle)
+		cursor: pointer
 		display: inline-block
-		background: $bg
-		padding: $unit-4 $unit2
-		border: $border-width solid $bg--1
+		font-family: inherit
+		padding: $unit-1 $unit6
+		border: none
+		text-align: center
+		&.full
+			width: 100%
+			text-align: center
+		&.wide
+			width: $unit18
+			text.align: center
+		&.inverted
+			background: $bg
+			color: $fg
+		&.concise
+			background: none
+			color: $color
+		&.pill
+			padding: $unit-5 $unit1
+			border-radius: $unit10
+			background: none
+			color: darken($bg--3, 15%)
+			border: 1px solid $bg--3		
+		&.big
+			padding: $unit1
+		&.inline
+			padding: $unit025 $unit05
+			margin-left: $unit025
+			margin-right: $unit025
+		&:not(.ghost)
+			@mixin gradient-bg $fg
+		&.ghost
+			padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
+			&.big
+				padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
+			&.inline
+				padding: calc($unit025 - $border-width) calc($unit05 - $border-width)
+			border: $border-width solid $fg
+			border-offset: -$border-width
+		font-size: inherit
+		@mixin hover-scale
+		@mixin hover-opacity
 		@mixin rounded
-		&.small
-			width: $unit8
-			padding: $unit-4 $unit-1
-		&:not(.no-focus-style):not([readonly])
+		&:not(.ghost):not(.plain)
+			color: $bg
+
+		&.secondary
+			&:not(.ghost)
+				@mixin gradient-bg $fg2
+			&.ghost
+				color: $fg2
+				border-color: $fg2
+
+		&.cta
+			&:not(.ghost)
+				@mixin gradient-bg $fg-accent
+			&.ghost
+				border-color: $fg-accent
+				color: $fg-accent
+
+		&.plain
+			&:not(.ghost)
+				@mixin gradient-bg $bg
+				color: $color
+			&.ghost
+				border-color: $bg--2
+				color: $bg--2
+
+		&.ghost
+			background: none
+			color: $fg
+
+	// forms
+	form
+		input,
+		select,
+		textarea
+			font-family: inherit
+			font-size: inherit
+			font-weight: inherit
+	form,
+	.form
+		input,
+		select,
+		textarea
+			max-width: 100%
+			display: inline-block
+			background: $bg
+			padding: $unit-4 $unit2
+			border: $border-width solid $bg--1
+			@mixin rounded
+			&.small
+				width: $unit8
+				padding: $unit-4 $unit-1
+			&:not(.no-focus-style):not([readonly])
+				&:focus,
+				&:active
+					border-color: $fg-accent
+					background: $fg-accent-transparent
+			&[disabled]
+				background: $bg--1
+			&[readonly]
+				cursor: default
 			&:focus,
 			&:active
 				border-color: $fg-accent
-				background: $fg-accent-transparent
-		&[disabled]
-			background: $bg--1
-		&[readonly]
-			cursor: default
-		&:focus,
-		&:active
-			border-color: $fg-accent
-			background: color($fg-accent a(10%))
-		&[type="radio"]
-			&:not(:first-child)
+				background: color($fg-accent a(10%))
+			&[type="radio"]
+				&:not(:first-child)
+					margin-left: $unit1
+				margin-right: $unit025
+			&[type="checkbox"]
+				margin-right: $unit05
+			&.full
+				width: 100%
+			&[type="number"]
+				padding-right: $unit-4
+			&::placeholder,
+			&.placeholder
+				color: $border-color
+				opacity: 1
+			&.error
+				border: 1px solid $red
+		.required,
+		.optional
+			&::after
+				font-size: 0.8em 
+				white-space: nowrap
+				vertical-align: middle
+				padding: 0.1em $unit05
 				margin-left: $unit1
-			margin-right: $unit025
-		&[type="checkbox"]
-			margin-right: $unit05
-		&.full
-			width: 100%
-		&[type="number"]
-			padding-right: $unit-4
-		&::placeholder,
-		&.placeholder
-			color: $border-color
-			opacity: 1
-		&.error
-			border: 1px solid $red
-	.required,
-	.optional
-		&::after
-			font-size: 0.8em 
-			white-space: nowrap
-			vertical-align: middle
-			padding: 0.1em $unit05
-			margin-left: $unit1
-			@mixin rounded
-	.required
-		&::after
-			content: "必須"
-			border: 1px solid color($red a(50%))
-			color: $red
-	.optional
-		&::after
-			content: "任意"
-			border: 1px solid color($fg2 a(50%))
-			color: $fg2
-form.lines
-	input,
-	textarea
-		border-width: 0 0 2px 0
-		border-radius: 0
-		border-color: $bg--2
-		&:active,
-		&:focus
-			background: none
-			border-color: $fg
+				@mixin rounded
+		.required
+			&::after
+				content: "必須"
+				border: 1px solid color($red a(50%))
+				color: $red
+		.optional
+			&::after
+				content: "任意"
+				border: 1px solid color($fg2 a(50%))
+				color: $fg2
+	form.lines
+		input,
+		textarea
+			border-width: 0 0 2px 0
+			border-radius: 0
+			border-color: $bg--2
+			&:active,
+			&:focus
+				background: none
+				border-color: $fg
 
 
-// inverted
-.inverted
-	$inverted-bg: $body-bg
-	$inverted-fg: $bg
+	// inverted
+	.inverted
+		$inverted-bg: $body-bg
+		$inverted-fg: $bg
 
-	color: $inverted-fg
-	&section
-		background: $inverted-bg
+		color: $inverted-fg
+		&section
+			background: $inverted-bg
 
-	button,
-	.button
-		@mixin gradient-bg $bg
-		color: $inverted-bg
-		border-color: $inverted-fg
-		&:not(.ghost):not(.plain)
+		button,
+		.button
+			@mixin gradient-bg $bg
 			color: $inverted-bg
-		&.ghost
-			background: none
-			color: $inverted-fg
+			border-color: $inverted-fg
+			&:not(.ghost):not(.plain)
+				color: $inverted-bg
+			&.ghost
+				background: none
+				color: $inverted-fg
 
-// tables
-$table-border: 1px solid $bg--2
-table
-	&.concise
-		tr
-			td:not(:last-child)
-				padding-right: $unit3
-		tr:not(:last-child)
-			td
-				padding-bottom: $unit-4
-	&.list
-		width: 100%
-		border-spacing: 0
-		border-collapse: separate
-		font-size: $font-size-small
-		tr
-			td,
-			th
-				font-weight: inherit
-				&.no-padding
-					padding: 0
-			th
-				background: $bg--1
-				padding: $unit-3 $unit1
-			td
-				padding: $unit-1 $unit1
-		tr:not(:last-child), tbody:not(:last-child)
-			td
-				border-bottom: $border-width solid $bg--1
-		tr td,
-		tr th
-			text-align: left
-		&.center-text tr td,
-		&.center-text tr th
-			text-align: center
-		&.right-text tr td,
-		&.right-text tr th
-			text-align: right
-	&.simple,
-	&.simple2,
-	&.borders
-		border-spacing: 0
-		border-collapse: separate
-		tr
-			td,
-			th
-				padding: $unit025 $unit1
-				font-weight: inherit
-	&.simple,
-	&.borders
-		tr
-			th
-				color: $bg
-				background: $fg
-
-	&.simple2
-		&:not(.horz)
+	// tables
+	$table-border: 1px solid $bg--2
+	table
+		&.concise
+			tr
+				td:not(:last-child)
+					padding-right: $unit3
+			tr:not(:last-child)
+				td
+					padding-bottom: $unit-4
+		&.list
+			width: 100%
+			border-spacing: 0
+			border-collapse: separate
+			font-size: $font-size-small
+			tr
+				td,
+				th
+					font-weight: inherit
+					&.no-padding
+						padding: 0
+				th
+					background: $bg--1
+					padding: $unit-3 $unit1
+				td
+					padding: $unit-1 $unit1
+			tr:not(:last-child), tbody:not(:last-child)
+				td
+					border-bottom: $border-width solid $bg--1
+			tr td,
+			tr th
+				text-align: left
+			&.center-text tr td,
+			&.center-text tr th
+				text-align: center
+			&.right-text tr td,
+			&.right-text tr th
+				text-align: right
+		&.simple,
+		&.simple2,
+		&.borders
+			border-spacing: 0
+			border-collapse: separate
+			tr
+				td,
+				th
+					padding: $unit025 $unit1
+					font-weight: inherit
+		&.simple,
+		&.borders
 			tr
 				th
-					border-bottom: $unit025 solid $bg--2
-		&.horz
-			tr
-				th
-					border-right: $unit025 solid $bg--2
+					color: $bg
+					background: $fg
 
-	&.borders
-		tr
-			td,
-			th
+		&.simple2
+			&:not(.horz)
+				tr
+					th
+						border-bottom: $unit025 solid $bg--2
+			&.horz
+				tr
+					th
+						border-right: $unit025 solid $bg--2
+
+		&.borders
+			tr
+				td,
+				th
+					border-left: $table-border
+					border-bottom: $table-border
+					&:last-child
+						border-right: $table-border
+				th
+					color: $bg
+					background: $fg
+					border-color: $fg-1
+
+			tr:first-child
+				td,
+				th
+					border-top: $table-border
+
+				th:not(:first-child)
+					border-left-color: $fg-2
+
+
+			// rounding
+			tr:first-child
+				td:first-child,
+				th:first-child
+					border-top-left-radius: $border-radius
+				td:last-child,
+				th:last-child
+					border-top-right-radius: $border-radius
+			tr:last-child
+				td:first-child,
+				th:first-child
+					border-bottom-left-radius: $border-radius
+				td:last-child,
+				th:last-child
+					border-bottom-right-radius: $border-radius
+
+	.scroll-x
+		overflow-x: auto
+
+	dl.borders
+		display: table
+		border-spacing: 0
+		border-collapse: separate
+
+		.row
+			display: table-row
+			dt,
+			dd
+				display: table-cell
 				border-left: $table-border
 				border-bottom: $table-border
-				&:last-child
-					border-right: $table-border
-			th
+				padding: $unit-7 $unit-4
+			dd
+				border-right: $table-border
+			dt
 				color: $bg
 				background: $fg
-				border-color: $fg-1
+				border-right: none
+				border-color: $fg
 
-		tr:first-child
-			td,
-			th
+		.row:first-child
+			dt,
+			dd
 				border-top: $table-border
 
-			th:not(:first-child)
-				border-left-color: $fg-2
+		.row:not(:last-child)
+			dt
+				border-bottom-color: $fg-2
 
-
-		// rounding
-		tr:first-child
-			td:first-child,
-			th:first-child
+		.row:first-child
+			dt
 				border-top-left-radius: $border-radius
-			td:last-child,
-			th:last-child
+			dd
 				border-top-right-radius: $border-radius
-		tr:last-child
-			td:first-child,
-			th:first-child
+		.row:last-child
+			dt
 				border-bottom-left-radius: $border-radius
-			td:last-child,
-			th:last-child
+			dd
 				border-bottom-right-radius: $border-radius
 
-.scroll-x
-	overflow-x: auto
+	// cursors
 
-dl.borders
-	display: table
-	border-spacing: 0
-	border-collapse: separate
+	.cursor-default
+		cursor: default
+	.cursor-text
+		cursor: text
+	.cursor-pointer
+		cursor: pointer
+	.cursor-grab
+		cursor: grab
+	.cursor-grabbing
+		cursor: grabbing
 
-	.row
-		display: table-row
-		dt,
-		dd
-			display: table-cell
-			border-left: $table-border
-			border-bottom: $table-border
-			padding: $unit-7 $unit-4
-		dd
-			border-right: $table-border
-		dt
-			color: $bg
-			background: $fg
-			border-right: none
-			border-color: $fg
+	// print
 
-	.row:first-child
-		dt,
-		dd
-			border-top: $table-border
-
-	.row:not(:last-child)
-		dt
-			border-bottom-color: $fg-2
-
-	.row:first-child
-		dt
-			border-top-left-radius: $border-radius
-		dd
-			border-top-right-radius: $border-radius
-	.row:last-child
-		dt
-			border-bottom-left-radius: $border-radius
-		dd
-			border-bottom-right-radius: $border-radius
-
-// cursors
-
-.cursor-default
-	cursor: default
-.cursor-text
-	cursor: text
-.cursor-pointer
-	cursor: pointer
-.cursor-grab
-	cursor: grab
-.cursor-grabbing
-	cursor: grabbing
-
-// print
-
-.print-break-before
-	page-break-before: always
+	.print-break-before
+		page-break-before: always
