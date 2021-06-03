@@ -32,6 +32,7 @@ export default {
 	buildModules: [
 		"@nuxtjs/router",
 		"@nuxt/typescript-build",
+		"@nuxt/image",
 	],
 	build: {
 		transpile: [

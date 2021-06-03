@@ -22,6 +22,7 @@
         "@types/node",
         "@nuxt/types",
         "@nuxtjs/axios",
+        "@nuxt/image",
       ],
       "resolveJsonModule": true,
       "noErrorTruncation": true

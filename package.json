@@ -27,6 +27,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime-corejs3": "^7.14.0",
     "@nuxt/babel-preset-app": "^2.15.6",
+    "@nuxt/image": "^0.4.14",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
