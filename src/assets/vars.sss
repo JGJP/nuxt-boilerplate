@@ -313,6 +313,11 @@ $hover-opacity:      	0.6
 @define-mixin border-line $color: $border-color
 	box-shadow: 0 0 0 $border-width $color
 
+@define-mixin border-inline $color: $border-color
+	box-shadow: 0 0 0 $border-width $color
+@define-mixin border-outline $color: $border-color
+	outline: $border-width solid $color
+
 @define-mixin rounded-small $radius: $border-radius-small
 	border-radius: $radius
 .rounded-small

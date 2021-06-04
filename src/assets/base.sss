@@ -372,13 +372,60 @@
 	.h1, .h2, .h3, .h4, .h5, .h6
 		font-family: $font-header
 		font-weight: $font-weight-normal
+		line-height: 1.2em
 		.pre
 			font-size: 0.65em
 
-	strong
-		display: block
+	h1, h2, h3, h4, h5, h6, p, span,
+	.h1, .h2, .h3, .h4, .h5, .h6, a
+		&.center
+			text-align: center
+		&.highlight
+			@mixin highlight
+		&.right
+			text-align: right
+	
+	h1:not(.nostyle), .h1
+		font-size: $unit4
+		line-height: $unit5
+	h2:not(.nostyle), .h2
+		font-size: $unit3
+		line-height: $unit4
+	h3:not(.nostyle), .h3
+		font-size: $unit2
+		line-height: $unit3
+	h4:not(.nostyle), .h4
+		font-size: $unit1
+		line-height: $unit2
+		font-weight: $font-weight-bold
+	h5:not(.nostyle), .h5
+		font-size: $unit1
+		line-height: $unit2
+	h6:not(.nostyle), .h6
+		font-size: $unit1
+		line-height: $unit2
+		font-weight: $font-weight
+
+	.small
+		font-size: $font-size-small
+	.smaller
+		font-size: $font-size-smaller
+
 	.light-text
-		@mixin light-text	
+		@mixin light-text
+
+	strong,
+	b,
+	.bold
+		font-weight: $font-weight-bold
+
+	a.link,
+	span.link
+		cursor: pointer
+		text-decoration: underline
+		color: $fg
+		@mixin hover-opacity
+
 	p,
 	ul.list,
 	ol.list
@@ -393,35 +440,10 @@
 		&.bigger
 			font-size: $unit3
 			line-height: $unit4
-
-	main
-		p,
-		ul.list,
-		ol.list
-			a:not(.button)
-				color: inherit
-				@mixin hover-opacity
-				@mixin highlight
-	.small
-		font-size: $font-size-small
-	.smaller
-		font-size: $font-size-smaller
-
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6
-		font-weight: $font-weight-header
-		line-height: 1.2em
-		.pre
-			font-size: 0.65em
-
-	h1, h2, h3, h4, h5, h6, p, span,
-	.h1, .h2, .h3, .h4, .h5, .h6, a
-		&.center
-			text-align: center
-		&.highlight
+		a:not(.button)
+			color: inherit
+			@mixin hover-opacity
 			@mixin highlight
-		&.right
-			text-align: right
 
 	.right
 		display: flex
@@ -429,36 +451,13 @@
 		p
 			display: inline-block
 
-	h1,
-	.h1
-		font-size: $unit6
-		&.bigger
-			@media ($not-tablet)
-				font-size: $unit7
-	h2,
-	.h2
-		font-size: $unit5
-	h3:not(.nostyle),
-	.h3
-		font-size: $unit4
-
-	h4,
-	.h4
-		font-size: $unit3
-	h5,
-	.h5
-		font-size: $unit2
-	h6,
-	.h6
-		font-size: $unit1
-
 	ul.list
 		list-style: circle
 		list-style-position: outside
 		padding-left: 1em
 
 	ol.list
-		list-style: numbered
+		list-style: decimal
 		list-style-position: outside
 		padding-left: 1em
 
@@ -467,17 +466,6 @@
 		&.inline
 			> li
 				display: inline
-	strong,
-	b,
-	.bold
-		font-weight: $font-weight-bold
-
-	a.link,
-	span.link
-		cursor: pointer
-		text-decoration: underline
-		color: $fg
-		@mixin hover-opacity
 
 	.nowrap
 		white-space: nowrap
@@ -517,21 +505,36 @@
 	input
 		margin: 0
 
+	// prevent unnecessary whitespace after element
+	// https://stackoverflow.com/a/7144960
+	textarea
+		vertical-align: top
+
 	// buttons
 	button:not(.nostyle),
 	.button:not(.nostyle)
 		cursor: pointer
 		display: inline-block
 		font-family: inherit
+		font-weight: inherit
 		padding: $unit-1 $unit6
 		border: none
 		text-align: center
+		background: $fg
+		color: $bg
+		max-width: 100%
+		&:not(.nohover):not([disabled])
+			@mixin hover-scale-opacity
+		&.small-padding
+			padding: $unit-5 $unit-2
 		&.full
 			width: 100%
 			text-align: center
 		&.wide
 			width: $unit18
 			text.align: center
+		&.exec
+			background: $fg-accent
 		&.inverted
 			background: $bg
 			color: $fg
@@ -543,7 +546,9 @@
 			border-radius: $unit10
 			background: none
 			color: darken($bg--3, 15%)
-			border: 1px solid $bg--3		
+			border: 1px solid $bg--3
+			&[disabled]
+				color: $color
 		&.big
 			padding: $unit1
 		&.inline
@@ -618,7 +623,7 @@
 			&:not(.no-focus-style):not([readonly])
 				&:focus,
 				&:active
-					border-color: $fg-accent
+					border-color: @mixin border-inline $fg-accent
 					background: $fg-accent-transparent
 			&[disabled]
 				background: $bg--1
