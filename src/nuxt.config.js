@@ -98,6 +98,7 @@ export default {
 							{
 								loader: "url-loader",
 								options: {
+									esModule: false,
 									limit: 1000,
 									name: "img/[name]_[hash:7].[ext]",
 								},
@@ -105,6 +106,7 @@ export default {
 							{
 								loader: "image-webpack-loader",
 								options: {
+									esModule: false,
 									mozjpeg: {
 										progressive: true,
 										quality: 50,
@@ -180,7 +182,7 @@ export default {
 	// babel: {
 	// 	presets: ["env"],
 	// },
-	vendor: ["babel-polyfill", "image-webpack-loader"],
+	// vendor: ["babel-polyfill", "image-webpack-loader"],
 	modules: [
 		"@nuxtjs/axios",
 		["vue-scrollto/nuxt", {
