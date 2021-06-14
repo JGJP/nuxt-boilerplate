@@ -81,7 +81,7 @@ export default {
 			// 	]
 			// },
 			cacheDirectory: false,
-			configFile: true
+			configFile: true,
 		},
 		extractCSS: true,
 		extend(config, { isDev }) {
@@ -194,10 +194,10 @@ export default {
 	head: {
 		htmlAttrs: {
 			lang: "en",
-			class: "werks-ui-html"
+			class: "werks-ui-html",
 		},
 		bodyAttrs: {
-			class: "werks-ui"
+			class: "werks-ui",
 		},
 		titleTemplate: "%s | WERKS",
 		meta: [

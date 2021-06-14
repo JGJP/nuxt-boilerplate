@@ -17,17 +17,8 @@
 	margin: 0
 
 	.layout
-		overflow: hidden
-		position: relative
 		main
 			background: $main-bg
-			min-height: 100vh - $header-height - $socket-height
-			max-height: 100vh - $header-height
-			overflow-x: auto
-			overflow-y: overlay
-			margin-top: $header-height
-			@media ($nav-breakpoint)
-				margin-top: $header-height-mobile
 			> *:first-child
 				@media ($not-phone)
 					min-height: 35em
@@ -56,7 +47,6 @@
 	main
 		background: $bg
 		min-height: 20em
-		overflow: hidden
 		
 	section,
 	.section
@@ -85,7 +75,7 @@
 		position: relative
 		width: $width-full
 		max-width: 100%
-		padding: 0 $unit1
+		padding: 0 $unit3
 		margin: 0 auto
 
 		&.super-narrow
@@ -235,9 +225,9 @@
 	.grid-desktop-only
 		&:not(.mobile)
 			@media ($not-phone)
-				@mixin space-equal-padding-horz $unit1
+				@mixin space-equal-padding-horz $unit5
 		&.mobile
-			@mixin space-equal-padding-horz $unit1
+			@mixin space-equal-padding-horz $unit5
 		.half
 			width: 50%
 		.two-thirds
@@ -246,8 +236,12 @@
 			width: 33.33%
 		.quarter
 			width: 25%
+		.fifth
+			width: 20%
 		.three-quarters
 			width: 75%
+		.four-fifths
+			width: 80%
 		.three-fifths
 			width: 60%
 		.two-fifths
@@ -259,9 +253,11 @@
 				.half,
 				.two-thirds,
 				.third,
-				.quarter
+				.quarter,
+				.fifth,
+				.four-fifths
 					width: 100%
-				@mixin space-equal-padding $unit1
+				@mixin space-equal-padding $unit5
 	.grid-desktop-only
 		@media ($tablet)
 			&:not(.mobile):not(.column)
@@ -269,14 +265,16 @@
 				.half,
 				.two-thirds,
 				.third,
-				.quarter
+				.quarter,
+				.fifth,
+				.four-fifths
 					width: 100%
-				@mixin space-equal-padding $unit1
+				@mixin space-equal-padding $unit5
 
 	.grid-column
 		flex-direction: column
 		@media ($not-phone)
-			@mixin space-equal-padding $unit1
+			@mixin space-equal-padding $unit5
 		.half
 			height: 50%
 		.two-thirds
@@ -318,8 +316,8 @@
 	.panel
 		background: $bg
 		padding: $panel-padding
-		@mixin rounded
-		@mixin box-shadow
+		@mixin rounded-big
+		@mixin box-shadow-big
 
 		.panel-title
 			margin: -$panel-padding
@@ -351,7 +349,8 @@
 	hr,
 	.hr
 		border: none
-		border-top: $border-width dotted $bg--1
+		border-top: $border-width solid $color
+		opacity: $opacity3
 		width: $width-full
 		margin: 0 auto
 		max-width: 100%
@@ -381,7 +380,7 @@
 			text-align: right
 	
 	h1:not(.nostyle), .h1
-		font-size: $unit4
+		font-size: 2.5em
 		line-height: $unit5
 	h2:not(.nostyle), .h2
 		font-size: $unit3
@@ -424,10 +423,11 @@
 	p,
 	ul.list,
 	ol.list
-		@mixin light-text
+		// @mixin light-text
 		font-size: $unit1
 		line-height: $unit2
 		letter-spacing: 0.05em
+		font-weight: $font-weight-thin
 		word-wrap: break-word
 		&.big
 			font-size: $unit2
@@ -511,7 +511,7 @@
 		cursor: pointer
 		display: inline-block
 		font-family: inherit
-		font-weight: inherit
+		font-weight: $font-weight-thin
 		padding: $unit-1 $unit6
 		border: none
 		text-align: center
@@ -551,7 +551,8 @@
 			margin-left: $unit025
 			margin-right: $unit025
 		&:not(.ghost)
-			@mixin gradient-bg $fg
+			background: $fg
+			// @mixin gradient-bg $fg
 		&.ghost
 			padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
 			&.big
@@ -673,7 +674,6 @@
 			&:focus
 				background: none
 				border-color: $fg
-
 
 	// inverted
 	.inverted
