@@ -57,7 +57,26 @@
   "license": "ISC",
   "bit": {
     "env": {},
-    "componentsDefaultDirectory": "src/components/{name}",
-    "packageManager": "yarn"
+    "componentsDefaultDirectory": "src/{name}",
+    "packageManager": "yarn",
+    "resolveModules": {
+      "modulesDirectories": [
+        "src"
+      ],
+      "aliases": {
+        "~": "src",
+        "~~": "./"
+      }
+    },
+    "overrides": {
+      "layouts/*": {
+        "dependencies": {
+          "file://src/components/Header.vue": "-",
+          "file://src/components/Footer.vue": "-",
+          "file://src/components/Sidebar.vue": "-",
+          "file://src/components/Video.vue": "-"
+        }
+      }
+    }
   }
 }
