@@ -54,5 +54,10 @@
     "sugarss": "^3.0.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "src/components/{name}",
+    "packageManager": "yarn"
+  }
 }
