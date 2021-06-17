@@ -1,3 +1,5 @@
+@import "./override.sss"
+
 // breakpoints
 
 $phone-bp:           	44em
@@ -112,13 +114,13 @@ $bg--05:              	color( $bg shade(3.75%) )
 $bg--1:              	color( $bg shade(15%) )
 $bg--2:              	color( $bg shade(30%) )
 
-$fg:                 	$blue
+$fg:                 	$blue !default
 $fg--1:              	color( $fg shade(15%) )
 $fg--2:              	color( $fg shade(30%) )
 $fg-1:              	color( $fg tint(15%) )
 $fg-2:              	color( $fg tint(30%) )
 
-$fg2:					$orange
+$fg2:					$orange 
 $fg2-1:              	color( $fg2 tint(15%) )
 $fg-accent:				$orange
 $body-bg:				$fg--2
@@ -129,9 +131,9 @@ $logo-bar-height:		$unit5
 $nav-height:			$unit5
 $header-height:			calc( $unit5 + $header-padding * 2 )
 $header-height-mobile:	$logo-bar-height // logo-bar (logo and cta stacked)
-$nav-bg:             	$fg
-$nav-color:				$bg
-$nav-fg:				$bg
+$nav-bg:             	$fg 
+$nav-color:				$bg 
+$nav-fg:				$bg 
 $nav-bg--1:            	color( $nav-bg shade(15%) )
 $nav-bg--2:            	color( $nav-bg shade(30%) )
 $nav-bg-rim:         	color( $nav-bg tint(30%) )
