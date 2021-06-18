@@ -14,12 +14,6 @@ Boilerplate to use for WERKS Nuxt projects.
 
 To use Bit please view the details here: [Bit Quick Start Guide](https://docs.bit.dev/docs/quick-start)
 
-### Bit Installation
-
-```bash
-npm install bit-bin -g
-```
-
 Visit [Bit Werks-UI](https://bit.dev/werks-ui) to see all Bit Werks-UI components
 
 ### Add new components to Werks UI

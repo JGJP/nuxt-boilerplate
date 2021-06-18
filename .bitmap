@@ -52,12 +52,12 @@
     "werks-ui.components/header@1.0.0": {
         "files": [
             {
-                "relativePath": "src/components/header.vue",
+                "relativePath": "src/components/Header.vue",
                 "test": false,
-                "name": "header.vue"
+                "name": "Header.vue"
             }
         ],
-        "mainFile": "src/components/header.vue",
+        "mainFile": "src/components/Header.vue",
         "origin": "AUTHORED",
         "exported": true
     },
