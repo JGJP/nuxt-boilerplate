@@ -144,11 +144,11 @@ export default Vue.extend({
 							left: 0
 							@media ($phone)
 								display: none
-							background: $nav-bg-transparent
 							overflow: hidden
 							max-height: 0
 							@mixin transition max-height
-
+							background: $nav-bg
+							color: $nav-color
 							li
 								a
 									padding: $unit05 $unit2

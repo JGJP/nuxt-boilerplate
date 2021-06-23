@@ -13,28 +13,30 @@
     "rebase": "node cypress/rebase.js"
   },
   "dependencies": {
-    "@nuxtjs/axios": "5.13.1",
-    "nuxt": "2.15.6",
-    "vue-scroll-reveal": "^1.0.6",
+    "@nuxtjs/axios": "5.13.6",
+    "await-sleep": "^0.0.1",
+    "nuxt": "2.15.7",
+    "vue-scroll-reveal": "1.0.11",
     "vue-scrollto": "^2.20.0",
     "vue-textarea-autosize": "^1.1.1",
     "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.14.2",
-    "@babel/preset-env": "7.14.1",
-    "@babel/preset-typescript": "^7.13.0",
-    "@babel/runtime-corejs3": "^7.14.0",
-    "@nuxt/babel-preset-app": "^2.15.6",
+    "@babel/core": "7.14.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@babel/runtime-corejs3": "7.14.6",
+    "@nuxt/babel-preset-app": "2.15.7",
     "@nuxt/image": "^0.4.14",
-    "@nuxt/types": "^2.15.6",
+    "@nuxt/types": "2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.0",
+    "@nuxtjs/eslint-config-typescript": "6.0.1",
     "@nuxtjs/router": "^1.6.1",
-    "core-js": "3.12.1",
+    "bit-bin": "^14.8.8",
+    "core-js": "3.14.0",
     "css-mqpacker": "^7.0.0",
-    "eslint": "^7.26.0",
+    "eslint": "7.28.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "image-webpack-loader": "^7.0.1",
     "postcss-color-function": "^4.1.0",
@@ -50,9 +52,33 @@
     "precss": "3.1.2",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "sass": "^1.32.12",
+    "sass": "1.35.0",
     "sugarss": "^3.0.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "src/{name}",
+    "packageManager": "yarn",
+    "resolveModules": {
+      "modulesDirectories": [
+        "src"
+      ],
+      "aliases": {
+        "~": "src",
+        "~~": "./"
+      }
+    },
+    "overrides": {
+      "layouts/*": {
+        "dependencies": {
+          "file://src/components/Header.vue": "-",
+          "file://src/components/Footer.vue": "-",
+          "file://src/components/Sidebar.vue": "-",
+          "file://src/components/Video.vue": "-"
+        }
+      }
+    }
+  }
 }

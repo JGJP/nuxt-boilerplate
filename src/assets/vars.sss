@@ -25,6 +25,7 @@ $width-default:			$width-superwide
 // https://type-scale.com/
 // 1rem = 16px
 
+// TODO: calculate these
 $unit-10:				0.056rem
 $unit-9:				0.075rem
 $unit-8:				0.1rem
@@ -183,11 +184,6 @@ $double-nav-color:		$color
 $double-nav-fg:			$bg
 $double-nav-bg-transparent: color( $double-nav-bg a(75%) )
 $double-nav-bg-rim:    	color( $double-nav-bg tint(30%) )
-// controls
-$controls-height:		$unit4
-$controls-bg:			$nav-bg--1
-$controls-bg-1:			$nav-bg
-$controls-bg-2:			$fg-2
 
 // footer and socket
 $footer-bg:				$fg
@@ -210,27 +206,6 @@ $font-weight-bold:   	500
 $font-weight:			$font-weight-normal
 $font-weight-ui:		$font-weight-normal
 $font-weight-header: 	$font-weight-bold
-
-// svg
-$display-bg:			$bg--1
-$display-line:			$bg--2
-$display-color:			$bg--3
-$stroke-width-line:		2
-$stroke-width:			2
-$blank-fill:			color( $bg a(60%) )
-$missed-stroke:			color( $color tint(70%) )
-$blank-stroke: 			$missed-stroke
-$blank-stroke-today: 	$orange
-$done-fill: 			$fg
-$done-stroke: 			$fg
-$credit-fill: 			$fg-3
-$credit-stroke:			$fg-3
-$highlight-fill:		hsla(60, 100%, 80%, 0.4)
-$highlight-stroke:		hsla(60, 80%, 40%, 0.4)
-$highlight-fill-done:	hsl($hue, 80%, 70%)
-$highlight-stroke-done:	hsl($hue, 80%, 60%)
-$group-handle-fill:		hsl($hue, 20%, 60%)
-$group-handle-stroke:	hsl($hue, 80%, 40%)
 
 // z-indexes
 $z-indexes: "section"

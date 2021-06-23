@@ -3,8 +3,8 @@ module.exports = {
 		[
 			"@nuxt/babel-preset-app",
 			{
-                corejs: { version: "3.12.1" },
-                bugfixes: true,
+				corejs: { version: "3.14.0" },
+				bugfixes: true,
 			},
 		],
 		"@babel/preset-typescript",
