@@ -1,11 +1,11 @@
 **/.DS_Store
-**/node_modules
+**/.nuxt
 **/dist
+**/node_modules
 
+.idea
 .vscode
-.nuxt
-.data
-.vrt
+coverage
 
 # cypress
 cypress/screenshots
