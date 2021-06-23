@@ -46,7 +46,6 @@
 
 	main
 		background: $bg
-		min-height: 20em
 		
 	section,
 	.section
@@ -206,7 +205,6 @@
 		&:not(.mobile):not(.mobile-only)
 			@media ($phone)
 				display: none
-		&.mobile-only
 
 	// grids
 
@@ -255,7 +253,10 @@
 				.third,
 				.quarter,
 				.fifth,
-				.four-fifths
+				.three-quarters,
+				.four-fifths,
+				.three-fifths,
+				.two-fifths
 					width: 100%
 				@mixin space-equal-padding $unit5
 	.grid-desktop-only
@@ -267,7 +268,10 @@
 				.third,
 				.quarter,
 				.fifth,
-				.four-fifths
+				.three-quarters,
+				.four-fifths,
+				.three-fifths,
+				.two-fifths
 					width: 100%
 				@mixin space-equal-padding $unit5
 
@@ -283,8 +287,12 @@
 			height: 33.33%
 		.quarter
 			height: 25%
+		.fifth
+			height: 20%
 		.three-quarters
 			height: 75%
+		.four-fifths
+			height: 80%
 		.three-fifths
 			height: 60%
 		.two-fifths
@@ -319,16 +327,6 @@
 		@mixin rounded-big
 		@mixin box-shadow-big
 
-		.panel-title
-			margin: -$panel-padding
-			margin-bottom: $panel-padding
-			border-radius: $border-radius $border-radius 0 0
-			padding: $unit1 $panel-padding
-			background: $fg
-			color: $bg
-			font-size: $unit3
-			line-height: $unit4
-
 	img
 		&.float-right
 			float: right
@@ -344,12 +342,12 @@
 	.box
 		@mixin rounded
 		padding: $unit2
-		border: $border-width dotted $bg--1
+		border: $border
 
 	hr,
 	.hr
 		border: none
-		border-top: $border-width solid $color
+		border-top: $border
 		opacity: $opacity3
 		width: $width-full
 		margin: 0 auto
@@ -391,12 +389,10 @@
 	h4:not(.nostyle), .h4
 		font-size: $unit1
 		line-height: $unit2
-		font-weight: $font-weight-bold
 	h5:not(.nostyle), .h5
 		font-size: $unit1
 		line-height: $unit2
 	h6:not(.nostyle), .h6
-		font-size: $unit1
 		line-height: $unit2
 		font-weight: $font-weight
 
@@ -595,13 +591,12 @@
 			color: $fg
 
 	// forms
-	form
-		input,
-		select,
-		textarea
-			font-family: inherit
-			font-size: inherit
-			font-weight: inherit
+	input,
+	select,
+	textarea
+		font-family: inherit
+		font-size: inherit
+		font-weight: inherit
 	form,
 	.form
 		input,
