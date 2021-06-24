@@ -1,3 +1,5 @@
+@import "./override.sss"
+
 // breakpoints
 
 $phone-bp:           	44em
@@ -12,14 +14,14 @@ $nav-breakpoint: $phone
 $not-nav-breakpoint: $not-phone
 
 // sizes
-$width-superwide:      	110em
-$width-wide:         	80em
-$width-full:         	66em
-$width-medium:       	45em
-$width-narrow:       	30em
-$width-super-narrow: 	20em
+$width-superwide:      	110em !default
+$width-wide:         	80em !default
+$width-full:         	66em !default
+$width-medium:       	45em !default
+$width-narrow:       	30em !default
+$width-super-narrow: 	20em !default
 
-$width-default:			$width-superwide
+$width-default:			$width-superwide !default
 
 // units according type scale perfect fourth (1.333)
 // https://type-scale.com/
@@ -101,129 +103,127 @@ $emunit025:				$emunit-5
 $emunit05:				$emunit-2
 $emunit075:				$emunit-1
 
-$space:					$unit1
-$space-small:			$unit-4
-$space-medium:			$unit3
-$space-big:				$unit6
+$space:					$unit1 !default
+$space-small:			$unit-4 !default
+$space-medium:			$unit3 !default
+$space-big:				$unit6 !default
 
 // colors
 // postcss-color-function
-$blue-hue:				206
-$blue:				 	hsl($blue-hue, 92%, 46%)
-$green-hue:				145
-$green:					hsl($green-hue, 63%, 42%)
-$orange-hue:			36
-$orange:			 	hsl($orange-hue, 93%, 55%)
-$orange-transparent:	hsla($orange-hue, 98%, 66%, 0.05)
-$purple-hue:			331
-$purple:				hsl($purple-hue, 100%, 73%)
-$red-hue:				6
-$red:					hsl($red-hue, 78%, 57%)
-$turqoise-hue:			170
-$turquoise:				hsl($turqoise-hue, 99%, 31%)
-$yellow-hue:			57
-$yellow:				hsl($yellow-hue, 100%, 50%)
+$blue-hue:				206 !default
+$blue:				 	hsl($blue-hue, 92%, 46%) !default
+$green-hue:				145 !default
+$green:					hsl($green-hue, 63%, 42%) !default
+$orange-hue:			36 !default
+$orange:			 	hsl($orange-hue, 93%, 55%) !default
+$orange-transparent:	hsla($orange-hue, 98%, 66%, 0.05) !default
+$purple-hue:			331 !default
+$purple:				hsl($purple-hue, 100%, 73%) !default
+$red-hue:				6 !default
+$red:					hsl($red-hue, 78%, 57%) !default
+$turqoise-hue:			170 !default
+$turquoise:				hsl($turqoise-hue, 99%, 31%) !default
+$yellow-hue:			57 !default
+$yellow:				hsl($yellow-hue, 100%, 50%) !default
 
-$hue:					$blue-hue
-$black:              	hsl($hue, 10%, 10%)
-$white:              	hsl($hue, 10%, 100%)
-$opacity1:				0.85
-$opacity2:				0.65
-$opacity3:				0.25
+
+$hue:					$blue-hue !default
+$black:              	hsl($hue, 10%, 10%) !default
+$white:              	hsl($hue, 10%, 100%) !default
+$opacity1:				0.85 !default
+$opacity2:				0.65 !default
+$opacity3:				0.25 !default
 
 // color assignments
-$color:					$black
-$highlight-color:		$yellow
-$shadow: 				color( $black a(24%) )
-$shadow-2: 				color( $black a(16%) )
+$color:					$black !default
+$highlight-color:		$yellow !default
 
-$bg:                 	$white
-$bg--05:              	color( $bg shade(3.75%) )
-$bg--1:              	color( $bg shade(15%) )
-$bg--2:              	color( $bg shade(30%) )
-$bg--3:              	color( $bg shade(60%) )
+$bg:                 	$white !default
+$bg--05:              	color( $bg shade(3.75%) ) !default
+$bg--1:              	color( $bg shade(15%) ) !default
+$bg--2:              	color( $bg shade(30%) ) !default
+$bg--3:              	color( $bg shade(60%) ) !default
 
-$fg:                 	$blue
-$fg--1:              	color( $fg shade(15%) )
-$fg--2:              	color( $fg shade(30%) )
-$fg-1:              	color( $fg tint(15%) )
-$fg-2:              	color( $fg tint(30%) )
-$fg-3:              	color( $fg tint(60%) )
+$fg:                 	$blue !default
+$fg--1:              	color( $fg shade(15%) ) !default
+$fg--2:              	color( $fg shade(30%) ) !default
+$fg-1:              	color( $fg tint(15%) ) !default
+$fg-2:              	color( $fg tint(30%) ) !default
 
-$fg2:					$orange
-$fg2-1:              	color( $fg2 tint(15%) )
-$fg-accent:				$orange
-$fg-accent-transparent:	$orange-transparent
-$body-bg:				$fg--2
-$main-bg:				lighten( $bg--1, 3% )
-$border-color:			$bg--3
-$border-color-light:	$bg--2
+$fg2:					$orange !default
+$fg2-1:              	color( $fg2 tint(15%) ) !default
+$fg-accent:				$orange !default
+$fg-accent-transparent:	$orange-transparent !default
+$body-bg:				$fg--1 !default
+$main-bg:				lighten( $bg--1, 3% ) !default
+
 
 // Border
-$border-color:			$bg--1
-$border-width:			2px
-$border-style:			solid
-$border-radius-small:	$unit01
-$border-radius:			$unit025
-$border-radius-big:		$unit05
-$border:				$border-width $border-style $border-color
+$border-color:			$bg--1 !default
+$border-width:			2px !default
+$border-style:			solid !default
+$border-radius-small:	$unit01 !default
+$border-radius:			$unit025 !default
+$border-radius-big:		$unit05 !default
+$border:				$border-width $border-style $border-color !default
 
 // nav
-$panel-padding:			$unit2
-$header-padding:		0rem
-$logo-bar-height:		$unit5
-$nav-height:			$unit5
+$panel-padding:			$unit2 !default
+$header-padding:		0rem !default
+$logo-bar-height:		$unit5 !default
+$nav-height:			$unit5 !default
 // $header-height:			calc( $unit8 + $header-padding * 2 )
 // $header-height-mobile:	$logo-bar-height // logo-bar (logo and cta stacked)
-$nav-bg:             	$fg
-$nav-color:				$bg
-$nav-fg:				$bg
-$nav-bg--1:            	color( $nav-bg shade(15%) )
-$nav-bg--2:            	color( $nav-bg shade(30%) )
-$nav-bg-rim:         	color( $nav-bg tint(30%) )
-$nav-bg-transparent: 	$white
+$nav-bg:             	$fg !default
+$nav-color:				$bg !default
+$nav-fg:				$bg !default
+$nav-bg--1:            	color( $nav-bg shade(15%) ) !default
+$nav-bg--2:            	color( $nav-bg shade(30%) ) !default
+$nav-bg-rim:         	color( $nav-bg tint(30%) ) !default
+$nav-bg-transparent: 	$white !default
+
 // double nav
-$double-nav-bg:	        $bg
-$double-nav-color:		$color
-$double-nav-fg:			$bg
-$double-nav-bg-transparent: color( $double-nav-bg a(75%) )
-$double-nav-bg-rim:    	color( $double-nav-bg tint(30%) )
+$double-nav-bg:	        $bg !default
+$double-nav-color:		$color !default
+$double-nav-fg:			$bg !default
+$double-nav-bg-transparent: color( $double-nav-bg a(75%) ) !default
+$double-nav-bg-rim:    	color( $double-nav-bg tint(30%) ) !default
 
 // footer and socket
-$footer-bg:				$fg
-$socket-bg:				color( $footer-bg shade(15%) )
-$socket-height:			0rem
+$footer-bg:				$fg !default
+$socket-bg:				color( $footer-bg shade(15%) ) !default
+$socket-height:			0rem !default
 
 // fonts
-$font-japanese:	       	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
-$font-serif:         	游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif
-$font-minchotai:     	"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
-$font-english:       	'Roboto', sans-serif
-$font-ui:				sans-serif
-$font:					$font-english
-$font-header:			$font-english
-$font-size-small:		0.9rem
-$font-size-smaller:		0.7rem
-$font-weight-thin:   	300
-$font-weight-normal: 	400
-$font-weight-bold:   	500
-$font-weight:			$font-weight-normal
-$font-weight-ui:		$font-weight-normal
-$font-weight-header: 	$font-weight-bold
+$font-japanese:	       	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif !default
+$font-serif:         	游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !default
+$font-minchotai:     	"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif !default
+$font-english:       	'Roboto', sans-serif !default
+$font-ui:				sans-serif !default
+$font:					$font-english !default
+$font-header:			$font-english !default
+$font-size-small:		0.9rem !default
+$font-size-smaller:		0.7rem !default
+$font-weight-thin:   	300 !default
+$font-weight-normal: 	400 !default
+$font-weight-bold:   	500 !default
+$font-weight:			$font-weight-normal !default
+$font-weight-ui:		$font-weight-normal !default
+$font-weight-header: 	$font-weight-bold !default
 
 // z-indexes
-$z-indexes: "section"
-$z-index-header: 4
-$z-index-nav: 3
-$z-index-page-2: 2
-$z-index-page-1: 1
+$z-indexes: "section" !default
+$z-index-header: 4 !default
+$z-index-nav: 3 !default
+$z-index-page-2: 2 !default
+$z-index-page-1: 1 !default
 
 // transitions (similar to body-bg below)
-$trans-time:         	0.3s
-$ease-out:           	cubic-bezier(0, 0, 0, 1)
-$scale-down:         	0.96
-$scale-up:           	1.05
-$hover-opacity:      	0.6
+$trans-time:         	0.3s !default
+$ease-out:           	cubic-bezier(0, 0, 0, 1) !default
+$scale-down:         	0.96 !default
+$scale-up:           	1.05 !default
+$hover-opacity:      	0.6 !default
 
 // mixins
 @define-mixin nav-bg
@@ -240,6 +240,11 @@ $hover-opacity:      	0.6
 @define-mixin transition $property, $time: $trans-time, $ease: ease
 	transition: $property $time $ease
 	will-change: $property
+
+// mixins
+
+$shadow: color( $black a(24%) ) !default
+$shadow-2: color( $black a(16%) ) !default
 
 @define-mixin space-items-wrap $spacing: $unit1
 	margin-top: calc ( $spacing )
