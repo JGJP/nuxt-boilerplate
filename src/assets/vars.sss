@@ -110,24 +110,29 @@ $space-big:				$unit6 !default
 
 // colors
 // postcss-color-function
-$orange-hue:			36 !default
-$orange:			 	hsl($orange-hue, 93%, 55%) !default
 $blue-hue:				206 !default
 $blue:				 	hsl($blue-hue, 92%, 46%) !default
 $green-hue:				145 !default
 $green:					hsl($green-hue, 63%, 42%) !default
-$yellow-hue:			57 !default
-$yellow:				hsl($yellow-hue, 100%, 50%) !default
-$red-hue:				6 !default
-$red:					hsl($red-hue, 78%, 57%) !default
+$orange-hue:			36 !default
+$orange:			 	hsl($orange-hue, 93%, 55%) !default
+$orange-transparent:	hsla($orange-hue, 98%, 66%, 0.05) !default
 $purple-hue:			331 !default
 $purple:				hsl($purple-hue, 100%, 73%) !default
+$red-hue:				6 !default
+$red:					hsl($red-hue, 78%, 57%) !default
+$turqoise-hue:			170 !default
+$turquoise:				hsl($turqoise-hue, 99%, 31%) !default
+$yellow-hue:			57 !default
+$yellow:				hsl($yellow-hue, 100%, 50%) !default
+
 
 $hue:					$blue-hue !default
 $black:              	hsl($hue, 10%, 10%) !default
 $white:              	hsl($hue, 10%, 100%) !default
 $opacity1:				0.85 !default
 $opacity2:				0.65 !default
+$opacity3:				0.25 !default
 
 // color assignments
 $color:					$black !default
@@ -137,6 +142,7 @@ $bg:                 	$white !default
 $bg--05:              	color( $bg shade(3.75%) ) !default
 $bg--1:              	color( $bg shade(15%) ) !default
 $bg--2:              	color( $bg shade(30%) ) !default
+$bg--3:              	color( $bg shade(60%) ) !default
 
 $fg:                 	$blue !default
 $fg--1:              	color( $fg shade(15%) ) !default
@@ -147,7 +153,9 @@ $fg-2:              	color( $fg tint(30%) ) !default
 $fg2:					$orange !default
 $fg2-1:              	color( $fg2 tint(15%) ) !default
 $fg-accent:				$orange !default
+$fg-accent-transparent:	$orange-transparent !default
 $body-bg:				$fg--1 !default
+$main-bg:				lighten( $bg--1, 3% ) !default
 
 
 // Border

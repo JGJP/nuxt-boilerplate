@@ -1,33 +1,27 @@
 @import "./vars.sss"
 @import "./proprietary.sss"
 
-.layout
-	overflow: hidden
-	position: relative
-	main
-		margin-top: $header-height
-		@media ($nav-breakpoint)
-			margin-top: $header-height-mobile
-		> *:first-child
-			@media ($not-phone)
-				min-height: 35em
-
 .no-mobile
 	@media ($phone)
 		display: none
 
-html
+.werks-ui-html
+	font-size: $unit1
 	@mixin font-range
 
-body
+.werks-ui
 	font-family: $font
 	font-weight: $font-weight
 	background: $socket-bg
 	color: $color
+	margin: 0
 
-	.flex
-		display: flex
-		align-items: center
+	.layout
+		main
+			background: $main-bg
+			> *:first-child
+				@media ($not-phone)
+					min-height: 35em
 
 	.english
 		font-family: $font-english
@@ -52,8 +46,6 @@ body
 
 	main
 		background: $bg
-		min-height: 20em
-		overflow: hidden
 		
 	section,
 	.section
@@ -82,9 +74,11 @@ body
 		position: relative
 		width: $width-full
 		max-width: 100%
-		padding: 0 $unit1
+		padding: 0 $unit3
 		margin: 0 auto
 
+		&.super-narrow
+			width: $width-super-narrow
 		&.narrow
 			width: $width-narrow
 		&.medium
@@ -103,31 +97,91 @@ body
 				padding: 0
 			@media ($phone)
 				padding: 0
-	hr,
-	.hr
-		border: none
-		border-top: $border-width dotted $bg--1
-		width: $width-full
-		margin: 0 auto
-		max-width: 100%
+		&.left
+			margin-left: 0
+		&.right
+			margin-right: 0
+			text-align: right
 
-	.space-items > *:not(:last-child)
-		margin-bottom: $unit1
-		&.no-margin
-			margin-bottom: 0
+	.width-nomax
+		width: fit-content
+		min-width: min($width-default)
+		max-width: unset	
 
-	.space-items-small > *:not(:last-child)
-		margin-bottom: $unit05
-		&.no-margin
-			margin-bottom: 0
+	.flex
+		display: flex
+		align-items: center
+	.flex-inline
+		display: inline-flex
+		align-items: center
+	.flex-space-between
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.flex-end
+		display: flex
+		align-items: center
+		justify-content: flex-end
+	.flex-start
+		display: flex
+		align-items: flex-start
+		justify-content: flex-start
 
-	.space-items-big > *:not(:last-child)
-		margin-bottom: $unit2
-		&.no-margin
-			margin-bottom: 0
+	@define-function scaleSpace($input, $times)
+		@if $times < 0
+			$times: $times * -1
+			@for $_ from 1 to $times
+				$input: $input / $scale
+		@else
+			@for $_ from 1 to $times
+				$input: $input * $scale
+		@return $input
 
-	.space-items-horz > *:not(:last-child)
-		margin-right: $unit1
+	@define-mixin space $this-space
+		> *:not(:last-child)
+			margin-bottom: $this-space
+			&.no-margin
+				margin-bottom: 0
+		> .space-before
+			margin-top: @callFn scaleSpace($this-space, 2)
+		> .space-after
+			margin-bottom: @callFn scaleSpace($this-space, 2)
+		> .space-before-big
+			margin-top: @callFn scaleSpace($this-space, 4)
+		> .space-after-big
+			margin-bottom: @callFn scaleSpace($this-space, 4)
+
+	.space-items
+		@mixin space $space
+	.space-items-small
+		@mixin space $space-small
+	.space-items-medium
+		@mixin space $space-medium
+	.space-items-big
+		@mixin space $space-big
+
+	@define-mixin spaceHorz $this-space
+		> *:not(:last-child)
+			margin-right: $this-space
+			&.no-margin
+				margin-right: 0
+		> .space-before
+			margin-left: @callFn scaleSpace($this-space, 2)
+		> .space-after
+			margin-right: @callFn scaleSpace($this-space, 2)
+		> .space-before-big
+			margin-left: @callFn scaleSpace($this-space, 4)
+		> .space-after-big
+			margin-right: @callFn scaleSpace($this-space, 4)
+
+	.space-items-horz
+		@mixin spaceHorz $space
+	.space-items-horz-small
+		@mixin spaceHorz $space-small
+	.space-items-horz-medium
+		@mixin spaceHorz $space-medium
+	.space-items-horz-big
+		@mixin spaceHorz $space-big
 
 	.space-items-wrap
 		@mixin space-items-wrap
@@ -147,146 +201,169 @@ body
 	.reader
 		@util hide-visually
 
-	br:not(.mobile)
-		@media ($phone)
-			display: none
+	br
+		&:not(.mobile):not(.mobile-only)
+			@media ($phone)
+				display: none
 
-	.box
-		@mixin rounded
-		padding: $unit2
-		border: $border-width dotted $bg--1
+	// grids
+
+	.grid,
+	.grid-desktop-only,
+	.grid-column
+		display: flex
+		justify-content: center
+		align-items: center
+		&.start
+			align-items: flex-start
+		> .grow
+			flex-grow: 1
+
+	.grid,
+	.grid-desktop-only
+		&:not(.mobile)
+			@media ($not-phone)
+				@mixin space-equal-padding-horz $unit5
+		&.mobile
+			@mixin space-equal-padding-horz $unit5
+		.half
+			width: 50%
+		.two-thirds
+			width: 66.66%
+		.third
+			width: 33.33%
+		.quarter
+			width: 25%
+		.fifth
+			width: 20%
+		.three-quarters
+			width: 75%
+		.four-fifths
+			width: 80%
+		.three-fifths
+			width: 60%
+		.two-fifths
+			width: 40%
+	.grid
+		@media ($phone)
+			&:not(.mobile):not(.column)
+				display: block
+				.half,
+				.two-thirds,
+				.third,
+				.quarter,
+				.fifth,
+				.three-quarters,
+				.four-fifths,
+				.three-fifths,
+				.two-fifths
+					width: 100%
+				@mixin space-equal-padding $unit5
+	.grid-desktop-only
+		@media ($tablet)
+			&:not(.mobile):not(.column)
+				display: block
+				.half,
+				.two-thirds,
+				.third,
+				.quarter,
+				.fifth,
+				.three-quarters,
+				.four-fifths,
+				.three-fifths,
+				.two-fifths
+					width: 100%
+				@mixin space-equal-padding $unit5
+
+	.grid-column
+		flex-direction: column
+		@media ($not-phone)
+			@mixin space-equal-padding $unit5
+		.half
+			height: 50%
+		.two-thirds
+			height: 66.66%
+		.third
+			height: 33.33%
+		.quarter
+			height: 25%
+		.fifth
+			height: 20%
+		.three-quarters
+			height: 75%
+		.four-fifths
+			height: 80%
+		.three-fifths
+			height: 60%
+		.two-fifths
+			height: 40%
+
+	.center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table):not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6)
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+	.center-text
+		text-align: center
+	.right:not(.tooltip)
+		display: flex
+		flex-direction: row-reverse
+	.right-text
+		text-align: right
+
+	// z-indexes
+
+	header
+		z-index: $z-index-header
+	nav,
+	.tooltip,
+	.dropdown-content
+		z-index: $z-index-nav
+
+	// elements
+	.panel
+		background: $bg
+		padding: $panel-padding
+		@mixin rounded-big
+		@mixin box-shadow-big
 
 	img
 		&.float-right
 			float: right
 		&.inline
 			display: inline-block
+		&.small
+			max-height: $unit8
 		&.medium
 			max-height: $unit10
 		&.big
 			max-height: $unit12
 
-// grids
+	.box
+		@mixin rounded
+		padding: $unit2
+		border: $border
 
-.grid,
-.grid-desktop-only,
-.grid-column
-	display: flex
-	justify-content: center
-	align-items: center
-	&.start
-		align-items: flex-start
-	> .grow
-		flex-grow: 1
+	hr,
+	.hr
+		border: none
+		border-top: $border
+		opacity: $opacity3
+		width: $width-full
+		margin: 0 auto
+		max-width: 100%
 
-.grid,
-.grid-desktop-only
-	&:not(.mobile)
-		@media ($not-phone)
-			@mixin space-equal-padding-horz $unit1
-	&.mobile
-		@mixin space-equal-padding-horz $unit1
-	.half
-		width: 50%
-	.two-thirds
-		width: 66.66%
-	.third
-		width: 33.33%
-	.quarter
-		width: 25%
-.grid
-	@media ($phone)
-		&:not(.mobile):not(.column)
-			display: block
-			.half,
-			.two-thirds,
-			.third,
-			.quarter
-				width: 100%
-			@mixin space-equal-padding $unit1
-.grid-desktop-only
-	@media ($tablet)
-		&:not(.mobile):not(.column)
-			display: block
-			.half,
-			.two-thirds,
-			.third,
-			.quarter
-				width: 100%
-			@mixin space-equal-padding $unit1
-
-.grid-column
-	flex-direction: column
-	@media ($not-phone)
-		@mixin space-equal-padding $unit1
-	.half
-		height: 50%
-	.two-thirds
-		height: 66.66%
-	.third
-		height: 33.33%
-	.quarter
-		height: 25%
-
-.center:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(table):not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6)
-	display: flex
-	flex-direction: column
-	justify-content: space-around
-	align-items: center
-
-// z-indexes
-
-body
-	.container
-		z-index: 10
-	section
-		z-index: 10
-	header
-		z-index: 20
-
-// type
-
-body
-
+	// type
 	h1, h2, h3, h4, h5, h6, p:not(.br),
 	.h1, .h2, .h3, .h4, .h5, .h6
-		font-family: $font-header
 		white-space: pre-line
 		margin-top: 0
 		margin-bottom: 0
 
-	strong
-		display: block
-	p,
-	ul.list,
-	ol.list
-		@mixin light-text
-		font-size: $unit1
-		line-height: $unit2
-		letter-spacing: 0.05em
-		word-wrap: break-word
-		&.big
-			font-size: $unit2
-			line-height: $unit3
-		&.bigger
-			font-size: $unit3
-			line-height: $unit4
-
-	main
-		p,
-		ul.list,
-		ol.list
-			a:not(.button)
-				color: inherit
-				@mixin hover-opacity
-				@mixin highlight
-
-	.smaller
-		font-size: 0.9em
-
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6
-		font-weight: $font-weight-header
+		font-family: $font-header
+		font-weight: $font-weight-normal
 		line-height: 1.2em
 		.pre
 			font-size: 0.65em
@@ -299,6 +376,65 @@ body
 			@mixin highlight
 		&.right
 			text-align: right
+	
+	h1:not(.nostyle), .h1
+		font-size: 2.5em
+		line-height: $unit5
+	h2:not(.nostyle), .h2
+		font-size: $unit3
+		line-height: $unit4
+	h3:not(.nostyle), .h3
+		font-size: $unit2
+		line-height: $unit3
+	h4:not(.nostyle), .h4
+		font-size: $unit1
+		line-height: $unit2
+	h5:not(.nostyle), .h5
+		font-size: $unit1
+		line-height: $unit2
+	h6:not(.nostyle), .h6
+		line-height: $unit2
+		font-weight: $font-weight
+
+	.small
+		font-size: $font-size-small
+	.smaller
+		font-size: $font-size-smaller
+
+	.light-text
+		@mixin light-text
+
+	strong,
+	b,
+	.bold
+		font-weight: $font-weight-bold
+
+	a.link,
+	span.link
+		cursor: pointer
+		text-decoration: underline
+		color: $fg
+		@mixin hover-opacity
+
+	p,
+	ul.list,
+	ol.list
+		// @mixin light-text
+		font-size: $unit1
+		line-height: $unit2
+		letter-spacing: 0.05em
+		font-weight: $font-weight-thin
+		word-wrap: break-word
+		&.big
+			font-size: $unit2
+			line-height: $unit3
+		&.bigger
+			font-size: $unit3
+			line-height: $unit4
+		a:not(.button)
+			color: inherit
+			@mixin hover-opacity
+			@mixin highlight
 
 	.right
 		display: flex
@@ -306,36 +442,13 @@ body
 		p
 			display: inline-block
 
-	h1,
-	.h1
-		font-size: $unit6
-		&.bigger
-			@media ($not-tablet)
-				font-size: $unit7
-	h2,
-	.h2
-		font-size: $unit5
-	h3:not(.nostyle),
-	.h3
-		font-size: $unit4
-
-	h4,
-	.h4
-		font-size: $unit3
-	h5,
-	.h5
-		font-size: $unit2
-	h6,
-	.h6
-		font-size: $unit1
-
 	ul.list
 		list-style: circle
 		list-style-position: outside
 		padding-left: 1em
 
 	ol.list
-		list-style: numbered
+		list-style: decimal
 		list-style-position: outside
 		padding-left: 1em
 
@@ -345,14 +458,17 @@ body
 			> li
 				display: inline
 
-// resets and compatibility
+	.nowrap
+		white-space: nowrap
 
-body
+	// resets and compatibility
 
 	overflow-y: scroll
 	margin: 0
 	min-height: 100vh
-	*
+	*,
+	*:before,
+	*:after
 		box-sizing: border-box
 	main
 		display: block
@@ -375,255 +491,366 @@ body
 		list-style: none
 	table
 		border-collapse: collapse
-
-// buttons
-button,
-.button
-	cursor: pointer
-	display: inline-block
-	font-family: inherit
-	padding: $unit05 $unit2
-	border: none
-	text-align: center
-	&.full
-		width: 100%
-		text-align: center
-	&.big
-		padding: $unit1
-	&.inline
-		padding: $unit025 $unit05
-		margin-left: $unit025
-		margin-right: $unit025
-	&:not(.ghost)
-		@mixin gradient-bg $fg
-	&.ghost
-		padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
-		&.big
-			padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
-		&.inline
-			padding: calc($unit025 - $border-width) calc($unit05 - $border-width)
-		border: $border-width solid $fg
-		border-offset: -$border-width
-	font-size: inherit
-	@mixin hover-scale
-	@mixin hover-opacity
-	@mixin rounded
-	&:not(.ghost):not(.plain)
-		color: $bg
-
-	&.secondary
-		&:not(.ghost)
-			@mixin gradient-bg $fg2
-		&.ghost
-			color: $fg2
-			border-color: $fg2
-
-	&.cta
-		&:not(.ghost)
-			@mixin gradient-bg $fg-accent
-		&.ghost
-			border-color: $fg-accent
-			color: $fg-accent
-
-	&.plain
-		&:not(.ghost)
-			@mixin gradient-bg $bg
-			color: $color
-		&.ghost
-			border-color: $bg--2
-			color: $bg--2
-
-	&.ghost
+	button
 		background: none
-		color: $fg
+	input
+		margin: 0
 
-// forms
-form
+	// prevent unnecessary whitespace after element
+	// https://stackoverflow.com/a/7144960
+	textarea
+		vertical-align: top
+
+	// buttons
+	button:not(.nostyle),
+	.button:not(.nostyle)
+		cursor: pointer
+		display: inline-block
+		font-family: inherit
+		font-weight: $font-weight-thin
+		padding: $unit-1 $unit6
+		border: none
+		text-align: center
+		background: $fg
+		color: $bg
+		max-width: 100%
+		&:not(.nohover):not([disabled])
+			@mixin hover-scale-opacity
+		&.small-padding
+			padding: $unit-5 $unit-2
+		&.full
+			width: 100%
+			text-align: center
+		&.wide
+			width: $unit18
+			text.align: center
+		&.exec
+			background: $fg-accent
+		&.inverted
+			background: $bg
+			color: $fg
+		&.concise
+			background: none
+			color: $color
+		&.pill
+			padding: $unit-5 $unit1
+			border-radius: $unit10
+			background: none
+			color: darken($bg--3, 15%)
+			border: 1px solid $bg--3
+			&[disabled]
+				color: $color
+		&.big
+			padding: $unit1
+		&.inline
+			padding: $unit025 $unit05
+			margin-left: $unit025
+			margin-right: $unit025
+		&:not(.ghost)
+			background: $fg
+			// @mixin gradient-bg $fg
+		&.ghost
+			padding: calc($unit05 - $border-width) calc($unit2 - $border-width)
+			&.big
+				padding: calc($unit1 - $border-width) calc($unit2 - $border-width)
+			&.inline
+				padding: calc($unit025 - $border-width) calc($unit05 - $border-width)
+			border: $border-width solid $fg
+			border-offset: -$border-width
+		font-size: inherit
+		@mixin hover-scale
+		@mixin hover-opacity
+		@mixin rounded
+		&:not(.ghost):not(.plain)
+			color: $bg
+
+		&.secondary
+			&:not(.ghost)
+				@mixin gradient-bg $fg2
+			&.ghost
+				color: $fg2
+				border-color: $fg2
+
+		&.cta
+			&:not(.ghost)
+				@mixin gradient-bg $fg-accent
+			&.ghost
+				border-color: $fg-accent
+				color: $fg-accent
+
+		&.plain
+			&:not(.ghost)
+				@mixin gradient-bg $bg
+				color: $color
+			&.ghost
+				border-color: $bg--2
+				color: $bg--2
+
+		&.ghost
+			background: none
+			color: $fg
+
+	// forms
 	input,
 	select,
 	textarea
-		max-width: 100%
-		display: inline-block
-		background: $bg
 		font-family: inherit
 		font-size: inherit
-		padding: $unit05 $unit2
-		border: $border-width solid $bg--1
-		@mixin rounded
-		&:focus,
-		&:active
-			border-color: $fg-accent
-			background: color($fg-accent a(10%))
-		&[type="radio"]
-			&:not(:first-child)
-				margin-left: $unit1
-			margin-right: $unit025
-		&[type="checkbox"]
-			margin-right: $unit05
-		&.full
-			width: 100%
-	.required,
-	.optional
-		&::after
-			font-size: 0.8em 
-			white-space: nowrap
-			vertical-align: middle
-			padding: 0.1em $unit05
-			margin-left: $unit1
+		font-weight: inherit
+	form,
+	.form
+		input,
+		select,
+		textarea
+			max-width: 100%
+			display: inline-block
+			background: $bg
+			padding: $unit-4 $unit2
+			border: $border-width solid $bg--1
 			@mixin rounded
-	.required
-		&::after
-			content: "必須"
-			border: 1px solid color($red a(50%))
-			color: $red
-	.optional
-		&::after
-			content: "任意"
-			border: 1px solid color($fg2 a(50%))
-			color: $fg2
-form.lines
-	input,
-	textarea
-		border-width: 0 0 2px 0
-		border-radius: 0
-		border-color: $bg--2
-		&:active,
-		&:focus
-			background: none
-			border-color: $fg
+			&.small
+				width: $unit8
+				padding: $unit-4 $unit-1
+			&:not(.no-focus-style):not([readonly])
+				&:focus,
+				&:active
+					@mixin border-inline $fg-accent
+					background: $fg-accent-transparent
+			&[disabled]
+				background: $bg--1
+			&[readonly]
+				cursor: default
+			&:focus,
+			&:active
+				border-color: $fg-accent
+				background: color($fg-accent a(10%))
+			&[type="radio"]
+				&:not(:first-child)
+					margin-left: $unit1
+				margin-right: $unit025
+			&[type="checkbox"]
+				margin-right: $unit05
+			&.full
+				width: 100%
+			&[type="number"]
+				padding-right: $unit-4
+			&::placeholder,
+			&.placeholder
+				color: $border-color
+				opacity: 1
+			&.error
+				border: 1px solid $red
+		.required,
+		.optional
+			&::after
+				font-size: 0.8em 
+				white-space: nowrap
+				vertical-align: middle
+				padding: 0.1em $unit05
+				margin-left: $unit1
+				@mixin rounded
+		.required
+			&::after
+				content: "必須"
+				border: 1px solid color($red a(50%))
+				color: $red
+		.optional
+			&::after
+				content: "任意"
+				border: 1px solid color($fg2 a(50%))
+				color: $fg2
+	form.lines
+		input,
+		textarea
+			border-width: 0 0 2px 0
+			border-radius: 0
+			border-color: $bg--2
+			&:active,
+			&:focus
+				background: none
+				border-color: $fg
 
+	// inverted
+	.inverted
+		$inverted-bg: $body-bg
+		$inverted-fg: $bg
 
-// inverted
-.inverted
-	$inverted-bg: $body-bg
-	$inverted-fg: $bg
+		color: $inverted-fg
+		&section
+			background: $inverted-bg
 
-	color: $inverted-fg
-	&section,
-	&.section
-		background: $inverted-bg
-
-	button,
-	.button
-		@mixin gradient-bg $bg
-		color: $inverted-bg
-		border-color: $inverted-fg
-		&:not(.ghost):not(.plain)
+		button,
+		.button
+			@mixin gradient-bg $bg
 			color: $inverted-bg
-		&.ghost
-			background: none
-			color: $inverted-fg
+			border-color: $inverted-fg
+			&:not(.ghost):not(.plain)
+				color: $inverted-bg
+			&.ghost
+				background: none
+				color: $inverted-fg
 
-// tables
-$table-border: 1px solid $bg--2
-table
-	&.simple,
-	&.simple2,
-	&.borders
+	// tables
+	$table-border: 1px solid $bg--2
+	table
+		&.concise
+			tr
+				td:not(:last-child)
+					padding-right: $unit3
+			tr:not(:last-child)
+				td
+					padding-bottom: $unit-4
+		&.list
+			width: 100%
+			border-spacing: 0
+			border-collapse: separate
+			font-size: $font-size-small
+			tr
+				td,
+				th
+					font-weight: inherit
+					&.no-padding
+						padding: 0
+				th
+					background: $bg--1
+					padding: $unit-3 $unit1
+				td
+					padding: $unit-1 $unit1
+			tr:not(:last-child), tbody:not(:last-child)
+				td
+					border-bottom: $border-width solid $bg--1
+			tr td,
+			tr th
+				text-align: left
+			&.center-text tr td,
+			&.center-text tr th
+				text-align: center
+			&.right-text tr td,
+			&.right-text tr th
+				text-align: right
+		&.simple,
+		&.simple2,
+		&.borders
+			border-spacing: 0
+			border-collapse: separate
+			tr
+				td,
+				th
+					padding: $unit025 $unit1
+					font-weight: inherit
+		&.simple,
+		&.borders
+			tr
+				th
+					color: $bg
+					background: $fg
+
+		&.simple2
+			&:not(.horz)
+				tr
+					th
+						border-bottom: $unit025 solid $bg--2
+			&.horz
+				tr
+					th
+						border-right: $unit025 solid $bg--2
+
+		&.borders
+			tr
+				td,
+				th
+					border-left: $table-border
+					border-bottom: $table-border
+					&:last-child
+						border-right: $table-border
+				th
+					color: $bg
+					background: $fg
+					border-color: $fg-1
+
+			tr:first-child
+				td,
+				th
+					border-top: $table-border
+
+				th:not(:first-child)
+					border-left-color: $fg-2
+
+
+			// rounding
+			tr:first-child
+				td:first-child,
+				th:first-child
+					border-top-left-radius: $border-radius
+				td:last-child,
+				th:last-child
+					border-top-right-radius: $border-radius
+			tr:last-child
+				td:first-child,
+				th:first-child
+					border-bottom-left-radius: $border-radius
+				td:last-child,
+				th:last-child
+					border-bottom-right-radius: $border-radius
+
+	.scroll-x
+		overflow-x: auto
+
+	dl.borders
+		display: table
 		border-spacing: 0
 		border-collapse: separate
-		tr
-			td,
-			th
-				padding: $unit025 $unit1
-				font-weight: inherit
-	&.simple,
-	&.borders
-		tr
-			th
-				color: $bg
-				background: $fg
 
-	&.simple2
-		&:not(.horz)
-			tr
-				th
-					border-bottom: $unit025 solid $bg--2
-		&.horz
-			tr
-				th
-					border-right: $unit025 solid $bg--2
-
-	&.borders
-		tr
-			td,
-			th
+		.row
+			display: table-row
+			dt,
+			dd
+				display: table-cell
 				border-left: $table-border
 				border-bottom: $table-border
-				&:last-child
-					border-right: $table-border
-			th
+				padding: $unit-7 $unit-4
+			dd
+				border-right: $table-border
+			dt
 				color: $bg
 				background: $fg
-				border-color: $fg-1
+				border-right: none
+				border-color: $fg
 
-		tr:first-child
-			td,
-			th
+		.row:first-child
+			dt,
+			dd
 				border-top: $table-border
 
-			th:not(:first-child)
-				border-left-color: $fg-2
+		.row:not(:last-child)
+			dt
+				border-bottom-color: $fg-2
 
-
-		// rounding
-		tr:first-child
-			td:first-child,
-			th:first-child
+		.row:first-child
+			dt
 				border-top-left-radius: $border-radius
-			td:last-child,
-			th:last-child
+			dd
 				border-top-right-radius: $border-radius
-		tr:last-child
-			td:first-child,
-			th:first-child
+		.row:last-child
+			dt
 				border-bottom-left-radius: $border-radius
-			td:last-child,
-			th:last-child
+			dd
 				border-bottom-right-radius: $border-radius
 
-dl.borders
-	display: table
-	border-spacing: 0
-	border-collapse: separate
+	// cursors
 
-	.row
-		display: table-row
-		dt,
-		dd
-			display: table-cell
-			border-left: $table-border
-			border-bottom: $table-border
-			padding: $unit025 $unit05
-		dd
-			border-right: $table-border
-		dt
-			color: $bg
-			background: $fg
-			border-right: none
-			border-color: $fg
+	.cursor-default
+		cursor: default
+	.cursor-text
+		cursor: text
+	.cursor-pointer
+		cursor: pointer
+	.cursor-grab
+		cursor: grab
+	.cursor-grabbing
+		cursor: grabbing
 
-	.row:first-child
-		dt,
-		dd
-			border-top: $table-border
+	// print
 
-	.row:not(:last-child)
-		dt
-			border-bottom-color: $fg-2
-
-	.row:first-child
-		dt
-			border-top-left-radius: $border-radius
-		dd
-			border-top-right-radius: $border-radius
-	.row:last-child
-		dt
-			border-bottom-left-radius: $border-radius
-		dd
-			border-bottom-right-radius: $border-radius
-
-// print
-
-.print-break-before
-	page-break-before: always
+	.print-break-before
+		page-break-before: always
