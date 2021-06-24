@@ -13,8 +13,6 @@ $tablet-only:        	$phone-bp < width <= $tablet-bp
 $nav-breakpoint: $phone
 $not-nav-breakpoint: $not-phone
 
-
-
 // sizes
 $width-superwide:      	110em !default
 $width-wide:         	80em !default
@@ -23,8 +21,16 @@ $width-medium:       	45em !default
 $width-narrow:       	30em !default
 $width-super-narrow: 	20em !default
 
+$width-default:			$width-superwide !default
+
 // units according type scale perfect fourth (1.333)
 // https://type-scale.com/
+// 1rem = 16px
+
+// TODO: calculate these
+$unit-10:				0.056rem
+$unit-9:				0.075rem
+$unit-8:				0.1rem
 $unit-7:				0.134rem
 $unit-6:				0.178rem
 $unit-5:				0.238rem
@@ -32,6 +38,7 @@ $unit-4:				0.317rem
 $unit-3:				0.422rem
 $unit-2:				0.563rem
 $unit-1:				0.75rem
+
 $unit1:					1rem
 $unit2:					1.333rem
 $unit3:					1.777rem
@@ -47,11 +54,21 @@ $unit12:				23.612rem
 $unit13:				31.476rem
 $unit14:				41.956rem
 $unit15:				55.927rem
+$unit16:				74.551em
+$unit17:				99.376rem
+$unit18:				132.468rem
+$unit19:				176.58rem
+$unit20:				235.382rem
+
 
 $unit01:				$unit-7
 $unit025:				$unit-5
 $unit05:				$unit-2
+$unit075:				$unit-1
 
+$emunit-10:				0.056em
+$emunit-9:				0.075em
+$emunit-8:				0.1em
 $emunit-7:				0.134em
 $emunit-6:				0.178em
 $emunit-5:				0.238em
@@ -59,6 +76,7 @@ $emunit-4:				0.317em
 $emunit-3:				0.422em
 $emunit-2:				0.563em
 $emunit-1:				0.75em
+
 $emunit1:				1em
 $emunit2:				1.333em
 $emunit3:				1.777em
@@ -74,15 +92,21 @@ $emunit12:				23.612em
 $emunit13:				31.476em
 $emunit14:				41.956em
 $emunit15:				55.927em
+$emunit16:				74.551em
+$emunit17:				99.376em
+$emunit18:				132.468em
+$emunit19:				176.58em
+$emunit20:				235.382em
 
 $emunit01:				$emunit-7
 $emunit025:				$emunit-5
 $emunit05:				$emunit-2
+$emunit075:				$emunit-1
 
-$border-width:       	2px !default
-$border-width-big:      $unit05 !default
-$border-radius:       	$unit025 !default
-$border-radius-big: 	$unit05 !default
+$space:					$unit1 !default
+$space-small:			$unit-4 !default
+$space-medium:			$unit3 !default
+$space-big:				$unit6 !default
 
 // colors
 // postcss-color-function
@@ -125,19 +149,31 @@ $fg2-1:              	color( $fg2 tint(15%) ) !default
 $fg-accent:				$orange !default
 $body-bg:				$fg--1 !default
 
+
+// Border
+$border-color:			$bg--1 !default
+$border-width:			2px !default
+$border-style:			solid !default
+$border-radius-small:	$unit01 !default
+$border-radius:			$unit025 !default
+$border-radius-big:		$unit05 !default
+$border:				$border-width $border-style $border-color !default
+
 // nav
+$panel-padding:			$unit2 !default
 $header-padding:		0rem !default
 $logo-bar-height:		$unit5 !default
 $nav-height:			$unit5 !default
-$header-height:			calc( $unit5 + $header-padding * 2 ) !default
-$header-height-mobile:	$logo-bar-height // logo-bar (logo and cta stacked) !default
+// $header-height:			calc( $unit8 + $header-padding * 2 )
+// $header-height-mobile:	$logo-bar-height // logo-bar (logo and cta stacked)
 $nav-bg:             	$fg !default
 $nav-color:				$bg !default
 $nav-fg:				$bg !default
 $nav-bg--1:            	color( $nav-bg shade(15%) ) !default
 $nav-bg--2:            	color( $nav-bg shade(30%) ) !default
 $nav-bg-rim:         	color( $nav-bg tint(30%) ) !default
-$nav-bg-transparent: 	color( $nav-bg a(100%) ) !default
+$nav-bg-transparent: 	$white !default
+
 // double nav
 $double-nav-bg:	        $bg !default
 $double-nav-color:		$color !default
@@ -147,27 +183,51 @@ $double-nav-bg-rim:    	color( $double-nav-bg tint(30%) ) !default
 
 // footer and socket
 $footer-bg:				$fg !default
-$socket-bg:				$body-bg !default
+$socket-bg:				color( $footer-bg shade(15%) ) !default
+$socket-height:			0rem !default
 
 // fonts
 $font-japanese:	       	'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif !default
 $font-serif:         	游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !default
 $font-minchotai:     	"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif !default
 $font-english:       	'Roboto', sans-serif !default
+$font-ui:				sans-serif !default
 $font:					$font-english !default
 $font-header:			$font-english !default
-$font-weight-thin:   	400 !default
-$font-weight-normal: 	500 !default
-$font-weight-bold:   	700 !default
-$font-weight:			$font-weight-thin !default
-$font-weight-header: 	$font-weight-normal !default
+$font-size-small:		0.9rem !default
+$font-size-smaller:		0.7rem !default
+$font-weight-thin:   	300 !default
+$font-weight-normal: 	400 !default
+$font-weight-bold:   	500 !default
+$font-weight:			$font-weight-normal !default
+$font-weight-ui:		$font-weight-normal !default
+$font-weight-header: 	$font-weight-bold !default
 
-// transitions
+// z-indexes
+$z-indexes: "section" !default
+$z-index-header: 4 !default
+$z-index-nav: 3 !default
+$z-index-page-2: 2 !default
+$z-index-page-1: 1 !default
+
+// transitions (similar to body-bg below)
 $trans-time:         	0.3s !default
 $ease-out:           	cubic-bezier(0, 0, 0, 1) !default
 $scale-down:         	0.96 !default
 $scale-up:           	1.05 !default
 $hover-opacity:      	0.6 !default
+
+// mixins
+@define-mixin nav-bg
+	background: $nav-bg
+
+@define-mixin body-bg
+	@mixin gradient-bg $nav-bg, $nav-bg-dark
+		$trans-time: 0.3s
+		$ease-out: cubic-bezier(0, 0, 0, 1)
+		$scale-down: 0.96
+		$scale-up: 1.05
+		$hover-opacity: 0.6
 
 @define-mixin transition $property, $time: $trans-time, $ease: ease
 	transition: $property $time $ease
@@ -179,57 +239,67 @@ $shadow: color( $black a(24%) ) !default
 $shadow-2: color( $black a(16%) ) !default
 
 @define-mixin space-items-wrap $spacing: $unit1
-	margin-top: calc ( $spacing * -1 )
+	margin-top: calc ( $spacing )
 	> *
 		margin-top: $spacing
+		&:not(:last-child)
+			margin-right: $spacing
 
 @define-mixin space-items-wrap-horz $spacing: $unit1
 	margin-left: calc ( $spacing * -1 )
 	> *
 		margin-left: $spacing
+		&:not(:last-child)
+			margin-right: $spacing
 
 @define-mixin light-text
 	color: inherit
-	opacity: 90%
+	opacity: $opacity1
+
+@define-mixin gradient-bg-vert $from: $main-color-light, $to: $main-color
+	background: linear-gradient($from,$to)
 
 @define-mixin bg1
 	background: $bg--05
+
+// box-shadows
 
 @define-mixin box-shadow
 	box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow-2
 .box-shadow
 	@mixin box-shadow
 
+@define-mixin box-shadow-small
+	box-shadow: 1px 3px 4px $shadow, 1px 3px 4px $shadow
+.box-shadow-small
+	@mixin box-shadow-small
+
 @define-mixin box-shadow-big
 	box-shadow: 0 20px 40px $shadow, 0 15px 12px $shadow-2
-	// box-shadow: 0 6px 20px rgba(0, 26, 14, 0.24), 0 8px 8px rgba(0, 26, 14, 0.16)
 .box-shadow-big
 	@mixin box-shadow-big
+
+@define-mixin box-shadow-down
+	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
+.box-shadow-down
+	@mixin box-shadow-down
 
 @define-mixin highlight $color: $highlight-color, $width: $unit-6
 	background: linear-gradient(0deg, $color $width, transparent $width) 
 
-@define-mixin space-equal-padding $padding
-	> *
-		padding: calc($padding / 2) 0
-	> *:first-child
-		padding-top: 0
-	> *:last-child
-		padding-bottom: 0
+@define-mixin border-line $color: $border-color
+	box-shadow: 0 0 0 $border-width $color
 
-@define-mixin space-equal-padding-horz $padding
-	> *
-		padding: 0 calc($padding / 2)
-	> *:first-child
-		padding-left: 0
-	> *:last-child
-		padding-right: 0
+@define-mixin border-inline $color: $border-color
+	box-shadow: 0 0 0 $border-width $color
+	
+@define-mixin border-outline $color: $border-color
+	outline: $border-width solid $color
 
-@define-mixin gradient-bg $color
-	background: linear-gradient($color, color( $color shade(15%) ))
-
-@define-mixin gradient-bg-opposite $color
-	background: linear-gradient(color( $color shade(15%) ), $color)
+@define-mixin rounded-small $radius: $border-radius-small
+	border-radius: $radius
+.rounded-small
+	@mixin rounded-small
 
 @define-mixin rounded $radius: $border-radius
 	border-radius: $radius
@@ -241,15 +311,14 @@ $shadow-2: color( $black a(16%) ) !default
 .rounded-big
 	@mixin rounded-big
 
-@define-mixin box-shadow-down
-	box-shadow: 6px 6px 6px $shadow, -6px 6px 6px $shadow-2
-
 @define-mixin font-range $min: $unit-1, $max: $unit1, $range: 12em 54em
 	font-size: responsive $min $max
 	font-range: $range
 
 @define-mixin minchotai
 	font-family: $font-minchotai
+
+// hover
 
 @define-mixin hover-opacity
 	@media ($not-phone)
@@ -264,10 +333,28 @@ $shadow-2: color( $black a(16%) ) !default
 		&:hover
 			transform: scale($amount)
 
+@define-mixin hover-scale-opacity $amount: $scale-down, $start: 1
+	@media ($not-phone)
+		transform: scale($start)
+		transition: transform $trans-time ease, opacity $trans-time ease
+		&:hover
+			opacity: $hover-opacity
+			transform: scale($amount)
+
+// backgrounds
+
 @define-mixin background-image $src
 	background: url($src)
 	background-size: cover
 	background-position: center center
+
+@define-mixin gradient-bg $color
+	background: linear-gradient($color, color( $color shade(15%) ))
+
+@define-mixin gradient-bg-opposite $color
+	background: linear-gradient(color( $color shade(15%) ), $color)
+
+// positioning
 
 @define-mixin overlay
 	&::after
@@ -285,59 +372,77 @@ $shadow-2: color( $black a(16%) ) !default
 	top: 0
 	left: 0
 
+// paddings
+
+@define-mixin space-equal-padding $padding
+	> *
+		padding: calc($padding / 2) 0
+	> *:first-child
+		padding-top: 0
+	> *:last-child
+		padding-bottom: 0
+
+@define-mixin space-equal-padding-horz $padding
+	> *
+		padding: 0 calc($padding / 2)
+	> *:first-child
+		padding-left: 0
+	> *:last-child
+		padding-right: 0
+
 @define-mixin super-big-vert-padding
 	@mixin super-big-vert-padding-top
 	@mixin super-big-vert-padding-bottom
 
 @define-mixin super-big-vert-padding-top
-	padding-top: $unit6
+	padding-top: $unit8
 	@media ($tablet)
-		padding-top: $unit4
+		padding-top: $unit6
 	@media ($phone)
-		padding-top: $unit3
+		padding-top: $unit4
 
 @define-mixin super-big-vert-padding-bottom
-	padding-bottom: $unit6
+	padding-bottom: $unit8
 	@media ($tablet)
-		padding-bottom: $unit4
+		padding-bottom: $unit6
 	@media ($phone)
-		padding-bottom: $unit3
+		padding-bottom: $unit4
 
 @define-mixin big-vert-padding
 	@mixin big-vert-padding-top
 	@mixin big-vert-padding-bottom
 
 @define-mixin big-vert-padding-top
-	padding-top: $unit4
+	padding-top: $unit6
 	@media ($tablet)
-		padding-top: $unit3
+		padding-top: $unit4
 	@media ($phone)
-		padding-top: $unit2
+		padding-top: $unit3
 
 @define-mixin big-vert-padding-bottom
-	padding-bottom: $unit4
+	padding-bottom: $unit6
 	@media ($tablet)
-		padding-bottom: $unit3
+		padding-bottom: $unit4
 	@media ($phone)
-		padding-bottom: $unit2
+		padding-bottom: $unit3
 
 @define-mixin medium-vert-padding
 	@mixin medium-vert-padding-top
 	@mixin medium-vert-padding-bottom
 
 @define-mixin medium-vert-padding-top
-	padding-top: $unit3
+	padding-top: $unit4
 	@media ($tablet)
-		padding-top: $unit2
+		padding-top: $unit3
 	@media ($phone)
-		padding-top: $unit1
+		padding-top: $unit2
 
 @define-mixin medium-vert-padding-bottom
-	padding-bottom: $unit3
+	padding-bottom: $unit4
 	@media ($tablet)
-		padding-bottom: $unit2
+		padding-bottom: $unit3
 	@media ($phone)
-		padding-bottom: $unit1
+		padding-bottom: $unit2
 
 @define-mixin small-vert-padding
 	@mixin small-vert-padding-top
@@ -356,7 +461,6 @@ $shadow-2: color( $black a(16%) ) !default
 		padding-bottom: $unit1
 	@media ($phone)
 		padding-bottom: $unit1
-
 
 @define-mixin vert-padding
 	@mixin vert-padding-top
@@ -442,7 +546,6 @@ $shadow-2: color( $black a(16%) ) !default
 	@media ($phone)
 		margin-bottom: $unit1
 
-
 @define-mixin vert-margin
 	@mixin vert-margin-top
 	@mixin vert-margin-bottom
@@ -470,3 +573,6 @@ $shadow-2: color( $black a(16%) ) !default
 	margin-right: 4em
 	@media ($phone)
 		margin-right: 2em
+
+@define-mixin transparent
+	opacity: 0.6

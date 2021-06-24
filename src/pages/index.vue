@@ -19,7 +19,7 @@ export default Vue.extend({
 	components: {
 		Hero,
 	},
-	layout: "video",
+	layout: "default",
 	scrollToTop: true,
 	head() {
 		return {

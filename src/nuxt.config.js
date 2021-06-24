@@ -32,55 +32,15 @@ export default {
 	buildModules: [
 		"@nuxtjs/router",
 		"@nuxt/typescript-build",
+		"@nuxt/image",
 	],
 	build: {
 		transpile: [
-			// /(.+)(@nuxtjs\\axios\\lib\\)(.+)(\.js)$/,
 			"vue-youtube-embed",
 		],
-		// hardSource: true,
 		babel: {
-			// presets({isServer}, [preset, options]) {
-			// 	const r = [
-			// 		[
-			// 			preset, {
-			// 				buildTarget: isServer ? 'server' : 'client',
-			// 				...options
-			// 			}
-			// 		]
-			// 	]
-			// 	r[0][1].targets = {
-			// 		"browsers": ["> 1%", "last 2 versions"],
-			// 		ie: 11
-			// 	}
-			// 	r[0][1].polyfills = [
-			// 		// 'es6.array.iterator',
-			// 		// 'es6.promise',
-			// 		// 'es6.object.assign',
-			// 		// 'es7.promise.finally',
-			// 		// 'es6.symbol',
-			// 		// 'es6.array.find',
-			// 		'es6.array.from',
-			// 	]
-			// 	return r
-			// },
-			// plugins: [
-			// 	'@babel/plugin-transform-runtime'
-			// ],
-			// presets() {
-			// 	return [
-			// 		[
-			// 			"@nuxt/babel-preset-app",
-			// 			{
-			// 				corejs: { version: "3.12.1" },
-			// 				bugfixes: true,
-			// 			},
-			// 		],
-			// 		"@babel/preset-typescript"
-			// 	]
-			// },
 			cacheDirectory: false,
-			configFile: true
+			configFile: true,
 		},
 		extractCSS: true,
 		extend(config, { isDev }) {
@@ -97,6 +57,7 @@ export default {
 							{
 								loader: "url-loader",
 								options: {
+									esModule: false,
 									limit: 1000,
 									name: "img/[name]_[hash:7].[ext]",
 								},
@@ -104,6 +65,7 @@ export default {
 							{
 								loader: "image-webpack-loader",
 								options: {
+									esModule: false,
 									mozjpeg: {
 										progressive: true,
 										quality: 50,
@@ -133,7 +95,6 @@ export default {
 				options: {
 					sourceMap: true,
 					importLoaders: 2,
-					// onlyLocals: false
 				},
 			}
 			const postcss = {
@@ -144,6 +105,7 @@ export default {
 					plugins: () => [
 						require("postcss-easy-import")({ extensions: [".sss"] }),
 						require("postcss-mixins"),
+						require("postcss-define-function"),
 						require("precss"),
 						require("postcss-color-short"),
 						require("postcss-color-function"),
@@ -175,10 +137,6 @@ export default {
 			})
 		},
 	},
-	// babel: {
-	// 	presets: ["env"],
-	// },
-	vendor: ["babel-polyfill", "image-webpack-loader"],
 	modules: [
 		"@nuxtjs/axios",
 		["vue-scrollto/nuxt", {
@@ -190,8 +148,12 @@ export default {
 	head: {
 		htmlAttrs: {
 			lang: "en",
+			class: "werks-ui-html",
 		},
-		titleTemplate: "%s | NUXT",
+		bodyAttrs: {
+			class: "werks-ui",
+		},
+		titleTemplate: "%s | WERKS",
 		meta: [
 			{ charset: "utf-8" },
 			{ name: "robots", content: "noindex, nofollow, noimageindex, noarchive" },
@@ -203,14 +165,5 @@ export default {
 			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP" },
 			// { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:300,500,700,900" },
 		],
-		// script: [
-		// 	{ src: "https://cdn.polyfill.io/v2/polyfill.js?features="+
-		// 		"String.prototype.includes,"+
-		// 		"Array.prototype.find,"+
-		// 		"Array.prototype.from,"+
-		// 		"Promise,"+
-		// 		"Object.assign"
-		// 	},
-		// ],
 	},
 }
