@@ -1,3 +1,5 @@
+import { scaleUnit } from "./functions"
+
 export default {
 	render: {
 		injectScripts: true,
@@ -105,8 +107,8 @@ export default {
 					plugins: () => [
 						require("postcss-easy-import")({ extensions: [".sss"] }),
 						require("postcss-mixins"),
-						require("postcss-define-function"),
 						require("precss"),
+						require("postcss-functions")({ functions: { scaleUnit } }),
 						require("postcss-color-short"),
 						require("postcss-color-function"),
 						require("postcss-utilities")(),
