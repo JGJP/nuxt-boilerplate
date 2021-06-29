@@ -1,5 +1,5 @@
-export function scaleUnit(input, times, scale) {
-	const regex = /rem|em/i
+function scaleUnit(input, times, scale) {
+	const regex = /(rem|em)/i
 	const unit = input.match(regex)
 	let value = input.replace(regex, "")
 
@@ -18,4 +18,8 @@ export function scaleUnit(input, times, scale) {
 	const cssValue = value + unit[0]
 
 	return cssValue
+}
+
+module.exports = {
+	scaleUnit,
 }
