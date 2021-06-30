@@ -4,10 +4,14 @@ module.exports = {
 		parser: "sugarss",
 		sourceMap: true,
 		plugins: () => [
-			require("postcss-easy-import")({ extensions: [".sss"] }),
+			require("postcss-easy-import")({
+				extensions: [".sss"]
+			}),
 			require("postcss-mixins"),
 			require("precss"),
-			require("postcss-functions")({ functions: require("./postcss-functions") }),
+			require("postcss-functions")({
+				functions: require("./postcss-functions")
+			}),
 			require("postcss-color-short"),
 			require("postcss-color-function"),
 			require("postcss-utilities")(),

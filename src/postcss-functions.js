@@ -1,22 +1,21 @@
-function scaleUnit(input, times, scale) {
-	const regex = /(rem|em|px)/i
-	const [unit] = input.match(regex)
-	let value = input.replace(regex, "")
-
-	if (times < 0) {
-		for (let i = 0; i < Math.abs(times); i++) {
-			value = value / scale
-		}
-	}
-	else {
-		for (let i = 0; i < times; i++) {
-			value = value * scale
-		}
-	}
-
-	return value.toFixed(3) + unit
-}
-
 module.exports = {
-	scaleUnit,
+	scaleUnit: (input, times, scale, decimals = 3) => {
+		const regex = /(rem|em|px)/i
+		const [ unit ] = input.match(regex)
+		let value = input.replace(regex, "")
+
+		if (times < 0) {
+			// https://stackoverflow.com/a/59063674
+			while (times++ < 0) {
+				value = value / scale
+			}
+		}
+		else {
+			while (times--) {
+				value = value * scale
+			}
+		}
+
+		return value.toFixed(decimals) + unit
+	}
 }
