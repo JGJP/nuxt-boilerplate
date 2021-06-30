@@ -127,29 +127,19 @@
 		align-items: flex-start
 		justify-content: flex-start
 
-	@define-function scaleSpace($input, $times)
-		@if $times < 0
-			$times: $times * -1
-			@for $_ from 1 to $times
-				$input: $input / $scale
-		@else
-			@for $_ from 1 to $times
-				$input: $input * $scale
-		@return $input
-
 	@define-mixin space $this-space
 		> *:not(:last-child)
 			margin-bottom: $this-space
 			&.no-margin
 				margin-bottom: 0
 		> .space-before
-			margin-top: @callFn scaleSpace($this-space, 2)
+			margin-top: scaleUnit($this-space, 2, $scale)
 		> .space-after
-			margin-bottom: @callFn scaleSpace($this-space, 2)
+			margin-bottom: scaleUnit($this-space, 2, $scale)
 		> .space-before-big
-			margin-top: @callFn scaleSpace($this-space, 4)
+			margin-top: scaleUnit($this-space, 4, $scale)
 		> .space-after-big
-			margin-bottom: @callFn scaleSpace($this-space, 4)
+			margin-bottom: scaleUnit($this-space, 4, $scale)
 
 	.space-items
 		@mixin space $space
@@ -166,13 +156,13 @@
 			&.no-margin
 				margin-right: 0
 		> .space-before
-			margin-left: @callFn scaleSpace($this-space, 2)
+			margin-left: scaleUnit($this-space, 2, $scale)
 		> .space-after
-			margin-right: @callFn scaleSpace($this-space, 2)
+			margin-right: scaleUnit($this-space, 2, $scale)
 		> .space-before-big
-			margin-left: @callFn scaleSpace($this-space, 4)
+			margin-left: scaleUnit($this-space, 4, $scale)
 		> .space-after-big
-			margin-right: @callFn scaleSpace($this-space, 4)
+			margin-right: scaleUnit($this-space, 4, $scale)
 
 	.space-items-horz
 		@mixin spaceHorz $space
@@ -188,15 +178,6 @@
 
 	.space-items-wrap-horz
 		@mixin space-items-wrap-horz
-
-	.space-before
-		margin-top: $unit2
-	.space-after
-		margin-bottom: $unit2
-	.space-before-big
-		margin-top: $unit4
-	.space-after-big
-		margin-bottom: $unit4
 
 	.reader
 		@util hide-visually

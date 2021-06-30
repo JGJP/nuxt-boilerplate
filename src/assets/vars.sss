@@ -23,80 +23,81 @@ $width-super-narrow: 	20em !default
 
 $width-default:			$width-superwide !default
 
-// units according type scale perfect fourth (1.333)
 // https://type-scale.com/
 // 1rem = 16px
+// units according type scale perfect fourth (1.333)
+// $unit-base:			16px
 
-// TODO: calculate these
-$unit-10:				0.056rem
-$unit-9:				0.075rem
-$unit-8:				0.1rem
-$unit-7:				0.134rem
-$unit-6:				0.178rem
-$unit-5:				0.238rem
-$unit-4:				0.317rem
-$unit-3:				0.422rem
-$unit-2:				0.563rem
-$unit-1:				0.75rem
+$scale:					1.333 
 
 $unit1:					1rem
-$unit2:					1.333rem
-$unit3:					1.777rem
-$unit4:					2.369rem
-$unit5:					3.157rem
-$unit6:					4.209rem
-$unit7:					5.61rem
-$unit8:					7.478rem
-$unit9:					9.969rem
-$unit10:				13.288rem
-$unit11:				17.713rem
-$unit12:				23.612rem
-$unit13:				31.476rem
-$unit14:				41.956rem
-$unit15:				55.927rem
-$unit16:				74.551em
-$unit17:				99.376rem
-$unit18:				132.468rem
-$unit19:				176.58rem
-$unit20:				235.382rem
+$unit2:					scaleUnit($unit1, 1, $scale)
+$unit3:					scaleUnit($unit1, 2, $scale)
+$unit4:					scaleUnit($unit1, 3, $scale)
+$unit5:					scaleUnit($unit1, 4, $scale)
+$unit6:					scaleUnit($unit1, 5, $scale)
+$unit7:					scaleUnit($unit1, 6, $scale)
+$unit8:					scaleUnit($unit1, 7, $scale)
+$unit9:					scaleUnit($unit1, 8, $scale)
+$unit10:				scaleUnit($unit1, 9, $scale)
+$unit11:				scaleUnit($unit1, 10, $scale)
+$unit12:				scaleUnit($unit1, 11, $scale)
+$unit13:				scaleUnit($unit1, 12, $scale)
+$unit14:				scaleUnit($unit1, 13, $scale)
+$unit15:				scaleUnit($unit1, 14, $scale)
+$unit16:				scaleUnit($unit1, 15, $scale)
+$unit17:				scaleUnit($unit1, 16, $scale)
+$unit18:				scaleUnit($unit1, 17, $scale)
+$unit19:				scaleUnit($unit1, 18, $scale)
+$unit20:				scaleUnit($unit1, 19, $scale)
 
+$unit-10:				scaleUnit($unit1, -10, $scale)
+$unit-9:				scaleUnit($unit1, -9, $scale)
+$unit-8:				scaleUnit($unit1, -8, $scale)
+$unit-7:				scaleUnit($unit1, -7, $scale)
+$unit-6:				scaleUnit($unit1, -6, $scale)
+$unit-5:				scaleUnit($unit1, -5, $scale)
+$unit-4:				scaleUnit($unit1, -4, $scale)
+$unit-3:				scaleUnit($unit1, -3, $scale)
+$unit-2:				scaleUnit($unit1, -2, $scale)
+$unit-1:				scaleUnit($unit1, -1, $scale)
 
 $unit01:				$unit-7
 $unit025:				$unit-5
 $unit05:				$unit-2
 $unit075:				$unit-1
 
-$emunit-10:				0.056em
-$emunit-9:				0.075em
-$emunit-8:				0.1em
-$emunit-7:				0.134em
-$emunit-6:				0.178em
-$emunit-5:				0.238em
-$emunit-4:				0.317em
-$emunit-3:				0.422em
-$emunit-2:				0.563em
-$emunit-1:				0.75em
-
 $emunit1:				1em
-$emunit2:				1.333em
-$emunit3:				1.777em
-$emunit4:				2.369em
-$emunit5:				3.157em
-$emunit6:				4.209em
-$emunit7:				5.61em
-$emunit8:				7.478em
-$emunit9:				9.969em
-$emunit10:				13.288em
-$emunit11:				17.713em
-$emunit12:				23.612em
-$emunit13:				31.476em
-$emunit14:				41.956em
-$emunit15:				55.927em
-$emunit16:				74.551em
-$emunit17:				99.376em
-$emunit18:				132.468em
-$emunit19:				176.58em
-$emunit20:				235.382em
+$emunit2:				scaleUnit($emunit1, 1, $scale)
+$emunit3:				scaleUnit($emunit1, 2, $scale)
+$emunit4:				scaleUnit($emunit1, 3, $scale)
+$emunit5:				scaleUnit($emunit1, 4, $scale)
+$emunit6:				scaleUnit($emunit1, 5, $scale)
+$emunit7:				scaleUnit($emunit1, 6, $scale)
+$emunit8:				scaleUnit($emunit1, 7, $scale)
+$emunit9:				scaleUnit($emunit1, 8, $scale)
+$emunit10:				scaleUnit($emunit1, 9, $scale)
+$emunit11:				scaleUnit($emunit1, 10, $scale)
+$emunit12:				scaleUnit($emunit1, 11, $scale)
+$emunit13:				scaleUnit($emunit1, 12, $scale)
+$emunit14:				scaleUnit($emunit1, 13, $scale)
+$emunit15:				scaleUnit($emunit1, 14, $scale)
+$emunit16:				scaleUnit($emunit1, 15, $scale)
+$emunit17:				scaleUnit($emunit1, 16, $scale)
+$emunit18:				scaleUnit($emunit1, 17, $scale)
+$emunit19:				scaleUnit($emunit1, 18, $scale)
+$emunit20:				scaleUnit($emunit1, 19, $scale)
+
+$emunit-10:				scaleUnit($emunit1, -10, $scale)
+$emunit-9:				scaleUnit($emunit1, -9, $scale)
+$emunit-8:				scaleUnit($emunit1, -8, $scale)
+$emunit-7:				scaleUnit($emunit1, -7, $scale)
+$emunit-6:				scaleUnit($emunit1, -6, $scale)
+$emunit-5:				scaleUnit($emunit1, -5, $scale)
+$emunit-4:				scaleUnit($emunit1, -4, $scale)
+$emunit-3:				scaleUnit($emunit1, -3, $scale)
+$emunit-2:				scaleUnit($emunit1, -2, $scale)
+$emunit-1:				scaleUnit($emunit1, -1, $scale)
 
 $emunit01:				$emunit-7
 $emunit025:				$emunit-5
