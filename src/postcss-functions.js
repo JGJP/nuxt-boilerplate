@@ -1,6 +1,6 @@
 function scaleUnit(input, times, scale) {
-	const regex = /(rem|em)/i
-	const unit = input.match(regex)
+	const regex = /(rem|em|px)/i
+	const [unit] = input.match(regex)
 	let value = input.replace(regex, "")
 
 	if (times < 0) {
@@ -14,10 +14,7 @@ function scaleUnit(input, times, scale) {
 		}
 	}
 
-	value = value.toFixed(3)
-	const cssValue = value + unit[0]
-
-	return cssValue
+	return value.toFixed(3) + unit
 }
 
 module.exports = {

@@ -1,5 +1,3 @@
-const { scaleUnit } = require("./postcss-functions")
-
 module.exports = {
 	loader: "postcss-loader",
 	options: {
@@ -9,7 +7,7 @@ module.exports = {
 			require("postcss-easy-import")({ extensions: [".sss"] }),
 			require("postcss-mixins"),
 			require("precss"),
-			require("postcss-functions")({ functions: { scaleUnit } }),
+			require("postcss-functions")({ functions: require("./postcss-functions") }),
 			require("postcss-color-short"),
 			require("postcss-color-function"),
 			require("postcss-utilities")(),
